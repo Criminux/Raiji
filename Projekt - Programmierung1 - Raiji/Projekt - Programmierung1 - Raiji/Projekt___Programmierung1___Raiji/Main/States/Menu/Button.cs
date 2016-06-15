@@ -42,20 +42,20 @@ namespace Projekt___Programmierung1___Raiji
 
         public event EventHandler<EventArgs> Click;
 
-        public Button(string text, ContentManager content, InputManager inputManager)
+        public Button(string text, ContentManager content)
         {
             texture = content.Load<Texture2D>("button");
             hoverTexture = content.Load <Texture2D>("buttonPressed");
             this.text = text;
             bounds = texture.Bounds;
 
-
-            this.inputManager = inputManager;
+            inputManager = StateMachine.inputManager;
+            
         }
 
         public void Update()
         {
-            inputManager.UpdateInput(); // TODO: Das hier brauchst du dann auch nur ein Mal pro Zyklus aufrufen
+            
 
             isHoveredOver = bounds.Contains(inputManager.GetMousePoint());
 
@@ -64,7 +64,7 @@ namespace Projekt___Programmierung1___Raiji
                 OnClick();
             }
 
-            inputManager.EndInput();
+           
         }
         
         public void Draw(SpriteBatch spriteBatch, SpriteFont spriteFont)

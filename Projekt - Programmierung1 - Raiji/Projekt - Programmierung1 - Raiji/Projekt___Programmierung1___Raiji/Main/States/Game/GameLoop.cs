@@ -23,7 +23,7 @@ namespace Projekt___Programmierung1___Raiji
             this.content = content;
             inputManager = StateMachine.inputManager;
 
-            levelManager = new LevelManager(inputManager, content);
+            levelManager = new LevelManager(content);
 
             targetState = EGameState.GameLoop;
 
@@ -34,7 +34,7 @@ namespace Projekt___Programmierung1___Raiji
             targetState = EGameState.GameLoop;
             //ExecuteInput(Input(inputManager));
 
-            levelManager.Update();
+            targetState = levelManager.Update();
 
             return targetState; 
         }
@@ -45,37 +45,7 @@ namespace Projekt___Programmierung1___Raiji
 
         protected override void ExecuteInput(EInputKey[] inputs)
         {
-            int size = inputs.Length;
-            
-
-            for (int i = 0; i < size; i++)
-            {
-                
-
-                switch (inputs[i])
-                {
-                    case EInputKey.Escape:
-                        targetState = EGameState.MainMenu;
-                        break;
-                    case EInputKey.Right:
-                        //pos.X += 5;                        
-                        break;
-                    case EInputKey.Left:
-                        //pos.X -= 5;
-                        break;
-                    case EInputKey.Up:
-                        //pos.Y -= 5;
-                        break;
-                    case EInputKey.Down:
-                        //pos.Y += 5;
-                        break;
-                    default:
-                        break;
-                }
-
-                
-            }
-            //levelManager.playerPosition = pos;
+            throw new NotImplementedException();
         }
     }
 }

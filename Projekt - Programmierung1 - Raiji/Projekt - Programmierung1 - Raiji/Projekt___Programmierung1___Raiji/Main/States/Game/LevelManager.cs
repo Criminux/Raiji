@@ -21,11 +21,12 @@ namespace Projekt___Programmierung1___Raiji
         Room room;
 
         private Player player;
-        
 
-        public LevelManager(InputManager inputManager, ContentManager content)
+        EGameState targetState;
+
+        public LevelManager(ContentManager content)
         {
-            this.inputManager = inputManager;
+            inputManager = StateMachine.inputManager;
             this.content = content;
 
             room = new Room(content);
@@ -36,13 +37,19 @@ namespace Projekt___Programmierung1___Raiji
         }
         
 
-        public void Update()
+        public EGameState Update()
         {
+            targetState = EGameState.GameLoop;
+            //Input
+            ExecuteInput(inputManager.GetInput());
+
             //Update Room
             room.Update();
 
             //Update Player
             player.Update();
+
+            return targetState;
         }
 
         public void Draw(SpriteBatch spriteBatch) 
@@ -56,7 +63,40 @@ namespace Projekt___Programmierung1___Raiji
 
         }
 
-        
-       
+        public void ExecuteInput(EInputKey[] inputs)
+        {
+            int size = inputs.Length;
+
+
+            for (int i = 0; i < size; i++)
+            {
+
+
+                switch (inputs[i])
+                {
+                    case EInputKey.Escape:
+                        targetState = EGameState.MainMenu;
+                        break;
+                    case EInputKey.Right:
+                        player.Position += new Vector2(5, 0);                        
+                        break;
+                    case EInputKey.Left:
+                        player.Position -= new Vector2(5, 0);
+                        break;
+                    case EInputKey.Up:
+                        player.Position -= new Vector2(0, 5);
+                        break;
+                    case EInputKey.Down:
+                        player.Position += new Vector2(0, 5);
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+            
+        }
+
     }
 }

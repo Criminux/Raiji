@@ -120,43 +120,18 @@ namespace Projekt___Programmierung1___Raiji
             //Time is being counted
             Time(gameTime);
 
+            //Global InputManager getInput
             inputManager.UpdateInput();
 
             //StateUpdate calls the specific Update-Method
             StateUpdate();
 
+            //Global InputManager ends Input
             inputManager.EndInput();
             base.Update(gameTime);
         }
 
-        private void Input()
-        {
-            //Aktuellen Keyboardstand speichern
-            inputManager.UpdateInput();
-
-
-            //Array aller Inputs anfordern
-            EInputKey[] inputs = inputManager.GetInput();
-            int size = inputs.Length;
-
-            //Ausführen der entsprechenden Aktion
-            for(int i = 0; i < size; i++)
-            {
-                switch(inputs[i])
-                {
-                    case EInputKey.Escape:
-                        Exit();
-                        break;
-                    default:
-                        break;
-                    //TODO Finish Case
-                }
-            }
-            
-            //Alten Keyboardstand speichern
-            inputManager.EndInput();
-        }
-
+        
         private void Time(GameTime gameTime)
         {
             timeManager.UpdateTime(gameTime);

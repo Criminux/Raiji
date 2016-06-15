@@ -25,8 +25,8 @@ namespace Projekt___Programmierung1___Raiji
             this.content = content;
 
             //Create Button Instances
-            startButton = new Button("Starten", content, inputManager);
-            exitButton = new Button("Beenden", content, inputManager);
+            startButton = new Button("Starten", content);
+            exitButton = new Button("Beenden", content);
 
             //Set the Button Position
             startButton.Position = new Vector2(860, 515);
