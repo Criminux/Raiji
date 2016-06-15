@@ -16,8 +16,7 @@ namespace Projekt___Programmierung1___Raiji
         //Creates a LevelManager
         LevelManager levelManager;
 
-        //TODO in den LevelManager
-        private int LevelCount;
+        
         
         public GameLoop(ContentManager content) 
         {
@@ -25,7 +24,6 @@ namespace Projekt___Programmierung1___Raiji
             inputManager = StateMachine.inputManager;
 
             levelManager = new LevelManager(inputManager, content);
-            LevelCount = 1;
 
             targetState = EGameState.GameLoop;
 
@@ -34,7 +32,7 @@ namespace Projekt___Programmierung1___Raiji
         public override EGameState Update(TimeSpan totalTime)
         {
             targetState = EGameState.GameLoop;
-            ExecuteInput(Input(inputManager));
+            //ExecuteInput(Input(inputManager));
 
             levelManager.Update();
 
@@ -48,7 +46,7 @@ namespace Projekt___Programmierung1___Raiji
         protected override void ExecuteInput(EInputKey[] inputs)
         {
             int size = inputs.Length;
-            Vector2 pos = levelManager.playerPosition;
+            
 
             for (int i = 0; i < size; i++)
             {
@@ -60,16 +58,16 @@ namespace Projekt___Programmierung1___Raiji
                         targetState = EGameState.MainMenu;
                         break;
                     case EInputKey.Right:
-                        pos.X += 5;                        
+                        //pos.X += 5;                        
                         break;
                     case EInputKey.Left:
-                        pos.X -= 5;
+                        //pos.X -= 5;
                         break;
                     case EInputKey.Up:
-                        pos.Y -= 5;
+                        //pos.Y -= 5;
                         break;
                     case EInputKey.Down:
-                        pos.Y += 5;
+                        //pos.Y += 5;
                         break;
                     default:
                         break;
@@ -77,7 +75,7 @@ namespace Projekt___Programmierung1___Raiji
 
                 
             }
-            levelManager.playerPosition = pos;
+            //levelManager.playerPosition = pos;
         }
     }
 }

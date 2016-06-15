@@ -21,12 +21,7 @@ namespace Projekt___Programmierung1___Raiji
         Room room;
 
         private Player player;
-         private Vector2 PlayerPosition;
-        public Vector2 playerPosition
-        {
-            get { return PlayerPosition; }
-            set { PlayerPosition = value; }
-        }
+        
 
         public LevelManager(InputManager inputManager, ContentManager content)
         {
@@ -36,7 +31,7 @@ namespace Projekt___Programmierung1___Raiji
             room = new Room(content);
 
             player = new Player(content);
-            PlayerPosition = new Vector2(960, 530);
+            player.Position = new Vector2(960, 530);
 
         }
         
@@ -50,13 +45,13 @@ namespace Projekt___Programmierung1___Raiji
             player.Update();
         }
 
-        public void Draw(SpriteBatch spriteBatch) // TODO: Extra Klasse -> die aktuelle Section übergeben und zeichnen lassen
+        public void Draw(SpriteBatch spriteBatch) 
         {
             //Draw Room
             room.Draw(spriteBatch);
             
             //Draw Character
-            player.DrawPlayer(spriteBatch, PlayerPosition);
+            player.Draw(spriteBatch);
 
 
         }

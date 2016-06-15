@@ -18,18 +18,22 @@ namespace Projekt___Programmierung1___Raiji
             characterSprite = content.Load<Texture2D>("Player");
             bounds = characterSprite.Bounds;
         }
-        public void Update()
+
+        public override void Update()
         {
+
+
             if(!isAlive(life))
             {
                 //TODO is character dead
             }
+            base.Update();
         }
 
-        public void DrawPlayer(SpriteBatch spriteBatch, Vector2 position) // TODO: Mach in der Base eine abstrakte (?) Methode, die der LevelManager dann von jedem Character aufruft und du dann in den Subclasses für jeden unterschiedlich implementieren kannst (in C++-Terminologie wäre es pure virtual, bin mir aber nichts sicher, was dafür das richtige Keyword in C# ist). Oder lege die Draw-Methode gleich in der Oberklasse fest und stelle dan für jeden Character eine Textur ein.
+
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(characterSprite, position, Color.White);
+            spriteBatch.Draw(characterSprite, Position, Color.White);
         }
-
     }
 }

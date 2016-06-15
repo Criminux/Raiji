@@ -91,13 +91,9 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
            
             this.LevelID = LevelID;
             this.RoomID = RoomID;
-
             
-
-           
             int yCount = 0;
-
-
+            
             while (yCount < 15)
             {
 
