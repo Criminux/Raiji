@@ -22,7 +22,6 @@ namespace Projekt___Programmierung1___Raiji
 
         private Player player;
 
-        EGameState targetState;
 
         public LevelManager(ContentManager content)
         {
@@ -37,9 +36,8 @@ namespace Projekt___Programmierung1___Raiji
         }
         
 
-        public EGameState Update()
+        public void Update()
         {
-            targetState = EGameState.GameLoop;
             //Input
             ExecuteInput(inputManager.GetInput());
 
@@ -49,7 +47,6 @@ namespace Projekt___Programmierung1___Raiji
             //Update Player
             player.Update();
 
-            return targetState;
         }
 
         public void Draw(SpriteBatch spriteBatch) 
@@ -74,9 +71,6 @@ namespace Projekt___Programmierung1___Raiji
 
                 switch (inputs[i])
                 {
-                    case EInputKey.Escape:
-                        targetState = EGameState.MainMenu;
-                        break;
                     case EInputKey.Right:
                         player.Position += new Vector2(5, 0);                        
                         break;

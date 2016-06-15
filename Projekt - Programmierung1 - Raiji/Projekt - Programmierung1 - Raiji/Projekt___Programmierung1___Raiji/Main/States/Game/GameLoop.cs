@@ -32,9 +32,9 @@ namespace Projekt___Programmierung1___Raiji
         public override EGameState Update(TimeSpan totalTime)
         {
             targetState = EGameState.GameLoop;
-            //ExecuteInput(Input(inputManager));
+            ExecuteInput(Input(inputManager));
 
-            targetState = levelManager.Update();
+            levelManager.Update();
 
             return targetState; 
         }
@@ -45,7 +45,25 @@ namespace Projekt___Programmierung1___Raiji
 
         protected override void ExecuteInput(EInputKey[] inputs)
         {
-            throw new NotImplementedException();
+            int size = inputs.Length;
+
+
+            for (int i = 0; i < size; i++)
+            {
+
+
+                switch (inputs[i])
+                {
+                    case EInputKey.Escape:
+                        targetState = EGameState.MainMenu;
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+
         }
     }
 }
