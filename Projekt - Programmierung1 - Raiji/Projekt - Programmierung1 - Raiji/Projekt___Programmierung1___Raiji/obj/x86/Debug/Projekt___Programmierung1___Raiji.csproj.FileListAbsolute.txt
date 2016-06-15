@@ -1,0 +1,45 @@
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Projekt___Programmierung1___Raiji.exe
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Projekt___Programmierung1___Raiji.pdb
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.dll
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.xml
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Projekt___Programmierung1___Raiji.csprojResolveAssemblyReference.cache
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Projekt___Programmierung1___Raiji.exe
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Projekt___Programmierung1___Raiji.pdb
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\SplashScreen.xnb
+c:\users\sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Arial.xnb
+C:\Users\Sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\button.xnb
+C:\Users\Sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\buttonPressed.xnb
+C:\Users\Sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Stone.xnb
+C:\Users\Sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Player.xnb
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\SplashScreen.xnb
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\buttonPressed.xnb
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\button.xnb
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Stone.xnb
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Player.xnb
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Arial.xnb
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Projekt___Programmierung1___Raiji.exe
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Projekt___Programmierung1___Raiji.pdb
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Projekt___Programmierung1___Raiji.csprojResolveAssemblyReference.cache
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Projekt___Programmierung1___Raiji.exe
+C:\Users\rayma\Downloads\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Projekt___Programmierung1___Raiji.pdb
+C:\Users\Sebastian\documents\visual studio 2015\Projects\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Back.xnb
