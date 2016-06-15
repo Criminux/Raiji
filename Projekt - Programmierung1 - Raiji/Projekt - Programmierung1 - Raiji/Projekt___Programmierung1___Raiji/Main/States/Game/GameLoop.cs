@@ -33,6 +33,7 @@ namespace Projekt___Programmierung1___Raiji
 
         public override EGameState Update(TimeSpan totalTime)
         {
+            targetState = EGameState.GameLoop;
             ExecuteInput(Input(inputManager));
 
             levelManager.Update();

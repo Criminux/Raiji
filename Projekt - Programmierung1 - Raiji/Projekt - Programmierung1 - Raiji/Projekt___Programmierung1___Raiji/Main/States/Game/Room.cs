@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using System.Xml;
+using System.IO;
 
 namespace Projekt___Programmierung1___Raiji.Main.States.Game
 {
@@ -27,6 +27,7 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
         private int LevelID;
         private int RoomID;
 
+        StreamReader reader;
 
         public Room(ContentManager content)
         {
@@ -37,6 +38,12 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
 
             LevelID = 1;
             RoomID = 1;
+
+            LoadContent();
+        }
+        void LoadContent()
+        {
+            reader = new StreamReader("Content/LevelData/Level1Room1.txt");
         }
 
         public void Update()
@@ -81,42 +88,48 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
 
         private void InitializeLevel(int LevelID, int RoomID) 
         {
-
+           
             this.LevelID = LevelID;
             this.RoomID = RoomID;
 
-            XmlTextReader reader = new XmlTextReader("Level" + LevelID + "Room" + RoomID + ".xml");
+            
 
-            int xCount = 0;
+           
             int yCount = 0;
 
-            while (true)
+
+            while (yCount < 15)
             {
-                if (reader.NodeType == XmlNodeType.Element)
+
+                
+                String Line = reader.ReadLine();
+                String[] IDs = Line.Split(' ');
+                
+                for(int i = 0; i < IDs.Length; i++)
                 {
-                    reader.Read();
-                    continue;                                       
-                }
-                else if(reader.NodeType == XmlNodeType.Text)
-                {
-                    int ID = int.Parse(reader.Value);
-                    ETile temptile;
-                    switch(ID)
+                    
+
+                    int[] ID = new int[IDs.Length];
+                    ID[i] = Int32.Parse(IDs[i]);
+
+                    switch(ID[i])
                     {
-                        case 0: temptile = ETile.Background;
+                        case 0:
+                            TileRoom[i, yCount] = new Tile(ETile.Background, content);
                             break;
-                        case 1: temptile = ETile.Stone;
+                        case 1:
+                            TileRoom[i, yCount] = new Tile(ETile.Stone, content);
                             break;
-                        default: temptile = ETile.Unspecified;
+                        case 99:
+                            TileRoom[i, yCount] = new Tile(ETile.Unspecified, content);
                             break;
                     }
-                    TileRoom[xCount, yCount] = new Tile(temptile, content);
-
-                    xCount++;
                 }
-            }
 
-            
+                yCount++;
+
+                
+            }
 
             //for(int i = 0; i < RowY; i++)
             //{

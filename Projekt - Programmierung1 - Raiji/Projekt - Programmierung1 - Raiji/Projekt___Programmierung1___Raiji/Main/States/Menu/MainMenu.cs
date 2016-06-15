@@ -55,6 +55,7 @@ namespace Projekt___Programmierung1___Raiji
 
         public override EGameState Update(TimeSpan totalTime)
         {
+            targetState = EGameState.MainMenu;
             ExecuteInput(Input(inputManager));
 
             startButton.Update();

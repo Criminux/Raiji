@@ -3,5 +3,6 @@ Content\buttonPressed.xnb
 Content\button.xnb
 Content\Stone.xnb
 Content\Player.xnb
-Content\Arial.xnb
 Content\Back.xnb
+Content\Arial.xnb
+Content\LevelData\Level1Room1.txt
