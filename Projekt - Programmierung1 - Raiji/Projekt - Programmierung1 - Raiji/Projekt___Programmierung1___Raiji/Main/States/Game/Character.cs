@@ -15,8 +15,19 @@ namespace Projekt___Programmierung1___Raiji
     {
         protected float life;
         protected Texture2D characterSprite;
-        public Rectangle bounds; 
-        
+        public Rectangle bounds;
+
+        private const float maxdir = 1f;
+        private const float acceleration = 0.5f;
+        private const float maxMoveSpeed = 100f;
+
+        //BeginJump Stuff
+        protected bool isJumping;
+        private float jumpTime;
+        private const float maxJumpTime = 3f;
+        private const float jumpVelocity = 50f;
+
+        private Vector2 velocity;
 
         private Vector2 position;
         public Vector2 Position
@@ -25,10 +36,13 @@ namespace Projekt___Programmierung1___Raiji
             set { position = value; }
         }
 
-        virtual public void Update()
+        virtual public void Update(GameTime gametime)
         {
-            
+            HandleCollisions();
+            ApplyPhysics(gametime);
+            Position += velocity;
         }
+
         abstract public void Draw(SpriteBatch spriteBatch);
 
         //Is Character Alive 
@@ -37,6 +51,47 @@ namespace Projekt___Programmierung1___Raiji
             if (life <= 0f) return false;
             else return true;
         }
+
+        public void Move(float dir, GameTime gameTime)
+        {
+            dir = MathHelper.Clamp(dir, -maxdir, maxdir);
+
+            velocity.X = MathHelper.Clamp(dir * gameTime.ElapsedGameTime.Milliseconds * acceleration, -maxMoveSpeed, maxMoveSpeed);
+        }
+
+        public void BeginJump(GameTime gameTime)
+        {
+            //Start Jump
+            if (!isJumping)
+            {
+                isJumping = true;
+                jumpTime = 0f;
+                //Play Jumpsound
+            }
+            
+        }
+
+        private void HandleCollisions()
+        {
+
+        }
+
+        private void ApplyPhysics(GameTime gameTime)
+        {
+            //Jumping Velocity
+            if(isJumping)
+            {
+                jumpTime += gameTime.ElapsedGameTime.Milliseconds;
+                if (jumpTime <= maxJumpTime)
+                {
+                    velocity.Y += jumpVelocity * (1f - (jumpTime / maxJumpTime));
+                }
+            }
+
+
+
+        }
+
 
         //TODO Attack Method etc etc
 

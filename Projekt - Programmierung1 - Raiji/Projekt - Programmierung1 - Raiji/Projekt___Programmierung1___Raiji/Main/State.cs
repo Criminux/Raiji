@@ -21,8 +21,8 @@ namespace Projekt___Programmierung1___Raiji
         //TargetState
         protected EGameState targetState;
 
-        public abstract EGameState Update(TimeSpan totalTime);
-
+        public abstract EGameState Update(TimeSpan totalTime, GameTime gameTime);
+        
         public abstract void Draw(SpriteBatch spriteBatch, SpriteFont spriteFont);
 
         protected virtual EInputKey[] Input(InputManager inputManager)

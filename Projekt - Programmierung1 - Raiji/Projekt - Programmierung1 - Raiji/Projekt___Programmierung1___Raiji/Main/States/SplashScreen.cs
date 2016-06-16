@@ -36,7 +36,7 @@ namespace Projekt___Programmierung1___Raiji
 
 
         //Override Update Method showing the SplashScreen 5 Seconds
-        public override EGameState Update(TimeSpan totalTime)
+        public override EGameState Update(TimeSpan totalTime, GameTime gameTime)
         {
             //Process the Input
             ExecuteInput(Input(inputManager));

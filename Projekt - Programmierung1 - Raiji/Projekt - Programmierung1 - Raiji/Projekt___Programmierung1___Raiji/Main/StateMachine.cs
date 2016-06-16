@@ -124,7 +124,7 @@ namespace Projekt___Programmierung1___Raiji
             inputManager.UpdateInput();
 
             //StateUpdate calls the specific Update-Method
-            StateUpdate();
+            StateUpdate(gameTime);
 
             //Global InputManager ends Input
             inputManager.EndInput();
@@ -137,7 +137,7 @@ namespace Projekt___Programmierung1___Raiji
             timeManager.UpdateTime(gameTime);
         }
 
-        private void StateUpdate()
+        private void StateUpdate(GameTime gameTime)
         {
             switch (currentState)
             {
@@ -146,18 +146,18 @@ namespace Projekt___Programmierung1___Raiji
                     break;
                 case EGameState.SplashScreen:
                     IsMouseVisible = false;
-                    targetState = splashScreen.Update(timeManager.GetTotalTime());
+                    targetState = splashScreen.Update(timeManager.GetTotalTime(), gameTime);
                     break;
                 case EGameState.Intro:
                     IsMouseVisible = false;
                     break;
                 case EGameState.MainMenu:
                     IsMouseVisible = true;
-                    targetState = mainMenu.Update(timeManager.GetTotalTime());
+                    targetState = mainMenu.Update(timeManager.GetTotalTime(), gameTime);
                     break;
                 case EGameState.GameLoop:
                     IsMouseVisible = false;
-                    targetState = gameloop.Update(timeManager.GetTotalTime());
+                    targetState = gameloop.Update(timeManager.GetTotalTime(), gameTime);
                     break;
                 //TODO Finish Case
 

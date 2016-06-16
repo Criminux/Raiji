@@ -29,12 +29,12 @@ namespace Projekt___Programmierung1___Raiji
 
         }
 
-        public override EGameState Update(TimeSpan totalTime)
+        public override EGameState Update(TimeSpan totalTime, GameTime gameTime)
         {
             targetState = EGameState.GameLoop;
             ExecuteInput(Input(inputManager));
 
-            levelManager.Update();
+            levelManager.Update(gameTime);
 
             return targetState; 
         }

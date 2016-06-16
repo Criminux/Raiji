@@ -14,7 +14,7 @@ namespace Raiji.Main
     public class CollisionManager
     {
 
-        public bool Colliding(Rectangle obj1, Rectangle obj2)
+        public static bool Colliding(Rectangle obj1, Rectangle obj2)
         {
             return (obj1.Intersects(obj2));
         }

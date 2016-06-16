@@ -17,9 +17,10 @@ namespace Projekt___Programmierung1___Raiji
         {
             characterSprite = content.Load<Texture2D>("Player");
             bounds = characterSprite.Bounds;
+            isJumping = false;
         }
 
-        public override void Update()
+        public override void Update(GameTime gameTime)
         {
 
 
@@ -27,7 +28,7 @@ namespace Projekt___Programmierung1___Raiji
             {
                 //TODO is character dead
             }
-            base.Update();
+            base.Update(gameTime);
         }
 
 

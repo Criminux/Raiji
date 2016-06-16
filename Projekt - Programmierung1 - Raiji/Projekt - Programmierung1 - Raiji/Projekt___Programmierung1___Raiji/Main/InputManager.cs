@@ -57,13 +57,13 @@ namespace Projekt___Programmierung1___Raiji
             // TODO: Können 20 Keys gedrückt werden? Was wenn noch mehr gedrückt werden? Mach doch ein kleineres Array oder ein HashSet
 
             //Tastenspezifishe Abfrage; Speichern der Eingabe im Array
-            if (KeyJustPressed(currentKeyboardState, previousKeyboardState, Keys.Escape))     { inputs[count] = EInputKey.Escape; count++; }
-            else if (KeyIsPressed(currentKeyboardState, Keys.Up))                { inputs[count] = EInputKey.Up; count++; }
-            else if (KeyIsPressed(currentKeyboardState, Keys.Down))              { inputs[count] = EInputKey.Down; count++; }
-            else if (KeyIsPressed(currentKeyboardState, Keys.Left))              { inputs[count] = EInputKey.Left; count++; }
-            else if (KeyIsPressed(currentKeyboardState, Keys.Right))             { inputs[count] = EInputKey.Right; count++; }
-            else if (KeyIsPressed(currentKeyboardState, Keys.Space))             { inputs[count] = EInputKey.Jump; count++; }
-            else                                                                { inputs[count] = EInputKey.Unspecified; count++; }
+            if (KeyJustPressed(currentKeyboardState, previousKeyboardState, Keys.Escape))       { inputs[count] = EInputKey.Escape; count++; }
+            else if (KeyIsPressed(currentKeyboardState, Keys.Up))                               { inputs[count] = EInputKey.Up; count++; }
+            else if (KeyIsPressed(currentKeyboardState, Keys.Down))                             { inputs[count] = EInputKey.Down; count++; }
+            else if (KeyIsPressed(currentKeyboardState, Keys.Left))                             { inputs[count] = EInputKey.Left; count++; }
+            else if (KeyIsPressed(currentKeyboardState, Keys.Right))                            { inputs[count] = EInputKey.Right; count++; }
+            else if (KeyJustPressed(currentKeyboardState, previousKeyboardState, Keys.Space))   { inputs[count] = EInputKey.Jump; count++; }
+            else                                                                                { inputs[count] = EInputKey.Unspecified; count++; }
 
             //Anlegen eines neuen Arrays der korrekten Größe, sowie Übertragung der gespeicherten Werte
             // TODO: Warum?
