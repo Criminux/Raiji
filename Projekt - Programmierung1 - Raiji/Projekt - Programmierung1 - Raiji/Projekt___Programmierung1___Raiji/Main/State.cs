@@ -16,7 +16,6 @@ namespace Projekt___Programmierung1___Raiji
 
         //Managers
         protected ContentManager content;
-        protected InputManager inputManager;
 
         //TargetState
         protected EGameState targetState;

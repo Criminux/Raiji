@@ -38,7 +38,6 @@ namespace Projekt___Programmierung1___Raiji
         Rectangle bounds;
 
         //MouseInput
-        InputManager inputManager;
 
         public event EventHandler<EventArgs> Click;
 
@@ -48,8 +47,7 @@ namespace Projekt___Programmierung1___Raiji
             hoverTexture = content.Load <Texture2D>("buttonPressed");
             this.text = text;
             bounds = texture.Bounds;
-
-            inputManager = StateMachine.inputManager;
+           
             
         }
 
@@ -57,9 +55,9 @@ namespace Projekt___Programmierung1___Raiji
         {
             
 
-            isHoveredOver = bounds.Contains(inputManager.GetMousePoint());
+            isHoveredOver = bounds.Contains(StateMachine.inputManager.GetMousePoint());
 
-            if (isHoveredOver && inputManager.MouseClicked()) // TODO: if(hover && MouseClicked())
+            if (isHoveredOver && StateMachine.inputManager.MouseClicked()) // TODO: if(hover && MouseClicked())
             {
                 OnClick();
             }

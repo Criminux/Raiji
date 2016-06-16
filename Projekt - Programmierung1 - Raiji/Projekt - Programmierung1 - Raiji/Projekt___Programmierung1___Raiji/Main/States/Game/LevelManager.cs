@@ -15,8 +15,7 @@ namespace Projekt___Programmierung1___Raiji
 {
     class LevelManager
     {
-
-        InputManager inputManager;
+        
         ContentManager content;
 
         Room room;
@@ -25,7 +24,6 @@ namespace Projekt___Programmierung1___Raiji
 
         public LevelManager(ContentManager content)
         {
-            inputManager = StateMachine.inputManager;
             this.content = content;
 
             room = new Room(content);
@@ -40,11 +38,16 @@ namespace Projekt___Programmierung1___Raiji
             //Update Room
             room.Update();
 
-            //Input
-            ExecuteInput(inputManager.GetInput(), gameTime);
+            
 
             //Update Player
             player.Update(gameTime);
+
+            //Input
+            ExecuteInput(StateMachine.inputManager.GetInput(), gameTime);
+
+            //AfterUpdatePlayer
+            player.AfterUpdate(gameTime);
 
         }
 
@@ -76,7 +79,7 @@ namespace Projekt___Programmierung1___Raiji
                         player.Move(-1f, gameTime);
                         break;
                     case EInputKey.Jump:
-                        player.BeginJump(gameTime);
+                          player.BeginJump(gameTime);
                         break;
                 }
             }

@@ -21,7 +21,6 @@ namespace Projekt___Programmierung1___Raiji
         public MainMenu(ContentManager content)
         {
             //Set the instances
-            inputManager = StateMachine.inputManager;
             this.content = content;
 
             //Create Button Instances
@@ -56,7 +55,7 @@ namespace Projekt___Programmierung1___Raiji
         public override EGameState Update(TimeSpan totalTime, GameTime gameTime)
         {
             targetState = EGameState.MainMenu;
-            ExecuteInput(Input(inputManager));
+            ExecuteInput(Input(StateMachine.inputManager));
 
             startButton.Update();
             exitButton.Update();

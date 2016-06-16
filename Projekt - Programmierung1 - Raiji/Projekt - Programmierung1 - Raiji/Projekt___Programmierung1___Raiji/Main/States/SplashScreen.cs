@@ -23,7 +23,6 @@ namespace Projekt___Programmierung1___Raiji
         {
             //TODO
             this.content = content;
-            inputManager = StateMachine.inputManager;
 
             //Giving the fields values
             texture = content.Load<Texture2D>("SplashScreen");
@@ -39,7 +38,7 @@ namespace Projekt___Programmierung1___Raiji
         public override EGameState Update(TimeSpan totalTime, GameTime gameTime)
         {
             //Process the Input
-            ExecuteInput(Input(inputManager));
+            ExecuteInput(Input(StateMachine.inputManager));
             
             //After 5 Seconds SplashScreen
             if(totalTime.Seconds >= 5) 

@@ -36,8 +36,8 @@ namespace Projekt___Programmierung1___Raiji
                     break;
                 case ETile.Background:
                     texture = content.Load<Texture2D>("Back");
-                    bounds = texture.Bounds; break;
                     this.ID = ID;
+                    bounds = texture.Bounds; break;
             }
         }
 

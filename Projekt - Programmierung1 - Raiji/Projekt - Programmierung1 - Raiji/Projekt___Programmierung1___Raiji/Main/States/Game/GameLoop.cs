@@ -21,7 +21,6 @@ namespace Projekt___Programmierung1___Raiji
         public GameLoop(ContentManager content) 
         {
             this.content = content;
-            inputManager = StateMachine.inputManager;
 
             levelManager = new LevelManager(content);
 
@@ -32,7 +31,7 @@ namespace Projekt___Programmierung1___Raiji
         public override EGameState Update(TimeSpan totalTime, GameTime gameTime)
         {
             targetState = EGameState.GameLoop;
-            ExecuteInput(Input(inputManager));
+            ExecuteInput(Input(StateMachine.inputManager));
 
             levelManager.Update(gameTime);
 

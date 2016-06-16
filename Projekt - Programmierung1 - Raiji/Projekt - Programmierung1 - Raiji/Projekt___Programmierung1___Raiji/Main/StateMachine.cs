@@ -89,7 +89,6 @@ namespace Projekt___Programmierung1___Raiji
             spriteFont = Content.Load<SpriteFont>("Arial");
 
             //TODO Eigene Klassen
-            inputManager = new InputManager();
             timeManager = new TimeManager();
 
             //TODO State Klassen

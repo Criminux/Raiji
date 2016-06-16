@@ -16,7 +16,7 @@ namespace Projekt___Programmierung1___Raiji
         protected float life;
         protected Texture2D characterSprite;
         public Rectangle bounds;
-
+        
         private const float maxdir = 1f;
         private const float acceleration = 0.5f;
         private const float maxMoveSpeed = 100f;
@@ -36,10 +36,16 @@ namespace Projekt___Programmierung1___Raiji
             set { position = value; }
         }
 
-        virtual public void Update(GameTime gametime)
+        virtual public void Update(GameTime gameTime)
         {
-            HandleCollisions();
-            ApplyPhysics(gametime);
+            
+            velocity = Vector2.Zero;
+            HandleCollisions();            
+        }
+
+        public void AfterUpdate(GameTime gameTime)
+        {
+            ApplyPhysics(gameTime);
             Position += velocity;
         }
 
