@@ -67,3 +67,27 @@ X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projek
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Raiji.pdb
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Raiji.exe
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Raiji.pdb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\SplashScreen.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\buttonPressed.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\button.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Stone.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Player.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Back.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Arial.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\LevelData\Level1Room1.txt
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Raiji.exe
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Raiji.pdb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.dll
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.xml
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Projekt___Programmierung1___Raiji.csprojResolveAssemblyReference.cache
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Raiji.exe
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\Raiji.pdb

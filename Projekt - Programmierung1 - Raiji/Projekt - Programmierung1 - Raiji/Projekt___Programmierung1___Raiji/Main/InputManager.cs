@@ -19,7 +19,8 @@ namespace Projekt___Programmierung1___Raiji
         Up = 21,
         Down = 22,
         Left = 23,
-        Right = 24
+        Right = 24,
+        Jump = 25
     }
 
     public class InputManager
@@ -61,7 +62,8 @@ namespace Projekt___Programmierung1___Raiji
             else if (KeyIsPressed(currentKeyboardState, Keys.Down))              { inputs[count] = EInputKey.Down; count++; }
             else if (KeyIsPressed(currentKeyboardState, Keys.Left))              { inputs[count] = EInputKey.Left; count++; }
             else if (KeyIsPressed(currentKeyboardState, Keys.Right))             { inputs[count] = EInputKey.Right; count++; }
-            else                                                    { inputs[count] = EInputKey.Unspecified; count++; }
+            else if (KeyIsPressed(currentKeyboardState, Keys.Space))             { inputs[count] = EInputKey.Jump; count++; }
+            else                                                                { inputs[count] = EInputKey.Unspecified; count++; }
 
             //Anlegen eines neuen Arrays der korrekten Größe, sowie Übertragung der gespeicherten Werte
             // TODO: Warum?

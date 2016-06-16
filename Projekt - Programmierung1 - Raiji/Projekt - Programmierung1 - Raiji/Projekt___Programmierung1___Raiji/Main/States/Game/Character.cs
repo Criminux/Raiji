@@ -15,8 +15,8 @@ namespace Projekt___Programmierung1___Raiji
     {
         protected float life;
         protected Texture2D characterSprite;
-        protected Vector2 gravity = new Vector2(0, 4);
         public Rectangle bounds; 
+        
 
         private Vector2 position;
         public Vector2 Position
@@ -27,11 +27,11 @@ namespace Projekt___Programmierung1___Raiji
 
         virtual public void Update()
         {
-            Position += gravity;
+            
         }
         abstract public void Draw(SpriteBatch spriteBatch);
 
-        //Is Character Alive // TODO: Wenn die Methode schon richtig und eindeutig benannt ist, brauchst du das nicht nochmal zu kommentieren ;)
+        //Is Character Alive 
         virtual protected bool isAlive(float life)
         {
             if (life <= 0f) return false;

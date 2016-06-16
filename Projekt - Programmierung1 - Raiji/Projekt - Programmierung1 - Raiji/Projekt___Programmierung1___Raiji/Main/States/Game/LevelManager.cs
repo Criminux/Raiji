@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Projekt___Programmierung1___Raiji.Main.States.Game;
+using Raiji.Main;
 
 namespace Projekt___Programmierung1___Raiji
 {
@@ -21,7 +22,9 @@ namespace Projekt___Programmierung1___Raiji
         Room room;
 
         private Player player;
+        private bool needGravity;
 
+        private CollisionManager collisionManager = new CollisionManager();
 
         public LevelManager(ContentManager content)
         {
@@ -33,17 +36,21 @@ namespace Projekt___Programmierung1___Raiji
             player = new Player(content);
             player.Position = new Vector2(960, 530);
 
+            needGravity = true;
         }
         
 
         public void Update()
         {
-            //Input
-            ExecuteInput(inputManager.GetInput());
-
             //Update Room
             room.Update();
 
+            //Input
+            ExecuteInput(inputManager.GetInput());
+
+            //Check Collision
+            CheckCollision();
+            
             //Update Player
             player.Update();
 
@@ -60,6 +67,28 @@ namespace Projekt___Programmierung1___Raiji
 
         }
 
+        private void CheckCollision()
+        {
+            for (int i = 0; i < 30; i++)
+            {
+                for (int j = 0; j < 15; j++)
+                {
+                    Tile temptile = room.tileRoom[i, j];
+                    if (temptile.ID == ETile.Stone)
+                    {
+                        if (collisionManager.Colliding(player.bounds, temptile.bounds))
+                        {
+                            needGravity = false;
+                        }
+                        else { needGravity = true; }
+                    }
+
+                }
+            }
+
+        }
+
+
         public void ExecuteInput(EInputKey[] inputs)
         {
             int size = inputs.Length;
@@ -67,29 +96,32 @@ namespace Projekt___Programmierung1___Raiji
 
             for (int i = 0; i < size; i++)
             {
-
+                needGravity = true;
 
                 switch (inputs[i])
                 {
                     case EInputKey.Right:
-                        player.Position += new Vector2(5, 0);                        
+                        player.Position += new Vector2(5, 0);
+                        
                         break;
                     case EInputKey.Left:
                         player.Position -= new Vector2(5, 0);
+                        
                         break;
-                    case EInputKey.Up:
-                        player.Position -= new Vector2(0, 5);
+                    case EInputKey.Jump:
+                        player.Position -= new Vector2(0, 20);
+                        needGravity = false;
                         break;
-                    case EInputKey.Down:
-                        player.Position += new Vector2(0, 5);
-                        break;
+                    
                     default:
                         break;
                 }
 
 
             }
-            
+            if(needGravity)
+                player.Position += new Vector2(0, 5);
+
         }
 
     }

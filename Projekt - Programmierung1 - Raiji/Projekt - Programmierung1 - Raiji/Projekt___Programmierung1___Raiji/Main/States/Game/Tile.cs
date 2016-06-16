@@ -19,10 +19,11 @@ namespace Projekt___Programmierung1___Raiji
 
     }
 
-    class Tile
+    public class Tile
     {
         private Texture2D texture;
         public Rectangle bounds;
+        public ETile ID;
 
         public Tile(ETile ID, ContentManager content)
         {
@@ -31,10 +32,12 @@ namespace Projekt___Programmierung1___Raiji
                 case ETile.Stone:
                     texture = content.Load<Texture2D>("Stone");
                     bounds = texture.Bounds;
+                    this.ID = ID;
                     break;
                 case ETile.Background:
                     texture = content.Load<Texture2D>("Back");
                     bounds = texture.Bounds; break;
+                    this.ID = ID;
             }
         }
 

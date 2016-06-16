@@ -20,6 +20,11 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
         const int RowY = 15;
         
         private Tile[,] TileRoom = new Tile[RowX, RowY];
+        public Tile[,] tileRoom
+        {
+            get { return TileRoom; }
+        }
+        
 
         private bool levelDone;
         private bool isInitialized;
@@ -126,15 +131,7 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
 
                 
             }
-
-            //for(int i = 0; i < RowY; i++)
-            //{
-            //    for(int j = 0; j < RowX; j++)
-            //    {
-                    
-            //    }
-            //}
-
+            
         }
 
     }
