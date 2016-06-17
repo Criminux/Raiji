@@ -18,7 +18,6 @@ namespace Projekt___Programmierung1___Raiji
         {
             characterSprite = content.Load<Texture2D>("Player");
             bounds = characterSprite.Bounds;
-            isJumping = false;
         }
 
         public override void Update(GameTime gameTime, Room room)

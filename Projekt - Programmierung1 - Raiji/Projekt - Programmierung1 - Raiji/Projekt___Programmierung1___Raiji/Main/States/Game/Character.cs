@@ -27,11 +27,11 @@ namespace Projekt___Programmierung1___Raiji
         private const float gravity = 10f;
 
         //Jump and Collision Fields
-        protected bool isJumping;
         protected bool isOnGround;
-        private float jumpTime;
+        private float jumpTime = jumpCooldown;
         private const float maxJumpTime = 200f;
-        private const float jumpVelocity = 30f;
+        private const float jumpCooldown = 400f;
+        private const float jumpVelocity = 50f;
 
         //Collects all Movement
         private Vector2 velocity;
@@ -44,6 +44,14 @@ namespace Projekt___Programmierung1___Raiji
             set { position = value; }
         }
 
+        private bool IsJumping
+        {
+            get { return jumpTime <= maxJumpTime; }
+        }
+        private bool JumpHasCooledDown
+        {
+            get { return jumpTime <= jumpCooldown; }
+        }
 
         virtual public void Update(GameTime gameTime, Room room)
         {
@@ -81,9 +89,8 @@ namespace Projekt___Programmierung1___Raiji
         public void BeginJump(GameTime gameTime)
         {
             //Start Jump
-            if (!isJumping)
+            if (!JumpHasCooledDown)
             {
-                isJumping = true;
                 jumpTime = 0f;
                 //TODO: Play Jumpsound
             }
@@ -96,38 +103,35 @@ namespace Projekt___Programmierung1___Raiji
         {
             // Set up some stuff
             Tile[,] TileRoom = room.tileRoom;
-            Rectangle virtualBounds = bounds; virtualBounds.Location = new Point((int)position.X, (int)position.Y);
+            bounds.Location = new Point((int)position.X, (int)position.Y);
 
-            int playerIndexX = (int)Math.Floor(virtualBounds.Center.X / (float)Tile.Width);
-            int playerIndexY = (int)Math.Floor(virtualBounds.Center.Y / (float)Tile.Height);
+            int playerIndexX = (int)Math.Floor(bounds.Center.X / (float)Tile.Width);
+            int playerIndexY = (int)Math.Floor(bounds.Center.Y / (float)Tile.Height);
 
             for(int x = playerIndexX -1;  x <= playerIndexX +1; x++)
             {
-                try // TODO: Exception richtig verhindern
+                if(x >= 0 && x < TileRoom.GetLength(0) && playerIndexY >= 0 && playerIndexY < TileRoom.GetLength(1))
                 {
                     Tile currentTile = TileRoom[x, playerIndexY];
-                    if(currentTile.Collision == ETileCollision.Solid)
+                    if (currentTile.Collision == ETileCollision.Solid)
                     {
-                        position.X += CollisionUtil.CalculateCollisionDepth(virtualBounds, currentTile.Bounds).X;
-                        virtualBounds.Location = new Point((int)position.X, (int)position.Y); // Kopiergenudelt
+                        position.X += CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds).X;
+                        bounds.Location = new Point((int)position.X, (int)position.Y); // TODO: Update Bounds Funktion
                     }
-                }
-                catch (IndexOutOfRangeException) { }
+                }               
             }
-            
             
             for(int y = playerIndexY -1; y <= playerIndexY +1; y++)
             {
-                try
-                {
+                if(y >= 0 && y < TileRoom.GetLength(1) && playerIndexX >= 0 && playerIndexX < TileRoom.GetLength(0))
+                {                 
                     Tile currentTile = TileRoom[playerIndexX, y];
                     if(currentTile.Collision == ETileCollision.Solid)
                     {
-                        position.Y += CollisionUtil.CalculateCollisionDepth(virtualBounds, currentTile.Bounds).Y;
-                        virtualBounds.Location = new Point((int)position.X, (int)position.Y);
+                        position.Y += CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds).Y;
+                        bounds.Location = new Point((int)position.X, (int)position.Y);
                     }
-                }
-                catch (IndexOutOfRangeException) { }
+                }                
             }
             
         }
@@ -136,36 +140,20 @@ namespace Projekt___Programmierung1___Raiji
         //Moves the Player on Y-Axis
         private void ApplyPhysics(GameTime gameTime, Room room)
         {
+            //Add gravity
             velocity.Y += gravity;
-            /*//Jumping Velocity
-            if (isJumping)
+            //Add time from last Update to jumpTime
+            jumpTime += gameTime.ElapsedGameTime.Milliseconds;
+            
+            if (IsJumping)
             {
-                //Add time from last Update to jumpTime
-                jumpTime += gameTime.ElapsedGameTime.Milliseconds;
-                //If still jumping
-                if (jumpTime <= maxJumpTime)
-                {
-                    //Add velocity (which decreases with time)
-                    velocity.Y -= jumpVelocity * (1f - (jumpTime / maxJumpTime));
-                }
-                else
-                {
-                    //If time ran out and Player on ground: give back jump ability
-                    if (isOnGround)
-                    {
-                        isJumping = false;
-                    }
-                }
+                //Add velocity (which decreases with time)
+                velocity.Y -= jumpVelocity * (1f - (jumpTime / maxJumpTime));
             }
-            else //If not Jumping, not on ground: Apply gravity
-            {
-                if (!isOnGround)
-                {
-                    velocity.Y += 10f;
-                }
-            }*/
 
         }
+
+        
 
 
         //TODO Attack Method etc etc

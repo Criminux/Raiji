@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\SplashScreen.xnb</Output>
-      <Time>2016-06-15T18:49:03.4999643+02:00</Time>
+      <Time>2016-06-17T17:48:17+02:00</Time>
     </Item>
     <Item>
       <Source>buttonPressed.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\buttonPressed.xnb</Output>
-      <Time>2016-06-15T18:49:03.5089648+02:00</Time>
+      <Time>2016-06-17T17:48:17+02:00</Time>
     </Item>
     <Item>
       <Source>button.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\button.xnb</Output>
-      <Time>2016-06-15T18:49:03.5089648+02:00</Time>
+      <Time>2016-06-17T17:48:17+02:00</Time>
     </Item>
     <Item>
       <Source>Stone.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Stone.xnb</Output>
-      <Time>2016-06-15T20:47:42.8811696+02:00</Time>
+      <Time>2016-06-17T17:48:17+02:00</Time>
     </Item>
     <Item>
       <Source>Player.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Player.xnb</Output>
-      <Time>2016-06-15T18:49:03.4809632+02:00</Time>
+      <Time>2016-06-17T22:41:07.2351422+02:00</Time>
     </Item>
     <Item>
       <Source>Back.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Back.xnb</Output>
-      <Time>2016-06-15T20:48:32.6400156+02:00</Time>
+      <Time>2016-06-17T17:48:17+02:00</Time>
     </Item>
     <Item>
       <Source>Arial.spritefont</Source>
@@ -62,7 +62,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Arial.xnb</Output>
-      <Time>2016-06-15T18:49:03.4799631+02:00</Time>
+      <Time>2016-06-17T17:48:17+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
