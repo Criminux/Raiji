@@ -92,13 +92,16 @@ namespace Projekt___Programmierung1___Raiji
                 {
                     velocity.Y -= jumpVelocity * (1f - (jumpTime / maxJumpTime));
                 }
-                else { isJumping = false; }
+                else
+                {
+                    isJumping = false;
+                }
             }
-
+            else //If not Jumping: Apply gravity
+            {
+                velocity.Y += 10f;
+            }
             
-
-
-
         }
 
 
