@@ -47,15 +47,16 @@ namespace Projekt___Programmierung1___Raiji
 
         virtual public void Update(GameTime gameTime, Room room)
         {
-            previousPosition = Position;
+            
             bounds.Location = new Point((int)Position.X, (int)Position.Y);
             velocity = Vector2.Zero;
-            ApplyPhysics(gameTime, room);
+            
         }
 
         //After Update Method needed, for correct Callstack order
         public void AfterUpdate(GameTime gameTime, Room room)
         {
+            ApplyPhysics(gameTime, room);
             Position += velocity;
         }
 
@@ -120,11 +121,12 @@ namespace Projekt___Programmierung1___Raiji
                             
                             //Fix the position - if no collision at all, depth will be Zero
                             Vector2 depth = CollisionUtil.CollisionDepth(bounds, TileRoom[j, i].Bounds);
-
+                            
+                            
                             // Collision along y
                             if (Math.Abs(depth.Y) < Math.Abs(depth.X))
                             {
-                                
+
                                 position.Y += depth.Y;
                                 
                             }
@@ -149,7 +151,7 @@ namespace Projekt___Programmierung1___Raiji
             
 
             //Jumping Velocity
-            if(isJumping)
+            if (isJumping)
             {
                 //Add time from last Update to jumpTime
                 jumpTime += gameTime.ElapsedGameTime.Milliseconds;
@@ -175,7 +177,8 @@ namespace Projekt___Programmierung1___Raiji
                     velocity.Y += 10f;
                 }      
             }
-
+            
+            
             HandleCollisions(room);
         }
 
