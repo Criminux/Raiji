@@ -37,9 +37,7 @@ namespace Projekt___Programmierung1___Raiji
         {
             //Update Room
             room.Update();
-
             
-
             //Update Player
             player.Update(gameTime);
 
@@ -47,7 +45,7 @@ namespace Projekt___Programmierung1___Raiji
             ExecuteInput(StateMachine.inputManager.GetInput(), gameTime);
 
             //AfterUpdatePlayer
-            player.AfterUpdate(gameTime);
+            player.AfterUpdate(gameTime, room);
 
         }
 

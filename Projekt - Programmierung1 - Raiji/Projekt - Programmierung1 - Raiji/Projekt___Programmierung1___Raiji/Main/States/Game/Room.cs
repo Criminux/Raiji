@@ -63,7 +63,7 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             {
                 for(int j = 0; j < RowY; j++)
                 {
-                    TileRoom[i, j].DrawTile(spriteBatch, new Vector2((64*i),(64*j)));
+                    TileRoom[i, j].DrawTile(spriteBatch);
                 }
             }
         }
@@ -75,7 +75,7 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
 
             
 
-            switch (LevelID) // TODO: Definiere dir Levels in einer LevelCollection oder einer externen Datei. Weis ihm eine Id zu und gib dieser Funtktion dann die Id, damit sie sich das zugehörige Level aus der Collection raussucht und InitializeLevel() übergibt, was dann das Level in eine Instanz der Level-Klasse kopiert.
+            switch (LevelID) 
             {
                 case 1:
                     switch(RoomID)
@@ -116,13 +116,13 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                     switch(ID[i])
                     {
                         case 0:
-                            TileRoom[i, yCount] = new Tile(ETile.Background, content);
+                            TileRoom[i, yCount] = new Tile(ETile.Background, new Vector2(i*Tile.Width, yCount*Tile.Height), content);
                             break;
                         case 1:
-                            TileRoom[i, yCount] = new Tile(ETile.Stone, content);
+                            TileRoom[i, yCount] = new Tile(ETile.Stone, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
                             break;
                         case 99:
-                            TileRoom[i, yCount] = new Tile(ETile.Unspecified, content);
+                            TileRoom[i, yCount] = new Tile(ETile.Unspecified, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
                             break;
                     }
                 }

@@ -72,7 +72,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main\CollisionManager.cs" />
+    <Compile Include="Main\CollisionUtil.cs" />
     <Compile Include="Main\States\Game\Room.cs" />
     <Compile Include="Main\States\Menu\Button.cs" />
     <Compile Include="Main\States\Game\Character.cs" />
