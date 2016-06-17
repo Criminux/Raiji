@@ -15,6 +15,7 @@ namespace Projekt___Programmierung1___Raiji
 {
     class LevelManager
     {
+        
         ContentManager content;
 
         Room room;

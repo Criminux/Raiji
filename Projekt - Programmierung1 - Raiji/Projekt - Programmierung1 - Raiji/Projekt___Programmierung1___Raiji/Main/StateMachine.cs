@@ -140,7 +140,7 @@ namespace Projekt___Programmierung1___Raiji
         {
             switch (currentState)
             {
-                case EGameState.Quit:
+                case EGameState.Unspecified:
                     Exit();
                     break;
                 case EGameState.SplashScreen:

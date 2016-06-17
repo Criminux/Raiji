@@ -24,8 +24,8 @@ namespace Projekt___Programmierung1___Raiji
             this.content = content;
 
             //Create Button Instances
-            startButton = new Button("Play", content);
-            exitButton = new Button("Exit", content);
+            startButton = new Button("Starten", content);
+            exitButton = new Button("Beenden", content);
 
             //Set the Button Position
             startButton.Position = new Vector2(860, 515);
@@ -48,7 +48,7 @@ namespace Projekt___Programmierung1___Raiji
         }
         private void exitButton_Click(object sender, System.EventArgs e)
         {
-            targetState = EGameState.Quit;
+            targetState = EGameState.Unspecified; // TODO: Quit-State
         }
 
 
@@ -78,6 +78,8 @@ namespace Projekt___Programmierung1___Raiji
                 {
                     case EInputKey.Escape:
                         targetState = EGameState.Quit;
+                        break;
+                    default:
                         break;
                 }
             }

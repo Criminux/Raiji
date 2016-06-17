@@ -62,8 +62,7 @@ namespace Projekt___Programmierung1___Raiji
             if (KeyIsPressed(currentKeyboardState, Keys.Down))                             { inputs[count] = EInputKey.Down; count++; }
             if (KeyIsPressed(currentKeyboardState, Keys.Left))                             { inputs[count] = EInputKey.Left; count++; }
             if (KeyIsPressed(currentKeyboardState, Keys.Right))                            { inputs[count] = EInputKey.Right; count++; }
-            if (KeyIsPressed(currentKeyboardState, Keys.Space))   {
-                inputs[count] = EInputKey.Jump; count++; }
+            if (KeyIsPressed(currentKeyboardState, Keys.Space))                            { inputs[count] = EInputKey.Jump; count++; }
             //else                                                                                { inputs[count] = EInputKey.Unspecified; count++; }
 
             //Anlegen eines neuen Arrays der korrekten Größe, sowie Übertragung der gespeicherten Werte

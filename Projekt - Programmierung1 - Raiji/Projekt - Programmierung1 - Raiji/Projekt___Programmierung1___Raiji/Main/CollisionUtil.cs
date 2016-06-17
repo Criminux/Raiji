@@ -15,7 +15,7 @@ namespace Raiji.Main
     {
 
 
-        public static Vector2 CollisionDepth(Rectangle characterBounds, Rectangle otherBounds)
+        public static Vector2 CalculateCollisionDepth(Rectangle characterBounds, Rectangle otherBounds)
         {
             //If the distance on both axis is higher than the sum of the half of both Rectangles, they are not colliding
            // if((distanceX >= (characterBounds.Width/2 + otherBounds.Width/2)) && (distanceY >= (characterBounds.Height/2 + otherBounds.Height/2)))

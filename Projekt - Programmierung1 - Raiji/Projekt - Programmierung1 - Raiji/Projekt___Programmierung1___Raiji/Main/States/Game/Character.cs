@@ -19,11 +19,12 @@ namespace Projekt___Programmierung1___Raiji
         protected float life;
         protected Texture2D characterSprite;
         public Rectangle bounds;
-        
+
         //Movement Fields
         private const float maxdir = 1f;
         private const float acceleration = 0.5f;
         private const float maxMoveSpeed = 100f;
+        private const float gravity = 10f;
 
         //Jump and Collision Fields
         protected bool isJumping;
@@ -35,8 +36,6 @@ namespace Projekt___Programmierung1___Raiji
         //Collects all Movement
         private Vector2 velocity;
 
-        private Vector2 previousPosition;
-
         //Is finally influenced by the velocity
         private Vector2 position;
         public Vector2 Position
@@ -45,19 +44,20 @@ namespace Projekt___Programmierung1___Raiji
             set { position = value; }
         }
 
+
         virtual public void Update(GameTime gameTime, Room room)
         {
-            
-            bounds.Location = new Point((int)Position.X, (int)Position.Y);
+            // Reset variables for this cycle
             velocity = Vector2.Zero;
-            
+            bounds.Location = new Point((int)Position.X, (int)Position.Y);
         }
 
-        //After Update Method needed, for correct Callstack order
+        // Is called after retrieving the input
         public void AfterUpdate(GameTime gameTime, Room room)
         {
             ApplyPhysics(gameTime, room);
-            Position += velocity;
+            position += velocity;
+            HandleCollisions(room);
         }
 
         abstract public void Draw(SpriteBatch spriteBatch);
@@ -68,7 +68,6 @@ namespace Projekt___Programmierung1___Raiji
             if (life <= 0f) return false;
             else return true;
         }
-
 
         //Moves the Player on X-Axis
         public void Move(float dir, GameTime gameTime)
@@ -88,69 +87,57 @@ namespace Projekt___Programmierung1___Raiji
                 jumpTime = 0f;
                 //TODO: Play Jumpsound
             }
-            
+
         }
 
 
         //Handles Collisions
         private void HandleCollisions(Room room)
         {
-            //Save current Room
+            // Set up some stuff
             Tile[,] TileRoom = room.tileRoom;
+            Rectangle virtualBounds = bounds; virtualBounds.Location = new Point((int)position.X, (int)position.Y);
 
-            //Get potential colliding tiles
-            int leftTile = (int)Math.Floor((float)bounds.Left / Tile.Width) - 1;
-            int rightTile = (int)Math.Ceiling(((float)bounds.Right / Tile.Width)) ;
-            int topTile = (int)Math.Floor((float)bounds.Top / Tile.Height) - 1;
-            int bottomTile = (int)Math.Ceiling(((float)bounds.Bottom / Tile.Height));
+            int playerIndexX = (int)Math.Floor(virtualBounds.Center.X / (float)Tile.Width);
+            int playerIndexY = (int)Math.Floor(virtualBounds.Center.Y / (float)Tile.Height);
 
-            //Loop though those Tiles and check for Collision
-            for (int i = topTile; i <= bottomTile; i++)
+            for(int x = playerIndexX -1;  x <= playerIndexX +1; x++)
             {
-                for (int j = leftTile; j <= rightTile; j++)
+                try // TODO: Exception richtig verhindern
                 {
-                    //Index out of Bound Exception
-                    if (i < 15 && i > 0 && j < 29 && j > 0)
+                    Tile currentTile = TileRoom[x, playerIndexY];
+                    if(currentTile.Collision == ETileCollision.Solid)
                     {
-                        //Get the Collision Type of Tile
-                        ETileCollision currentTileCollision = TileRoom[j, i].Collision;
-
-                        //Is the Tile collidable?
-                        if (currentTileCollision == ETileCollision.Solid)
-                        {
-                            
-                            //Fix the position - if no collision at all, depth will be Zero
-                            Vector2 depth = CollisionUtil.CollisionDepth(bounds, TileRoom[j, i].Bounds);
-                            
-                            
-                            // Collision along y
-                            if (Math.Abs(depth.Y) < Math.Abs(depth.X))
-                            {
-
-                                position.Y += depth.Y;
-                                
-                            }
-                            // Collision along x
-                            else
-                            {
-                                
-                                position.X += depth.X;
-                                
-
-                            }
-                        }
-                    }                   
+                        position.X += CollisionUtil.CalculateCollisionDepth(virtualBounds, currentTile.Bounds).X;
+                        virtualBounds.Location = new Point((int)position.X, (int)position.Y); // Kopiergenudelt
+                    }
                 }
+                catch (IndexOutOfRangeException) { }
             }
+            
+            
+            for(int y = playerIndexY -1; y <= playerIndexY +1; y++)
+            {
+                try
+                {
+                    Tile currentTile = TileRoom[playerIndexX, y];
+                    if(currentTile.Collision == ETileCollision.Solid)
+                    {
+                        position.Y += CollisionUtil.CalculateCollisionDepth(virtualBounds, currentTile.Bounds).Y;
+                        virtualBounds.Location = new Point((int)position.X, (int)position.Y);
+                    }
+                }
+                catch (IndexOutOfRangeException) { }
+            }
+            
         }
 
 
         //Moves the Player on Y-Axis
         private void ApplyPhysics(GameTime gameTime, Room room)
         {
-            
-
-            //Jumping Velocity
+            velocity.Y += gravity;
+            /*//Jumping Velocity
             if (isJumping)
             {
                 //Add time from last Update to jumpTime
@@ -164,7 +151,7 @@ namespace Projekt___Programmierung1___Raiji
                 else
                 {
                     //If time ran out and Player on ground: give back jump ability
-                    if(isOnGround)
+                    if (isOnGround)
                     {
                         isJumping = false;
                     }
@@ -172,17 +159,15 @@ namespace Projekt___Programmierung1___Raiji
             }
             else //If not Jumping, not on ground: Apply gravity
             {
-                if(!isOnGround)
+                if (!isOnGround)
                 {
                     velocity.Y += 10f;
-                }      
-            }
-            
-            
-            HandleCollisions(room);
+                }
+            }*/
+
         }
 
-       
+
         //TODO Attack Method etc etc
 
     }
