@@ -21,11 +21,11 @@ namespace Projekt___Programmierung1___Raiji
         private const float acceleration = 0.5f;
         private const float maxMoveSpeed = 100f;
 
-        //BeginJump Stuff
+        //Jump Constants
         protected bool isJumping;
         private float jumpTime;
-        private const float maxJumpTime = 3f;
-        private const float jumpVelocity = 50f;
+        private const float maxJumpTime = 200f;
+        private const float jumpVelocity = 30f;
 
         private Vector2 velocity;
 
@@ -38,11 +38,11 @@ namespace Projekt___Programmierung1___Raiji
 
         virtual public void Update(GameTime gameTime)
         {
-            
             velocity = Vector2.Zero;
             HandleCollisions();            
         }
 
+        //After Update Method needed, for correct Callstack order
         public void AfterUpdate(GameTime gameTime)
         {
             ApplyPhysics(gameTime);
@@ -90,9 +90,12 @@ namespace Projekt___Programmierung1___Raiji
                 jumpTime += gameTime.ElapsedGameTime.Milliseconds;
                 if (jumpTime <= maxJumpTime)
                 {
-                    velocity.Y += jumpVelocity * (1f - (jumpTime / maxJumpTime));
+                    velocity.Y -= jumpVelocity * (1f - (jumpTime / maxJumpTime));
                 }
+                else { isJumping = false; }
             }
+
+            
 
 
 
