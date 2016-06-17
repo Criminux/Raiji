@@ -20,6 +20,16 @@ namespace Projekt___Programmierung1___Raiji
         protected Texture2D characterSprite;
         public Rectangle bounds;
 
+        //Animations
+        protected EAnimation currentAnimationState;
+
+        protected Animation idleAnimation;
+        protected Animation runAnimation;
+        protected SpriteEffects animationDirection;
+
+        protected Texture2D idleSpriteSheet;
+        protected Texture2D runSpriteSheet;
+
         //Movement Fields
         private const float maxdir = 1f;
         private const float acceleration = 0.5f;
@@ -30,7 +40,7 @@ namespace Projekt___Programmierung1___Raiji
         protected bool isOnGround;
         private float jumpTime = jumpCooldown;
         private const float maxJumpTime = 200f;
-        private const float jumpCooldown = 400f;
+        private const float jumpCooldown = 500f;
         private const float jumpVelocity = 50f;
 
         //Collects all Movement
@@ -55,7 +65,12 @@ namespace Projekt___Programmierung1___Raiji
 
         virtual public void Update(GameTime gameTime, Room room)
         {
+            //Update all Animations
+            idleAnimation.Update(gameTime);
+            runAnimation.Update(gameTime);
+
             // Reset variables for this cycle
+            currentAnimationState = EAnimation.Idle;
             velocity = Vector2.Zero;
             bounds.Location = new Point((int)Position.X, (int)Position.Y);
         }
@@ -68,7 +83,18 @@ namespace Projekt___Programmierung1___Raiji
             HandleCollisions(room);
         }
 
-        abstract public void Draw(SpriteBatch spriteBatch);
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            switch(currentAnimationState)
+            {
+                case EAnimation.Idle:
+                    idleAnimation.Draw(spriteBatch, position, animationDirection);
+                    break;
+                case EAnimation.Run:
+                    runAnimation.Draw(spriteBatch, position, animationDirection);
+                    break;
+            }
+        }
 
         //Is Character Alive 
         virtual protected bool isAlive(float life)
@@ -81,6 +107,13 @@ namespace Projekt___Programmierung1___Raiji
         public void Move(float dir, GameTime gameTime)
         {
             dir = MathHelper.Clamp(dir, -maxdir, maxdir);
+
+            //Set the Animation Direction
+            if (dir >= 0) animationDirection = SpriteEffects.None;
+            else animationDirection = SpriteEffects.FlipHorizontally;
+
+            //If Move is called: Set State to Run
+            currentAnimationState = EAnimation.Run;
 
             velocity.X = MathHelper.Clamp(dir * gameTime.ElapsedGameTime.Milliseconds * acceleration, -maxMoveSpeed, maxMoveSpeed);
         }

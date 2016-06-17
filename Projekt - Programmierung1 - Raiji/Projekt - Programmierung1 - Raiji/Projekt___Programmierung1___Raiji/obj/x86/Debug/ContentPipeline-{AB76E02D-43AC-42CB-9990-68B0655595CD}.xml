@@ -64,6 +64,33 @@
       <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Arial.xnb</Output>
       <Time>2016-06-17T17:48:17+02:00</Time>
     </Item>
+    <Item>
+      <Source>IdleSheet.png</Source>
+      <Name>IdleSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\IdleSheet.xnb</Output>
+      <Time>2016-06-17T23:54:42.6206878+02:00</Time>
+    </Item>
+    <Item>
+      <Source>RunSheet.png</Source>
+      <Name>RunSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\RunSheet.xnb</Output>
+      <Time>2016-06-17T23:54:42.6216878+02:00</Time>
+    </Item>
+    <Item>
+      <Source>PlayerOutline.png</Source>
+      <Name>PlayerOutline</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\PlayerOutline.xnb</Output>
+      <Time>2016-06-18T01:39:02.7867488+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{AB76E02D-43AC-42CB-9990-68B0655595CD}</ContentProjectGUID>

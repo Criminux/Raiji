@@ -72,6 +72,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main\Animation.cs" />
     <Compile Include="Main\CollisionUtil.cs" />
     <Compile Include="Main\States\Game\Room.cs" />
     <Compile Include="Main\States\Menu\Button.cs" />

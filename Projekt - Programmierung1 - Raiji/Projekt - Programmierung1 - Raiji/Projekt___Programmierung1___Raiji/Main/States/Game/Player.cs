@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Projekt___Programmierung1___Raiji.Main.States.Game;
+using Raiji.Main;
 
 namespace Projekt___Programmierung1___Raiji
 {
@@ -16,13 +17,23 @@ namespace Projekt___Programmierung1___Raiji
     {
         public Player(ContentManager content)
         {
-            characterSprite = content.Load<Texture2D>("Player");
+            //Load Sprites for Animation
+            runSpriteSheet = content.Load<Texture2D>("RunSheet");
+            idleSpriteSheet = content.Load<Texture2D>("IdleSheet");
+            characterSprite = content.Load<Texture2D>("PlayerOutline");
+
+            //Create Animation
+            idleAnimation = new Animation(idleSpriteSheet, 5, 2, 232, 439, new TimeSpan(0, 0, 0, 0, 100));
+            runAnimation = new Animation(runSpriteSheet, 5, 2, 363, 458, new TimeSpan(0, 0, 0, 0, 100));
+
+            currentAnimationState = EAnimation.Idle;
+
             bounds = characterSprite.Bounds;
         }
 
         public override void Update(GameTime gameTime, Room room)
         {
-
+            
 
             if(!isAlive(life))
             {
@@ -32,9 +43,9 @@ namespace Projekt___Programmierung1___Raiji
         }
 
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(characterSprite, Position, Color.White);
+            base.Draw(spriteBatch);  
         }
     }
 }

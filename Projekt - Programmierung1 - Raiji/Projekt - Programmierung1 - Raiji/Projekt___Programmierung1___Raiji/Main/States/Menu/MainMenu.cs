@@ -48,7 +48,7 @@ namespace Projekt___Programmierung1___Raiji
         }
         private void exitButton_Click(object sender, System.EventArgs e)
         {
-            targetState = EGameState.Unspecified; // TODO: Quit-State
+            targetState = EGameState.Quit; 
         }
 
 
