@@ -39,7 +39,7 @@ namespace Projekt___Programmierung1___Raiji
             room.Update();
             
             //Update Player
-            player.Update(gameTime);
+            player.Update(gameTime, room);
 
             //Input
             ExecuteInput(StateMachine.inputManager.GetInput(), gameTime);

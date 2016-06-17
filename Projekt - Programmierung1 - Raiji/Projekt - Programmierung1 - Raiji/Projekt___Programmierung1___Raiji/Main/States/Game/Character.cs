@@ -35,6 +35,8 @@ namespace Projekt___Programmierung1___Raiji
         //Collects all Movement
         private Vector2 velocity;
 
+        private Vector2 previousPosition;
+
         //Is finally influenced by the velocity
         private Vector2 position;
         public Vector2 Position
@@ -43,18 +45,18 @@ namespace Projekt___Programmierung1___Raiji
             set { position = value; }
         }
 
-        virtual public void Update(GameTime gameTime)
+        virtual public void Update(GameTime gameTime, Room room)
         {
+            previousPosition = Position;
             bounds.Location = new Point((int)Position.X, (int)Position.Y);
             velocity = Vector2.Zero;
+            ApplyPhysics(gameTime, room);
         }
 
         //After Update Method needed, for correct Callstack order
         public void AfterUpdate(GameTime gameTime, Room room)
         {
-            ApplyPhysics(gameTime);
             Position += velocity;
-            HandleCollisions(room);
         }
 
         abstract public void Draw(SpriteBatch spriteBatch);
@@ -115,32 +117,37 @@ namespace Projekt___Programmierung1___Raiji
                         //Is the Tile collidable?
                         if (currentTileCollision == ETileCollision.Solid)
                         {
+                            
                             //Fix the position - if no collision at all, depth will be Zero
                             Vector2 depth = CollisionUtil.CollisionDepth(bounds, TileRoom[j, i].Bounds);
 
-                            if (Math.Abs(depth.Y) < Math.Abs(depth.X)) // Collision along y
+                            // Collision along y
+                            if (Math.Abs(depth.Y) < Math.Abs(depth.X))
                             {
+                                
                                 position.Y += depth.Y;
+                                
                             }
-                            else // Collision along x
+                            // Collision along x
+                            else
                             {
-                                position.X += depth.X;                            
+                                
+                                position.X += depth.X;
+                                
 
                             }
-
                         }
-
-                    }
-                    
-
+                    }                   
                 }
             }
         }
 
 
         //Moves the Player on Y-Axis
-        private void ApplyPhysics(GameTime gameTime)
+        private void ApplyPhysics(GameTime gameTime, Room room)
         {
+            
+
             //Jumping Velocity
             if(isJumping)
             {
@@ -168,10 +175,11 @@ namespace Projekt___Programmierung1___Raiji
                     velocity.Y += 10f;
                 }      
             }
-            
+
+            HandleCollisions(room);
         }
 
-
+       
         //TODO Attack Method etc etc
 
     }

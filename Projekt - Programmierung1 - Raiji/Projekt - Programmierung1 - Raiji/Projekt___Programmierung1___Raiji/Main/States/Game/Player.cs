@@ -21,7 +21,7 @@ namespace Projekt___Programmierung1___Raiji
             isJumping = false;
         }
 
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime, Room room)
         {
 
 
@@ -29,7 +29,7 @@ namespace Projekt___Programmierung1___Raiji
             {
                 //TODO is character dead
             }
-            base.Update(gameTime);
+            base.Update(gameTime, room);
         }
 
 
