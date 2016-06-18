@@ -79,6 +79,9 @@ namespace Projekt___Programmierung1___Raiji
                     case EInputKey.Jump:
                           player.BeginJump(gameTime);
                         break;
+                    case EInputKey.Attack:
+                        player.Attack();
+                        break;
                 }
             }
 

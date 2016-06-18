@@ -20,7 +20,8 @@ namespace Projekt___Programmierung1___Raiji
         Down = 22,
         Left = 23,
         Right = 24,
-        Jump = 25
+        Jump = 25,
+        Attack = 26
     }
 
     public class InputManager
@@ -57,12 +58,13 @@ namespace Projekt___Programmierung1___Raiji
             // TODO: Können 20 Keys gedrückt werden? Was wenn noch mehr gedrückt werden? Mach doch ein kleineres Array oder ein HashSet
 
             //Tastenspezifishe Abfrage; Speichern der Eingabe im Array
-            if (KeyJustPressed(currentKeyboardState, previousKeyboardState, Keys.Escape))       { inputs[count] = EInputKey.Escape; count++; }
+            if (KeyJustPressed(currentKeyboardState, previousKeyboardState, Keys.Escape))  { inputs[count] = EInputKey.Escape; count++; }
             if (KeyIsPressed(currentKeyboardState, Keys.Up))                               { inputs[count] = EInputKey.Up; count++; }
             if (KeyIsPressed(currentKeyboardState, Keys.Down))                             { inputs[count] = EInputKey.Down; count++; }
             if (KeyIsPressed(currentKeyboardState, Keys.Left))                             { inputs[count] = EInputKey.Left; count++; }
             if (KeyIsPressed(currentKeyboardState, Keys.Right))                            { inputs[count] = EInputKey.Right; count++; }
             if (KeyIsPressed(currentKeyboardState, Keys.Space))                            { inputs[count] = EInputKey.Jump; count++; }
+            if (KeyIsPressed(currentKeyboardState, Keys.RightAlt))                         { inputs[count] = EInputKey.Attack; count++; }
             //else                                                                                { inputs[count] = EInputKey.Unspecified; count++; }
 
             //Anlegen eines neuen Arrays der korrekten Größe, sowie Übertragung der gespeicherten Werte
