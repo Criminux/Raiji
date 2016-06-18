@@ -18,13 +18,17 @@ namespace Projekt___Programmierung1___Raiji
         public Player(ContentManager content)
         {
             //Load Sprites for Animation
-            runSpriteSheet = content.Load<Texture2D>("RunSheet");
-            idleSpriteSheet = content.Load<Texture2D>("IdleSheet");
+            idleSpriteSheet = content.Load<Texture2D>("128x128_IdleSheet");
+            runSpriteSheet = content.Load<Texture2D>("128x128_RunSheet");
+            jumpSpriteSheet = content.Load<Texture2D>("128x128_JumpSheet");
+            attackSpriteSheet = content.Load<Texture2D>("128x128_AttackSheet");
             characterSprite = content.Load<Texture2D>("PlayerOutline");
 
             //Create Animation
-            idleAnimation = new Animation(idleSpriteSheet, 5, 2, 232, 439, new TimeSpan(0, 0, 0, 0, 100));
-            runAnimation = new Animation(runSpriteSheet, 5, 2, 363, 458, new TimeSpan(0, 0, 0, 0, 100));
+            idleAnimation = new Animation(idleSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
+            runAnimation = new Animation(runSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
+            jumpAnimation = new Animation(jumpSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
+            attackAnimation = new Animation(attackSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
 
             currentAnimationState = EAnimation.Idle;
 
@@ -37,7 +41,7 @@ namespace Projekt___Programmierung1___Raiji
 
             if(!isAlive(life))
             {
-                //TODO is character dead
+                
             }
             base.Update(gameTime, room);
         }

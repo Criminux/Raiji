@@ -65,31 +65,49 @@
       <Time>2016-06-17T17:48:17+02:00</Time>
     </Item>
     <Item>
-      <Source>IdleSheet.png</Source>
-      <Name>IdleSheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\IdleSheet.xnb</Output>
-      <Time>2016-06-17T23:54:42.6206878+02:00</Time>
-    </Item>
-    <Item>
-      <Source>RunSheet.png</Source>
-      <Name>RunSheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\RunSheet.xnb</Output>
-      <Time>2016-06-17T23:54:42.6216878+02:00</Time>
-    </Item>
-    <Item>
       <Source>PlayerOutline.png</Source>
       <Name>PlayerOutline</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\PlayerOutline.xnb</Output>
-      <Time>2016-06-18T01:39:02.7867488+02:00</Time>
+      <Time>2016-06-18T15:01:14+02:00</Time>
+    </Item>
+    <Item>
+      <Source>128x128_AttackSheet.png</Source>
+      <Name>128x128_AttackSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_AttackSheet.xnb</Output>
+      <Time>2016-06-18T15:13:14.6229548+02:00</Time>
+    </Item>
+    <Item>
+      <Source>128x128_IdleSheet.png</Source>
+      <Name>128x128_IdleSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_IdleSheet.xnb</Output>
+      <Time>2016-06-18T15:15:20.839174+02:00</Time>
+    </Item>
+    <Item>
+      <Source>128x128_JumpSheet.png</Source>
+      <Name>128x128_JumpSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_JumpSheet.xnb</Output>
+      <Time>2016-06-18T15:14:11.0361815+02:00</Time>
+    </Item>
+    <Item>
+      <Source>128x128_RunSheet.png</Source>
+      <Name>128x128_RunSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_RunSheet.xnb</Output>
+      <Time>2016-06-18T15:14:33.9674931+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -96,7 +96,7 @@ namespace Raiji.Main
 
         public void Draw(SpriteBatch spriteBatch, Vector2 position, SpriteEffects effect)
         {
-            spriteBatch.Draw(texture, position, rect[currentFrame], Color.White, 0f, new Vector2(0, 0), 0.2f, effect, 0f);
+            spriteBatch.Draw(texture, position, rect[currentFrame], Color.White, 0f, new Vector2(0, 0), 1f, effect, 0f);
         }
 
 

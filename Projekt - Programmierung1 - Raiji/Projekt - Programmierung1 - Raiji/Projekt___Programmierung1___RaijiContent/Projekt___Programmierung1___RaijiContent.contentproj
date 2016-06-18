@@ -85,23 +85,33 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IdleSheet.png">
-      <Name>IdleSheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="RunSheet.png">
-      <Name>RunSheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Animation\Player\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PlayerOutline.png">
       <Name>PlayerOutline</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="128x128_AttackSheet.png">
+      <Name>128x128_AttackSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="128x128_IdleSheet.png">
+      <Name>128x128_IdleSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="128x128_JumpSheet.png">
+      <Name>128x128_JumpSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="128x128_RunSheet.png">
+      <Name>128x128_RunSheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -25,10 +25,14 @@ namespace Projekt___Programmierung1___Raiji
 
         protected Animation idleAnimation;
         protected Animation runAnimation;
+        protected Animation jumpAnimation;
+        protected Animation attackAnimation;
         protected SpriteEffects animationDirection;
 
         protected Texture2D idleSpriteSheet;
         protected Texture2D runSpriteSheet;
+        protected Texture2D jumpSpriteSheet;
+        protected Texture2D attackSpriteSheet;
 
         //Movement Fields
         private const float maxdir = 1f;
@@ -39,8 +43,8 @@ namespace Projekt___Programmierung1___Raiji
         //Jump and Collision Fields
         protected bool isOnGround;
         private float jumpTime = jumpCooldown;
-        private const float maxJumpTime = 200f;
-        private const float jumpCooldown = 500f;
+        private const float maxJumpTime = 500f;
+        private const float jumpCooldown = 1000f;
         private const float jumpVelocity = 50f;
 
         //Collects all Movement
@@ -68,6 +72,8 @@ namespace Projekt___Programmierung1___Raiji
             //Update all Animations
             idleAnimation.Update(gameTime);
             runAnimation.Update(gameTime);
+            jumpAnimation.Update(gameTime);
+            attackAnimation.Update(gameTime);
 
             // Reset variables for this cycle
             currentAnimationState = EAnimation.Idle;
@@ -92,6 +98,12 @@ namespace Projekt___Programmierung1___Raiji
                     break;
                 case EAnimation.Run:
                     runAnimation.Draw(spriteBatch, position, animationDirection);
+                    break;
+                case EAnimation.Jump:
+                    jumpAnimation.Draw(spriteBatch, position, animationDirection);
+                    break;
+                case EAnimation.Attack:
+                    attackAnimation.Draw(spriteBatch, position, animationDirection);
                     break;
             }
         }
@@ -182,6 +194,7 @@ namespace Projekt___Programmierung1___Raiji
             {
                 //Add velocity (which decreases with time)
                 velocity.Y -= jumpVelocity * (1f - (jumpTime / maxJumpTime));
+                currentAnimationState = EAnimation.Jump;
             }
 
         }
@@ -189,7 +202,10 @@ namespace Projekt___Programmierung1___Raiji
         
 
 
-        //TODO Attack Method etc etc
+        public void Attack()
+        {
+            currentAnimationState = EAnimation.Attack;
+        }
 
     }
 }
