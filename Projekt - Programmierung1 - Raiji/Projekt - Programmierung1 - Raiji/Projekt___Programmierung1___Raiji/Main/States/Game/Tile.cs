@@ -15,6 +15,7 @@ namespace Projekt___Programmierung1___Raiji
     {
         Background = 0,
         Stone = 1,
+        Door = 11,
         Unspecified = 99
 
     }
@@ -29,11 +30,11 @@ namespace Projekt___Programmierung1___Raiji
     public class Tile
     {
         //Tile Fields
-        private Texture2D texture;
-        private Rectangle bounds;
-        private ETile type;
-        private ETileCollision collision;
-        private Vector2 position;
+        protected Texture2D texture;
+        protected Rectangle bounds;
+        protected ETile type;
+        protected ETileCollision collision;
+        protected Vector2 position;
 
         public const int Height = 64;
         public const int Width = 64;
