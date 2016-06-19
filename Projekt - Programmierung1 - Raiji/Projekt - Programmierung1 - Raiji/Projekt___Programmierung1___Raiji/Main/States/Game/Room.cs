@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 using System.IO;
+using Raiji.Main.States.Game;
 
 namespace Projekt___Programmierung1___Raiji.Main.States.Game
 {
@@ -28,9 +23,19 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
 
         private bool levelDone;
         private bool isInitialized;
+        public bool IsInitialized
+        {
+            set { isInitialized = value; }
+        }
 
-        private int LevelID;
-        private int RoomID;
+        private int levelID;
+        private int roomID;
+
+        public int RoomID
+        {
+            get { return roomID; }
+            set { roomID = value; }
+        }
 
         StreamReader reader;
 
@@ -41,20 +46,19 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             levelDone = false;
             isInitialized = false;
 
-            LevelID = 1;
-            RoomID = 1;
-
-            LoadContent();
+            levelID = 1;
+            roomID = 1;
         }
-        void LoadContent()
-        {
-            reader = new StreamReader("Content/LevelData/Level1Room1.txt");
-        }
+        
 
         public void Update()
         {
-            if (!isInitialized) { Initialize(LevelID, RoomID); isInitialized = true; }
-            if (levelDone) { isInitialized = false; LevelID++; RoomID = 1; }
+            //If the Level is done, increase the Level
+            if (levelDone) { isInitialized = false; levelID++; roomID = 1; }
+            //If the Room is not Initialized
+            if (!isInitialized) { Initialize(levelID, roomID); isInitialized = true; }
+
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -68,43 +72,26 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             }
         }
 
-        private void Initialize(int LevelID, int RoomID) 
-        {
-            this.LevelID = LevelID;
-            this.RoomID = RoomID;
+        
 
-            
-
-            switch (LevelID) 
-            {
-                case 1:
-                    switch(RoomID)
-                    {
-                        case 1: InitializeLevel(LevelID, RoomID);
-
-                            break;
-                    }
-                    break;
-                case 2:
-                    break;
-
-            }
-        }
-
-        private void InitializeLevel(int LevelID, int RoomID) 
+        //Initialize next Room
+        private void Initialize(int levelID, int roomID) 
         {
            
-            this.LevelID = LevelID;
-            this.RoomID = RoomID;
+            this.levelID = levelID;
+            this.roomID = roomID;
             
             int yCount = 0;
-            
+
+            reader = new StreamReader("Content/LevelData/Level" + levelID + "Room" + roomID + ".txt");
+
+            //Fill the standard roster
             while (yCount < 15)
             {
 
                 
-                String Line = reader.ReadLine();
-                String[] IDs = Line.Split(' ');
+                String tempLine = reader.ReadLine();
+                String[] IDs = tempLine.Split(' ');
                 
                 for(int i = 0; i < IDs.Length; i++)
                 {
@@ -121,6 +108,9 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                         case 1:
                             TileRoom[i, yCount] = new Tile(ETile.Stone, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
                             break;
+                        case 5:
+                            TileRoom[i, yCount] = new DoorTile(ETile.Door, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
+                            break;
                         case 99:
                             TileRoom[i, yCount] = new Tile(ETile.Unspecified, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
                             break;
@@ -130,6 +120,34 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                 yCount++;
 
                 
+            }
+
+            //Set the properties to DoorTiles, if there are any
+            String Line;
+            while((Line = reader.ReadLine()) != null)
+            {
+                String[] property = Line.Split(' ');
+
+                if (property[0] == "Property")
+                {
+                    int tempX = Int32.Parse(property[1]);
+                    int tempY = Int32.Parse(property[2]);
+
+                    int tempTargetRoom = Int32.Parse(property[3]);
+
+                    String tempID = property[4];
+                    String tempTargetID = property[5];
+
+                    if (TileRoom[tempX, tempY] is DoorTile)
+                    {
+                        DoorTile tile = (DoorTile)TileRoom[tempX, tempY];
+                        tile.SetProperties(tempTargetRoom, tempID, tempTargetID);
+                    }
+                    
+
+                    
+                }
+
             }
             
         }

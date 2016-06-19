@@ -36,6 +36,7 @@ namespace Projekt___Programmierung1___Raiji
         protected ETileCollision collision;
         protected Vector2 position;
 
+        //Needed for some calculations
         public const int Height = 64;
         public const int Width = 64;
 
@@ -47,6 +48,10 @@ namespace Projekt___Programmierung1___Raiji
         public ETileCollision Collision
         {
             get { return collision; }
+        }
+        public ETile Type
+        {
+            get { return type; }
         }
             
 
@@ -64,6 +69,11 @@ namespace Projekt___Programmierung1___Raiji
                     texture = content.Load<Texture2D>("Back");
                     collision = ETileCollision.Passable;
                     break;
+                case ETile.Door:
+                    texture = content.Load<Texture2D>("Back");
+                    collision = ETileCollision.Passable;
+                    break;
+                    
             }
 
             this.type = type;
