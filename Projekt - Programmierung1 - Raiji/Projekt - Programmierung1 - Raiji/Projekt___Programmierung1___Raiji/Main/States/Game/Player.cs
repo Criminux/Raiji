@@ -37,12 +37,7 @@ namespace Projekt___Programmierung1___Raiji
 
         public override void Update(GameTime gameTime, Room room)
         {
-            
 
-            if(!isAlive(life))
-            {
-                
-            }
             base.Update(gameTime, room);
         }
 

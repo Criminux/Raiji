@@ -181,6 +181,7 @@ namespace Projekt___Programmierung1___Raiji
                         if(tempDepth != 0f)
                         {
                             level.ActiveRoom = ((DoorTile)currentTile).TargetRoom;
+                            //TODO: Position not correct
                             position = new Vector2(300, 500);
                         }
                     }
@@ -211,6 +212,7 @@ namespace Projekt___Programmierung1___Raiji
                         if (tempDepth != 0f)
                         {
                             level.ActiveRoom = ((DoorTile)currentTile).TargetRoom;
+                            //TODO: Position not correct
                             position = new Vector2(300, 500);
                         }
                     }
