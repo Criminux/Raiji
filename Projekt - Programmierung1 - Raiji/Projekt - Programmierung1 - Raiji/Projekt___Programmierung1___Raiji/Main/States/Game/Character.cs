@@ -83,11 +83,11 @@ namespace Projekt___Programmierung1___Raiji
         }
 
         // Is called after retrieving the input
-        public void AfterUpdate(GameTime gameTime, Room room)
+        public void AfterUpdate(GameTime gameTime, Room room, LevelManager level)
         {
             ApplyPhysics(gameTime, room);
             position += velocity;
-            HandleCollisions(room);
+            HandleCollisions(room, level);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -144,7 +144,7 @@ namespace Projekt___Programmierung1___Raiji
         }
 
         
-        private void HandleCollisions(Room room)
+        private void HandleCollisions(Room room, LevelManager level)
         {
             // Get the current TileRoom
             Tile[,] TileRoom = room.tileRoom;
@@ -180,9 +180,8 @@ namespace Projekt___Programmierung1___Raiji
                         //If Depth is not 0
                         if(tempDepth != 0f)
                         {
-                            room.IsInitialized = false;
-                            room.RoomID = ((DoorTile)currentTile).TargetRoom;
-                            position = new Vector2(960, 530);
+                            level.ActiveRoom = ((DoorTile)currentTile).TargetRoom;
+                            position = new Vector2(300, 500);
                         }
                     }
                 }               
@@ -211,8 +210,8 @@ namespace Projekt___Programmierung1___Raiji
                         //If Depth is not 0
                         if (tempDepth != 0f)
                         {
-                            room.IsInitialized = false;
-                            room.RoomID = ((DoorTile)currentTile).TargetRoom;
+                            level.ActiveRoom = ((DoorTile)currentTile).TargetRoom;
+                            position = new Vector2(300, 500);
                         }
                     }
                 }                

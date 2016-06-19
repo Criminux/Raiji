@@ -124,6 +124,26 @@
       <Processor>PassThroughProcessor</Processor>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="LevelData\Level1Room3.txt">
+      <Name>Level1Room3</Name>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Importer>WmaImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="LevelData\Level1Room4.txt">
+      <Name>Level1Room4</Name>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Importer>WmaImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="LevelData\Level1Room5.txt">
+      <Name>Level1Room5</Name>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Importer>WmaImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

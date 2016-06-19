@@ -20,14 +20,7 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             get { return TileRoom; }
         }
         
-
-        private bool levelDone;
-        private bool isInitialized;
-        public bool IsInitialized
-        {
-            set { isInitialized = value; }
-        }
-
+        
         private int levelID;
         private int roomID;
 
@@ -39,28 +32,17 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
 
         StreamReader reader;
 
-        public Room(ContentManager content)
+        public Room(ContentManager content, int levelID, int roomID)
         {
             this.content = content;
 
-            levelDone = false;
-            isInitialized = false;
+            this.levelID = levelID;
+            this.roomID = roomID;
 
-            levelID = 1;
-            roomID = 1;
+            Initialize(levelID, roomID);
         }
         
-
-        public void Update()
-        {
-            //If the Level is done, increase the Level
-            if (levelDone) { isInitialized = false; levelID++; roomID = 1; }
-            //If the Room is not Initialized
-            if (!isInitialized) { Initialize(levelID, roomID); isInitialized = true; }
-
-
-        }
-
+        
         public void Draw(SpriteBatch spriteBatch)
         {
             for(int i = 0; i < RowX; i++)
@@ -134,6 +116,7 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                     int tempY = Int32.Parse(property[2]);
 
                     int tempTargetRoom = Int32.Parse(property[3]);
+                    tempTargetRoom--;
 
                     String tempID = property[4];
                     String tempTargetID = property[5];
