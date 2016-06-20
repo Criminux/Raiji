@@ -17,7 +17,7 @@ namespace Projekt___Programmierung1___Raiji
     abstract class Character
     {
         //General Character Fields
-        protected float life;
+        protected int life;
         protected Texture2D characterSprite;
         public Rectangle bounds;
 
@@ -67,6 +67,12 @@ namespace Projekt___Programmierung1___Raiji
         {
             get { return jumpTime <= jumpCooldown; }
         }
+
+        public int Life
+        {
+            get { return life; }
+        }
+
 
         virtual public void Update(GameTime gameTime, Room room)
         {

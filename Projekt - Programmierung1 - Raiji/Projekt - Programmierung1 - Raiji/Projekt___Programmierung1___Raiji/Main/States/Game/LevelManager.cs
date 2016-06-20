@@ -10,12 +10,13 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Projekt___Programmierung1___Raiji.Main.States.Game;
 using Raiji.Main;
+using Raiji.Main.States.Game;
 
 namespace Projekt___Programmierung1___Raiji
 {
     public class LevelManager
     {
-        
+        UIManager uiManager;
         ContentManager content;
         private bool levelDone;
         Room[] room;
@@ -40,6 +41,8 @@ namespace Projekt___Programmierung1___Raiji
             
             player = new Player(content);
             player.Position = new Vector2(200, 500);
+
+            uiManager = new UIManager(player, content);
         }
         
 
@@ -49,6 +52,9 @@ namespace Projekt___Programmierung1___Raiji
             {
                 InitializeLevel(levelID);
             }
+
+            //Update UI
+            uiManager.Update();
 
             //Update Room
             room[activeRoom].Update(gameTime, this);
@@ -66,6 +72,9 @@ namespace Projekt___Programmierung1___Raiji
 
         public void Draw(SpriteBatch spriteBatch) 
         {
+            //Draw UI
+            uiManager.Draw(spriteBatch);
+
             //Draw Room, including Tiles, Enemies and other Items
             room[activeRoom].Draw(spriteBatch);
             

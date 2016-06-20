@@ -33,6 +33,8 @@ namespace Projekt___Programmierung1___Raiji
             currentAnimationState = EAnimation.Idle;
 
             bounds = characterSprite.Bounds;
+
+            life = 3;
         }
 
         public override void Update(GameTime gameTime, Room room)

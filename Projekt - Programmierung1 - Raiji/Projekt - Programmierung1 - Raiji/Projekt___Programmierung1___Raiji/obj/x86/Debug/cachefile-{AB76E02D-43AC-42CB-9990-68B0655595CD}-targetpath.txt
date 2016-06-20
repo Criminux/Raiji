@@ -9,6 +9,7 @@ Content\128x128_AttackSheet.xnb
 Content\128x128_IdleSheet.xnb
 Content\128x128_JumpSheet.xnb
 Content\128x128_RunSheet.xnb
+Content\heart.xnb
 Content\LevelData\Level1Room1.txt
 Content\LevelData\Level1Room2.txt
 Content\LevelData\Level1Room3.txt
