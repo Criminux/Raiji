@@ -10,12 +10,13 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Projekt___Programmierung1___Raiji.Main.States.Game;
 using Raiji.Main;
+using Projekt___Programmierung1___Raiji;
 
-namespace Projekt___Programmierung1___Raiji
+namespace Raiji.Main.States.Game
 {
-    class Player : Character
+    class Enemy : Character
     {
-        public Player(ContentManager content)
+        public Enemy(ContentManager content)
         {
             //Load Sprites for Animation
             idleSpriteSheet = content.Load<Texture2D>("128x128_IdleSheet");
@@ -33,18 +34,25 @@ namespace Projekt___Programmierung1___Raiji
             currentAnimationState = EAnimation.Idle;
 
             bounds = characterSprite.Bounds;
+
         }
 
         public override void Update(GameTime gameTime, Room room)
         {
-
+            RandomMovement();
             base.Update(gameTime, room);
         }
 
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            base.Draw(spriteBatch);  
+            base.Draw(spriteBatch);
+        }
+
+
+        private void RandomMovement()
+        {
+
         }
     }
 }

@@ -38,15 +38,6 @@
       <Time>2016-06-17T17:48:17+02:00</Time>
     </Item>
     <Item>
-      <Source>Player.png</Source>
-      <Name>Player</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Player.xnb</Output>
-      <Time>2016-06-17T22:41:07.2351422+02:00</Time>
-    </Item>
-    <Item>
       <Source>Back.png</Source>
       <Name>Back</Name>
       <Importer>TextureImporter</Importer>

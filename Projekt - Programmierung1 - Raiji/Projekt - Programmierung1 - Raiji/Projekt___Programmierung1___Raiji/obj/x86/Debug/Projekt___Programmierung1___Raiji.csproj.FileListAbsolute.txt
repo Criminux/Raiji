@@ -47,7 +47,6 @@ X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projek
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\buttonPressed.xnb
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\button.xnb
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Stone.xnb
-X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Player.xnb
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Back.xnb
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Arial.xnb
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Microsoft.Xna.Framework.dll

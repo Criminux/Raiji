@@ -90,7 +90,7 @@ namespace Projekt___Programmierung1___Raiji
             HandleCollisions(room, level);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        virtual public void Draw(SpriteBatch spriteBatch)
         {
             switch(currentAnimationState)
             {

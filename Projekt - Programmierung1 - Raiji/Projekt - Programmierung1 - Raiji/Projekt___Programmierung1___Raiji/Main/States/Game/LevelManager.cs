@@ -63,7 +63,7 @@ namespace Projekt___Programmierung1___Raiji
 
         public void Draw(SpriteBatch spriteBatch) 
         {
-            //Draw Room
+            //Draw Room, including Tiles, Enemies and other Items
             room[activeRoom].Draw(spriteBatch);
             
             //Draw Character

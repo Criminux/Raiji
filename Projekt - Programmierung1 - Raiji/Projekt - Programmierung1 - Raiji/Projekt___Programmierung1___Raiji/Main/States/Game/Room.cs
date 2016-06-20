@@ -19,8 +19,11 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
         {
             get { return TileRoom; }
         }
-        
-        
+
+        //Für eventuelle Gegner
+        Enemy[] enemies;
+
+
         private int levelID;
         private int roomID;
 
@@ -45,6 +48,7 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
         
         public void Draw(SpriteBatch spriteBatch)
         {
+            //Draw the Tiles
             for(int i = 0; i < RowX; i++)
             {
                 for(int j = 0; j < RowY; j++)
@@ -52,6 +56,17 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                     TileRoom[i, j].DrawTile(spriteBatch);
                 }
             }
+
+            //Draw the Enemies
+            for(int i = 0; i < enemies.Length; i++)
+            {
+                try //TODO: Make the Arraysize dynamic
+                {
+                    enemies[i].Draw(spriteBatch);
+                }
+                catch (Exception e) { }
+            }
+
         }
 
         
@@ -104,22 +119,25 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                 
             }
 
-            //Set the properties to DoorTiles, if there are any
+            //Read more lines for DoorTile Linking and enemy initialization
+            int enemyCount = 0;
+            //Create the Array
+            enemies = new Enemy[5]; //TODO: Dynamic
             String Line;
             while((Line = reader.ReadLine()) != null)
             {
-                String[] property = Line.Split(' ');
+                String[] setting = Line.Split(' ');
 
-                if (property[0] == "Property")
+                if (setting[0] == "Property")
                 {
-                    int tempX = Int32.Parse(property[1]);
-                    int tempY = Int32.Parse(property[2]);
+                    int tempX = Int32.Parse(setting[1]);
+                    int tempY = Int32.Parse(setting[2]);
 
-                    int tempTargetRoom = Int32.Parse(property[3]);
+                    int tempTargetRoom = Int32.Parse(setting[3]);
                     tempTargetRoom--;
 
-                    String tempID = property[4];
-                    String tempTargetID = property[5];
+                    String tempID = setting[4];
+                    String tempTargetID = setting[5];
 
                     if (TileRoom[tempX, tempY] is DoorTile)
                     {
@@ -130,6 +148,21 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
 
                     
                 }
+
+                if (setting[0] == "Enemy")
+                {
+                    
+
+                    int tempX = Int32.Parse(setting[1]);
+                    int tempY = Int32.Parse(setting[2]);
+
+                    //Neuer Enemy initialisieren
+                    enemies[enemyCount] = new Enemy(content);
+                    enemies[enemyCount].Position = new Vector2(tempX,tempY);
+
+                    enemyCount++;
+                }
+
 
             }
             

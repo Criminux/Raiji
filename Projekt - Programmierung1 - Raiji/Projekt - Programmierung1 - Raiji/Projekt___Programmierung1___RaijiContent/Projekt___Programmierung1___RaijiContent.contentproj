@@ -63,13 +63,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Player.png">
-      <Name>Player</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Back.png">
       <Name>Back</Name>
       <Importer>TextureImporter</Importer>
