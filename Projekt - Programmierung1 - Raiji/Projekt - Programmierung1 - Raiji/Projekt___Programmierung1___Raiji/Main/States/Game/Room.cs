@@ -21,7 +21,7 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
         }
 
         //Für eventuelle Gegner
-        Enemy[] enemies;
+        Enemy enemy;
 
 
         private int levelID;
@@ -45,6 +45,17 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             Initialize(levelID, roomID);
         }
         
+        public void Update(GameTime gameTime, LevelManager level)
+        {
+            if(enemy != null)
+            {
+                enemy.Update(gameTime, this);
+                enemy.AfterUpdate(gameTime, this, level);
+
+            }
+
+        }
+
         
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -58,15 +69,11 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             }
 
             //Draw the Enemies
-            for(int i = 0; i < enemies.Length; i++)
+            if(enemy != null)
             {
-                try //TODO: Make the Arraysize dynamic
-                {
-                    enemies[i].Draw(spriteBatch);
-                }
-                catch (Exception e) { }
+                enemy.Draw(spriteBatch);
             }
-
+            
         }
 
         
@@ -120,9 +127,6 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             }
 
             //Read more lines for DoorTile Linking and enemy initialization
-            int enemyCount = 0;
-            //Create the Array
-            enemies = new Enemy[5]; //TODO: Dynamic
             String Line;
             while((Line = reader.ReadLine()) != null)
             {
@@ -152,15 +156,13 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                 if (setting[0] == "Enemy")
                 {
                     
-
                     int tempX = Int32.Parse(setting[1]);
                     int tempY = Int32.Parse(setting[2]);
 
                     //Neuer Enemy initialisieren
-                    enemies[enemyCount] = new Enemy(content);
-                    enemies[enemyCount].Position = new Vector2(tempX,tempY);
+                    enemy = new Enemy(content);
+                    enemy.Position = new Vector2(tempX,tempY);
 
-                    enemyCount++;
                 }
 
 

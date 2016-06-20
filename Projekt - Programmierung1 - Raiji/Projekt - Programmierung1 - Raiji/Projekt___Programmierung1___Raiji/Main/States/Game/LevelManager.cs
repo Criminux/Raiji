@@ -13,7 +13,7 @@ using Raiji.Main;
 
 namespace Projekt___Programmierung1___Raiji
 {
-    class LevelManager
+    public class LevelManager
     {
         
         ContentManager content;
@@ -49,6 +49,9 @@ namespace Projekt___Programmierung1___Raiji
             {
                 InitializeLevel(levelID);
             }
+
+            //Update Room
+            room[activeRoom].Update(gameTime, this);
 
             //Update Player
             player.Update(gameTime, room[activeRoom]);

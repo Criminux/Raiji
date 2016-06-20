@@ -19,4 +19,4 @@ Property 0 8 1 level1_room2_door3_left level1_room1_door3_right
 Property 29 6 3 level1_room2_door1_right level1_room3_door1_left
 Property 29 7 3 level1_room2_door2_right level1_room3_door2_left
 Property 29 8 3 level1_room2_door3_right level1_room3_door3_left
-Enemy 900 500
+Enemy 900 450
