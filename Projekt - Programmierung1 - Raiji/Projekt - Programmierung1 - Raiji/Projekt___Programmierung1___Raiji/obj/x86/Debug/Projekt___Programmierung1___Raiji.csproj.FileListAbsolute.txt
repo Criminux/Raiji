@@ -70,7 +70,6 @@ D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierun
 D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\buttonPressed.xnb
 D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\button.xnb
 D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Stone.xnb
-D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Player.xnb
 D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Back.xnb
 D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Arial.xnb
 D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\LevelData\Level1Room1.txt
@@ -100,3 +99,13 @@ X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projek
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\LevelData\Level1Room4.txt
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\LevelData\Level1Room5.txt
 X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\heart.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\PlayerOutline.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_AttackSheet.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_IdleSheet.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_JumpSheet.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_RunSheet.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\heart.xnb
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\LevelData\Level1Room2.txt
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\LevelData\Level1Room3.txt
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\LevelData\Level1Room4.txt
+D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\LevelData\Level1Room5.txt

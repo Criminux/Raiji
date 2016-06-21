@@ -3,13 +3,13 @@ Content\buttonPressed.xnb
 Content\button.xnb
 Content\Stone.xnb
 Content\Back.xnb
-Content\Arial.xnb
 Content\PlayerOutline.xnb
 Content\128x128_AttackSheet.xnb
 Content\128x128_IdleSheet.xnb
 Content\128x128_JumpSheet.xnb
 Content\128x128_RunSheet.xnb
 Content\heart.xnb
+Content\Arial.xnb
 Content\LevelData\Level1Room1.txt
 Content\LevelData\Level1Room2.txt
 Content\LevelData\Level1Room3.txt

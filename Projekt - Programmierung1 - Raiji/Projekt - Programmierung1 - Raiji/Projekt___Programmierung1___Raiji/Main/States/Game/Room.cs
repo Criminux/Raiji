@@ -21,7 +21,31 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
         }
 
         //Für eventuelle Gegner
-        Enemy enemy;
+        private Enemy enemy;
+        public Rectangle EnemyBounds
+        {
+            get
+            {
+                if (enemy != null)
+                {
+                    return enemy.bounds;
+                }
+                else { return new Rectangle(0, 0, 0, 0); }
+                
+            }
+        }
+        public int EnemyLife
+        {
+            get
+            {
+                if (enemy != null)
+                {
+                    return enemy.life;
+                }
+                else { return 0; }
+            }
+            set { enemy.life = value; }
+        }
 
 
         private int levelID;

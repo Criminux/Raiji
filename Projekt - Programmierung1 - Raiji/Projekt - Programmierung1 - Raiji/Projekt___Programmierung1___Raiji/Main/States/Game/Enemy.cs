@@ -35,6 +35,8 @@ namespace Raiji.Main.States.Game
 
             bounds = characterSprite.Bounds;
 
+            life = 3;
+
         }
 
         public override void Update(GameTime gameTime, Room room)

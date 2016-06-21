@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Projekt___Programmierung1___Raiji;
+using Projekt___Programmierung1___Raiji.Main.States.Game;
 
 namespace Raiji.Main.States.Game
 {
@@ -16,6 +17,7 @@ namespace Raiji.Main.States.Game
     {
         Player player;
         int playerLife;
+        int enemyLife;
 
         Texture2D heart;
 
@@ -25,9 +27,10 @@ namespace Raiji.Main.States.Game
             heart = content.Load<Texture2D>("heart");
         }
 
-        public void Update()
+        public void Update(Room room)
         {
             playerLife = player.Life;
+            enemyLife = room.EnemyLife;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -48,7 +51,24 @@ namespace Raiji.Main.States.Game
                     spriteBatch.Draw(heart, new Vector2(10, 970), Color.White); //TODO: 3 Vector2 anlegen mit festgestzten Koordinaten
                     break;     
             }
-
+            //Draw the Enemy life
+            switch (enemyLife)
+            {
+                case 3:
+                    spriteBatch.Draw(heart, new Vector2(700, 970), Color.White); //TODO: 3 Vector2 anlegen mit festgestzten Koordinaten
+                    spriteBatch.Draw(heart, new Vector2(774, 970), Color.White);
+                    spriteBatch.Draw(heart, new Vector2(848, 970), Color.White);
+                    break;
+                case 2:
+                    spriteBatch.Draw(heart, new Vector2(700, 970), Color.White); //TODO: 3 Vector2 anlegen mit festgestzten Koordinaten
+                    spriteBatch.Draw(heart, new Vector2(774, 970), Color.White);
+                    break;
+                case 1:
+                    spriteBatch.Draw(heart, new Vector2(700, 970), Color.White); //TODO: 3 Vector2 anlegen mit festgestzten Koordinaten
+                    break;
+                case 0:
+                    break;
+            }
         }
 
     }

@@ -35,6 +35,7 @@ namespace Projekt___Programmierung1___Raiji
             bounds = characterSprite.Bounds;
 
             life = 3;
+            lifeCooldown = 500f;
         }
 
         public override void Update(GameTime gameTime, Room room)

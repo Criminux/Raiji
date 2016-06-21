@@ -17,7 +17,8 @@ namespace Projekt___Programmierung1___Raiji
     abstract class Character
     {
         //General Character Fields
-        protected int life;
+        public int life;
+        protected float lifeCooldown;
         protected Texture2D characterSprite;
         public Rectangle bounds;
 
@@ -93,7 +94,7 @@ namespace Projekt___Programmierung1___Raiji
         {
             ApplyPhysics(gameTime, room);
             position += velocity;
-            HandleCollisions(room, level);
+            HandleCollisions(room, level, gameTime);
         }
 
         virtual public void Draw(SpriteBatch spriteBatch)
@@ -115,13 +116,7 @@ namespace Projekt___Programmierung1___Raiji
             }
         }
 
-        //Is Character Alive 
-        virtual protected bool isAlive(float life)
-        {
-            if (life <= 0f) return false;
-            else return true;
-        }
-
+       
         //Moves the Player on X-Axis
         public void Move(float dir, GameTime gameTime)
         {
@@ -150,7 +145,7 @@ namespace Projekt___Programmierung1___Raiji
         }
 
         
-        private void HandleCollisions(Room room, LevelManager level)
+        private void HandleCollisions(Room room, LevelManager level, GameTime gameTime)
         {
             // Get the current TileRoom
             Tile[,] TileRoom = room.tileRoom;
@@ -224,7 +219,23 @@ namespace Projekt___Programmierung1___Raiji
                     }
                 }                
             }
-            
+
+            lifeCooldown -= gameTime.ElapsedGameTime.Milliseconds;
+
+            //Intersect with Enemy and is Attacking
+            if(bounds.Intersects(room.EnemyBounds) && currentAnimationState == EAnimation.Attack)
+            {
+                room.EnemyLife = room.EnemyLife -= 1;
+            }      
+            else if(this is Player && bounds.Intersects(room.EnemyBounds))
+            {
+                if(lifeCooldown <= 0)
+                {
+                    life -= 1;
+                    lifeCooldown = 500f;
+                }
+                
+            }
         }
 
 
@@ -253,6 +264,8 @@ namespace Projekt___Programmierung1___Raiji
         {
             //Start Attack Animation
             currentAnimationState = EAnimation.Attack;
+
+
         }
 
     }

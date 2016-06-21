@@ -54,7 +54,7 @@ namespace Projekt___Programmierung1___Raiji
             }
 
             //Update UI
-            uiManager.Update();
+            uiManager.Update(room[activeRoom]);
 
             //Update Room
             room[activeRoom].Update(gameTime, this);

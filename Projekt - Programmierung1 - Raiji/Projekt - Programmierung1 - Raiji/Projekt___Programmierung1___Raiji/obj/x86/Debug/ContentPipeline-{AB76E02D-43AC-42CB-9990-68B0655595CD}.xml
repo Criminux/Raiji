@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\SplashScreen.xnb</Output>
-      <Time>2016-06-17T17:48:17+02:00</Time>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\SplashScreen.xnb</Output>
+      <Time>2016-06-16T11:09:46.6450266+02:00</Time>
     </Item>
     <Item>
       <Source>buttonPressed.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\buttonPressed.xnb</Output>
-      <Time>2016-06-17T17:48:17+02:00</Time>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\buttonPressed.xnb</Output>
+      <Time>2016-06-16T11:09:46.65904+02:00</Time>
     </Item>
     <Item>
       <Source>button.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\button.xnb</Output>
-      <Time>2016-06-17T17:48:17+02:00</Time>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\button.xnb</Output>
+      <Time>2016-06-16T11:09:46.6580449+02:00</Time>
     </Item>
     <Item>
       <Source>Stone.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Stone.xnb</Output>
-      <Time>2016-06-17T17:48:17+02:00</Time>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Stone.xnb</Output>
+      <Time>2016-06-16T11:09:46.6450266+02:00</Time>
     </Item>
     <Item>
       <Source>Back.png</Source>
@@ -43,17 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Back.xnb</Output>
-      <Time>2016-06-17T17:48:17+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Arial.spritefont</Source>
-      <Name>Arial</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Arial.xnb</Output>
-      <Time>2016-06-17T17:48:17+02:00</Time>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Back.xnb</Output>
+      <Time>2016-06-16T11:09:46.6230268+02:00</Time>
     </Item>
     <Item>
       <Source>PlayerOutline.png</Source>
@@ -61,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\PlayerOutline.xnb</Output>
-      <Time>2016-06-18T15:01:14+02:00</Time>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\PlayerOutline.xnb</Output>
+      <Time>2016-06-21T11:03:30.3481102+02:00</Time>
     </Item>
     <Item>
       <Source>128x128_AttackSheet.png</Source>
@@ -70,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_AttackSheet.xnb</Output>
-      <Time>2016-06-18T15:13:14.6229548+02:00</Time>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_AttackSheet.xnb</Output>
+      <Time>2016-06-21T11:03:30.3351018+02:00</Time>
     </Item>
     <Item>
       <Source>128x128_IdleSheet.png</Source>
@@ -79,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_IdleSheet.xnb</Output>
-      <Time>2016-06-18T15:15:20.839174+02:00</Time>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_IdleSheet.xnb</Output>
+      <Time>2016-06-21T11:03:30.3361159+02:00</Time>
     </Item>
     <Item>
       <Source>128x128_JumpSheet.png</Source>
@@ -88,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_JumpSheet.xnb</Output>
-      <Time>2016-06-18T15:14:11.0361815+02:00</Time>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_JumpSheet.xnb</Output>
+      <Time>2016-06-21T11:03:30.3371099+02:00</Time>
     </Item>
     <Item>
       <Source>128x128_RunSheet.png</Source>
@@ -97,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_RunSheet.xnb</Output>
-      <Time>2016-06-18T15:14:33.9674931+02:00</Time>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\128x128_RunSheet.xnb</Output>
+      <Time>2016-06-21T11:03:30.3381122+02:00</Time>
     </Item>
     <Item>
       <Source>heart.png</Source>
@@ -106,8 +97,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\heart.xnb</Output>
-      <Time>2016-06-20T15:39:28.7225428+02:00</Time>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\heart.xnb</Output>
+      <Time>2016-06-21T11:03:30.3520997+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Arial.spritefont</Source>
+      <Name>Arial</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Arial.xnb</Output>
+      <Time>2016-06-16T11:09:46.6220304+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -116,10 +116,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>true</CompressContent>
-      <RootDirectory>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___RaijiContent\</RootDirectory>
-      <LoggerRootDirectory>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\</LoggerRootDirectory>
-      <IntermediateDirectory>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___RaijiContent\</RootDirectory>
+      <LoggerRootDirectory>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Projekte\SRH\Programmierung 1\ProjektRepository\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -147,8 +147,8 @@
         <Value>2011-09-01T16:22:30+02:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2016-06-15T18:47:06.2992608+02:00</Value>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2016-05-17T14:08:57.6828223+02:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

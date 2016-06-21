@@ -29,12 +29,14 @@ namespace Projekt___Programmierung1___Raiji
 
         private KeyboardState currentKeyboardState, previousKeyboardState;
         private MouseState currentMouseState, previousMouseState;
+        private GamePadState currentPadState, previousPadState;
 
         //Aktueller Keyboardstand speichern
         public void UpdateInput()
         {
             currentKeyboardState = Keyboard.GetState();
             currentMouseState = Mouse.GetState();
+            currentPadState = GamePad.GetState(PlayerIndex.One);
         }
 
         //Alten Keyboardstand speichern
@@ -42,6 +44,7 @@ namespace Projekt___Programmierung1___Raiji
         {
             previousKeyboardState = currentKeyboardState;
             previousMouseState = currentMouseState;
+            previousPadState = currentPadState;
         }
 
         public bool MouseClicked()
@@ -58,14 +61,14 @@ namespace Projekt___Programmierung1___Raiji
             // TODO: Können 20 Keys gedrückt werden? Was wenn noch mehr gedrückt werden? Mach doch ein kleineres Array oder ein HashSet
 
             //Tastenspezifishe Abfrage; Speichern der Eingabe im Array
-            if (KeyJustPressed(currentKeyboardState, previousKeyboardState, Keys.Escape))  { inputs[count] = EInputKey.Escape; count++; }
-            if (KeyIsPressed(currentKeyboardState, Keys.Up))                               { inputs[count] = EInputKey.Up; count++; }
-            if (KeyIsPressed(currentKeyboardState, Keys.Down))                             { inputs[count] = EInputKey.Down; count++; }
-            if (KeyIsPressed(currentKeyboardState, Keys.Left))                             { inputs[count] = EInputKey.Left; count++; }
-            if (KeyIsPressed(currentKeyboardState, Keys.Right))                            { inputs[count] = EInputKey.Right; count++; }
-            if (KeyIsPressed(currentKeyboardState, Keys.Space))                            { inputs[count] = EInputKey.Jump; count++; }
-            if (KeyIsPressed(currentKeyboardState, Keys.RightAlt))                         { inputs[count] = EInputKey.Attack; count++; }
-            //else                                                                                { inputs[count] = EInputKey.Unspecified; count++; }
+            if (KeyJustPressed(currentKeyboardState, previousKeyboardState, Keys.Escape) || ButtonJustPressed(currentPadState, previousPadState, Buttons.Start)) { inputs[count] = EInputKey.Escape; count++; }
+            if (KeyIsPressed(currentKeyboardState, Keys.Up)         || ButtonIsPressed(currentPadState, Buttons.DPadUp))    { inputs[count] = EInputKey.Up; count++; }
+            if (KeyIsPressed(currentKeyboardState, Keys.Down)       || ButtonIsPressed(currentPadState, Buttons.DPadDown))  { inputs[count] = EInputKey.Down; count++; }
+            if (KeyIsPressed(currentKeyboardState, Keys.Left)       || ButtonIsPressed(currentPadState, Buttons.DPadLeft))  { inputs[count] = EInputKey.Left; count++; }
+            if (KeyIsPressed(currentKeyboardState, Keys.Right)      || ButtonIsPressed(currentPadState, Buttons.DPadRight)) { inputs[count] = EInputKey.Right; count++; }
+            if (KeyIsPressed(currentKeyboardState, Keys.Space)      || ButtonIsPressed(currentPadState, Buttons.A))         { inputs[count] = EInputKey.Jump; count++; }
+            if (KeyIsPressed(currentKeyboardState, Keys.RightAlt)   || ButtonIsPressed(currentPadState, Buttons.X))         { inputs[count] = EInputKey.Attack; count++; }
+            //else                                                                                                          { inputs[count] = EInputKey.Unspecified; count++; }
 
             //Anlegen eines neuen Arrays der korrekten Größe, sowie Übertragung der gespeicherten Werte
             // TODO: Warum?
@@ -90,11 +93,19 @@ namespace Projekt___Programmierung1___Raiji
         {
             return current.IsKeyDown(key);
         }
+        private bool ButtonIsPressed(GamePadState current, Buttons button)
+        {
+            return current.IsButtonDown(button);
+        }
 
         //KeyJustPressed gibt nur true zurück, wenn die Taste eben gerade gedrückt wurde (Kein Spam)
         private bool KeyJustPressed(KeyboardState current, KeyboardState previous, Keys key)
         {
             return (current.IsKeyDown(key) && !previous.IsKeyDown(key));
+        }
+        private bool ButtonJustPressed(GamePadState current, GamePadState previous, Buttons button)
+        {
+            return (current.IsButtonDown(button) && !previous.IsButtonDown(button));
         }
 
     }
