@@ -123,5 +123,34 @@ namespace Projekt___Programmierung1___Raiji
 
         }
 
+        public Vector2 GetPositionByID(String ID)
+        {
+            Vector2 result = new Vector2(0, 0);
+
+            for(int i = 0; i < room.Length; i++)
+            {
+                Tile[,] tempTileRoom = room[i].tileRoom;
+
+                //Loop through Tiles of current Room
+                for(int j = 0; j < tempTileRoom.GetLength(0); j++)
+                {
+                    for(int k = 0; k < tempTileRoom.GetLength(1); k++)
+                    {
+                        Tile tempTile = tempTileRoom[j, k];
+                        if(tempTile is DoorTile)
+                        {
+                            String tempID = ((DoorTile)tempTile).GetID;
+                            if(tempID == ID)
+                            {
+                                result = tempTile.Position;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
     }
 }

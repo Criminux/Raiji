@@ -53,10 +53,11 @@ namespace Projekt___Programmierung1___Raiji
         {
             get { return type; }
         }
-            
-
-
-
+        public Vector2 Position
+        {
+            get { return position; }
+        }
+        
         public Tile(ETile type, Vector2 position, ContentManager content)
         {
             switch(type)

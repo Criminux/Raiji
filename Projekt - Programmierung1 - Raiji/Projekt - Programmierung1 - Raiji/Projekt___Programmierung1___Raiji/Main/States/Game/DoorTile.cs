@@ -19,6 +19,14 @@ namespace Raiji.Main.States.Game
         {
             get { return targetRoom; }
         }
+        public String GetID
+        {
+            get { return ID; }
+        }
+        public String GetTargetID
+        {
+            get { return targetID; }
+        }
 
 
         public DoorTile(ETile type, Vector2 position, ContentManager content) : base(type, position, content)

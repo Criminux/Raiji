@@ -95,6 +95,8 @@ namespace Projekt___Programmierung1___Raiji
             ApplyPhysics(gameTime, room);
             position += velocity;
             HandleCollisions(room, level, gameTime);
+
+           
         }
 
         virtual public void Draw(SpriteBatch spriteBatch)
@@ -184,6 +186,7 @@ namespace Projekt___Programmierung1___Raiji
                             level.ActiveRoom = ((DoorTile)currentTile).TargetRoom;
                             //TODO: Position not correct
                             position = new Vector2(300, 500);
+                            //position = level.GetPositionByID(((DoorTile)currentTile).GetTargetID);
                         }
                     }
                 }               
@@ -222,6 +225,7 @@ namespace Projekt___Programmierung1___Raiji
 
             lifeCooldown -= gameTime.ElapsedGameTime.Milliseconds;
 
+            //TODO: Make
             //Intersect with Enemy and is Attacking
             if(bounds.Intersects(room.EnemyBounds) && currentAnimationState == EAnimation.Attack)
             {

@@ -34,6 +34,7 @@ namespace Projekt___Programmierung1___Raiji
 
             bounds = characterSprite.Bounds;
 
+            //Life Stufff
             life = 3;
             lifeCooldown = 500f;
         }

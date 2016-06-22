@@ -22,6 +22,9 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
 
         //Für eventuelle Gegner
         private Enemy enemy;
+
+        
+
         public Rectangle EnemyBounds
         {
             get
