@@ -22,6 +22,11 @@ namespace Projekt___Programmierung1___Raiji
         protected float hitCooldown;
         protected Texture2D characterSprite;
         public Rectangle bounds;
+        bool click;
+        public bool Click
+        {
+            set { click = value; }
+        }
 
         //Animations
         protected EAnimation currentAnimationState;
@@ -86,16 +91,17 @@ namespace Projekt___Programmierung1___Raiji
 
             // Reset variables for this cycle
             currentAnimationState = EAnimation.Idle;
+            click = false;
             velocity = Vector2.Zero;
             bounds.Location = new Point((int)Position.X, (int)Position.Y);
         }
 
         // Is called after retrieving the input
-        public void AfterUpdate(GameTime gameTime, Room room, LevelManager level)
+        public void AfterUpdate(GameTime gameTime, Room room, LevelManager level, ContentManager content)
         {
             ApplyPhysics(gameTime, room);
             position += velocity;
-            HandleCollisions(room, level, gameTime);
+            HandleCollisions(room, level, gameTime, content);
 
             HandleLife(gameTime, room, level);
         }
@@ -148,7 +154,7 @@ namespace Projekt___Programmierung1___Raiji
         }
 
         
-        private void HandleCollisions(Room room, LevelManager level, GameTime gameTime)
+        private void HandleCollisions(Room room, LevelManager level, GameTime gameTime, ContentManager content)
         {
             // Get the current TileRoom
             Tile[,] TileRoom = room.tileRoom;
@@ -190,6 +196,7 @@ namespace Projekt___Programmierung1___Raiji
                             //position = level.GetPositionByID(((DoorTile)currentTile).GetTargetID);
                         }
                     }
+                    
                 }               
             }
             
@@ -221,6 +228,7 @@ namespace Projekt___Programmierung1___Raiji
                             position = new Vector2(300, 500);
                         }
                     }
+                    
                 }                
             }
 

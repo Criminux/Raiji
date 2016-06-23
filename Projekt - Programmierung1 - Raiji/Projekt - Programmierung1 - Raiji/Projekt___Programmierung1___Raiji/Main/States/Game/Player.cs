@@ -15,6 +15,8 @@ namespace Projekt___Programmierung1___Raiji
 {
     class Player : Character
     {
+        
+
         public Player(ContentManager content)
         {
             //Load Sprites for Animation
@@ -42,6 +44,7 @@ namespace Projekt___Programmierung1___Raiji
 
         public override void Update(GameTime gameTime, Room room)
         {
+           
 
             base.Update(gameTime, room);
             
@@ -65,7 +68,7 @@ namespace Projekt___Programmierung1___Raiji
                 if(hitCooldown <= 0)
                 {
                     room.EnemyLife = room.EnemyLife -= 1;
-
+                    hitCooldown = 500f;
                 }
             }
             else if (bounds.Intersects(room.EnemyBounds))

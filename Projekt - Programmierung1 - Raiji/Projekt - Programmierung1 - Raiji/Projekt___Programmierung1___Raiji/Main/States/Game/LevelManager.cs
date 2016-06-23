@@ -71,7 +71,7 @@ namespace Projekt___Programmierung1___Raiji
             ExecuteInput(StateMachine.inputManager.GetInput(), gameTime);
 
             //AfterUpdatePlayer
-            player.AfterUpdate(gameTime, room[activeRoom], this);
+            player.AfterUpdate(gameTime, room[activeRoom], this, content);
 
         }
 
@@ -122,6 +122,9 @@ namespace Projekt___Programmierung1___Raiji
                         break;
                     case EInputKey.Attack:
                         player.Attack();
+                        break;
+                    case EInputKey.Use:
+                        player.Click = true;
                         break;
                 }
             }

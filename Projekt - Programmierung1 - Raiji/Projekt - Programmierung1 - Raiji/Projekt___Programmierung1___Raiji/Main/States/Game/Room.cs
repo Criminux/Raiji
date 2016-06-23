@@ -77,7 +77,7 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             if(enemy != null)
             {
                 enemy.Update(gameTime, this);
-                enemy.AfterUpdate(gameTime, this, level);
+                enemy.AfterUpdate(gameTime, this, level, content);
 
             }
 

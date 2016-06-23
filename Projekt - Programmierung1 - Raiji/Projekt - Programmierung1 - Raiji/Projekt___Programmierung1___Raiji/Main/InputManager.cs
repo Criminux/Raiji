@@ -21,7 +21,8 @@ namespace Projekt___Programmierung1___Raiji
         Left = 23,
         Right = 24,
         Jump = 25,
-        Attack = 26
+        Attack = 26,
+        Use = 27
     }
 
     public class InputManager
@@ -68,6 +69,7 @@ namespace Projekt___Programmierung1___Raiji
             if (KeyIsPressed(currentKeyboardState, Keys.Right)      || ButtonIsPressed(currentPadState, Buttons.DPadRight)) { inputs[count] = EInputKey.Right; count++; }
             if (KeyIsPressed(currentKeyboardState, Keys.Space)      || ButtonIsPressed(currentPadState, Buttons.A))         { inputs[count] = EInputKey.Jump; count++; }
             if (KeyIsPressed(currentKeyboardState, Keys.LeftAlt )   || ButtonIsPressed(currentPadState, Buttons.X))         { inputs[count] = EInputKey.Attack; count++; }
+            if (KeyIsPressed(currentKeyboardState, Keys.E)          || ButtonIsPressed(currentPadState, Buttons.Y))         { inputs[count] = EInputKey.Use; count++; }
             //else                                                                                                          { inputs[count] = EInputKey.Unspecified; count++; }
 
             //Anlegen eines neuen Arrays der korrekten Größe, sowie Übertragung der gespeicherten Werte
