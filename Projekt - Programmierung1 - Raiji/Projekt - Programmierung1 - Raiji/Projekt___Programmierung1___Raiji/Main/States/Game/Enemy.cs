@@ -25,17 +25,17 @@ namespace Raiji.Main.States.Game
         public Enemy(ContentManager content)
         {
             //Load Sprites for Animation
-            idleSpriteSheet = content.Load<Texture2D>("128x128_IdleSheet");
-            runSpriteSheet = content.Load<Texture2D>("128x128_RunSheet");
-            jumpSpriteSheet = content.Load<Texture2D>("128x128_JumpSheet");
-            attackSpriteSheet = content.Load<Texture2D>("128x128_AttackSheet");
-            characterSprite = content.Load<Texture2D>("PlayerOutline");
+            idleSpriteSheet = content.Load<Texture2D>("128x128_IdleSheetEnemy");
+            runSpriteSheet = content.Load<Texture2D>("128x128_RunSheetEnemy");
+            jumpSpriteSheet = content.Load<Texture2D>("128x128_JumpSheetEnemy");
+            attackSpriteSheet = content.Load<Texture2D>("128x128_AttackSheetEnemy");
+            characterSprite = content.Load<Texture2D>("Stone");
 
             //Create Animation
             idleAnimation = new Animation(idleSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
-            runAnimation = new Animation(runSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
+            runAnimation = new Animation(runSpriteSheet, 4, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
             jumpAnimation = new Animation(jumpSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
-            attackAnimation = new Animation(attackSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
+            attackAnimation = new Animation(attackSpriteSheet, 4, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
 
             currentAnimationState = EAnimation.Idle;
             isAlive = true;

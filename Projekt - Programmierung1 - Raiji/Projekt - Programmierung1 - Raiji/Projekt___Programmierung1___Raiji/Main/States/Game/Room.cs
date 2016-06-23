@@ -105,7 +105,7 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
 
         
 
-        //Initialize next Room
+        //Initialize new Room
         private void Initialize(int levelID, int roomID) 
         {
            
@@ -139,7 +139,28 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                         case 1:
                             TileRoom[i, yCount] = new Tile(ETile.Stone, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
                             break;
+                        case 2:
+                            TileRoom[i, yCount] = new Tile(ETile.Spike, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
+                            break;
+                        case 3:
+                            TileRoom[i, yCount] = new Tile(ETile.AcidTop, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
+                            break;
+                        case 4:
+                            TileRoom[i, yCount] = new Tile(ETile.AcidFull, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
+                            break;
                         case 5:
+                            TileRoom[i, yCount] = new Tile(ETile.HealStation, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
+                            break;
+                        case 6:
+                            TileRoom[i, yCount] = new Tile(ETile.HealStationUsed, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
+                            break;
+                        case 7:
+                            TileRoom[i, yCount] = new Tile(ETile.DoorOpen, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
+                            break;
+                        case 8:
+                            TileRoom[i, yCount] = new Tile(ETile.DoorLocked, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
+                            break;
+                        case 9:
                             TileRoom[i, yCount] = new DoorTile(ETile.Door, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
                             break;
                         case 99:

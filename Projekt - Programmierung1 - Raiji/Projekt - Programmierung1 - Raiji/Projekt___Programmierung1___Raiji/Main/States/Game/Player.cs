@@ -22,7 +22,7 @@ namespace Projekt___Programmierung1___Raiji
             runSpriteSheet = content.Load<Texture2D>("128x128_RunSheet");
             jumpSpriteSheet = content.Load<Texture2D>("128x128_JumpSheet");
             attackSpriteSheet = content.Load<Texture2D>("128x128_AttackSheet");
-            characterSprite = content.Load<Texture2D>("PlayerOutline");
+            characterSprite = content.Load<Texture2D>("Stone");
 
             //Create Animation
             idleAnimation = new Animation(idleSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));

@@ -15,7 +15,14 @@ namespace Projekt___Programmierung1___Raiji
     {
         Background = 0,
         Stone = 1,
-        Door = 11,
+        Door = 11, //Teleportation
+        Spike = 21,
+        AcidTop = 31,
+        AcidFull = 32,
+        HealStation = 41,
+        HealStationUsed = 42,
+        DoorOpen = 51, //LevelFinish
+        DoorLocked = 52, //LevelFinish
         Unspecified = 99
 
     }
@@ -74,7 +81,35 @@ namespace Projekt___Programmierung1___Raiji
                     texture = content.Load<Texture2D>("Back");
                     collision = ETileCollision.Passable;
                     break;
-                    
+                case ETile.Spike:
+                    texture = content.Load<Texture2D>("Spikes");
+                    collision = ETileCollision.Passable;
+                    break;
+                case ETile.HealStation:
+                    texture = content.Load<Texture2D>("HealStation");
+                    collision = ETileCollision.Passable;
+                    break;
+                case ETile.HealStationUsed:
+                    texture = content.Load<Texture2D>("HealStationUsed");
+                    collision = ETileCollision.Passable;
+                    break;
+                case ETile.DoorOpen:
+                    texture = content.Load<Texture2D>("DoorOpen");
+                    collision = ETileCollision.Passable;
+                    break;
+                case ETile.DoorLocked:
+                    texture = content.Load<Texture2D>("DoorLocked");
+                    collision = ETileCollision.Passable;
+                    break;
+                case ETile.AcidTop:
+                    texture = content.Load<Texture2D>("AcidTop");
+                    collision = ETileCollision.Passable;
+                    break;
+                case ETile.AcidFull:
+                    texture = content.Load<Texture2D>("AcidFull");
+                    collision = ETileCollision.Passable;
+                    break;
+
             }
 
             this.type = type;
