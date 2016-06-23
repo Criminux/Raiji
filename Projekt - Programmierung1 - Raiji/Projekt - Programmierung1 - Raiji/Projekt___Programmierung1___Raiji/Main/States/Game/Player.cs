@@ -37,12 +37,14 @@ namespace Projekt___Programmierung1___Raiji
             //Life Stufff
             life = 3;
             lifeCooldown = 500f;
+            hitCooldown = 500f;
         }
 
         public override void Update(GameTime gameTime, Room room)
         {
 
             base.Update(gameTime, room);
+            
         }
 
 
@@ -50,5 +52,32 @@ namespace Projekt___Programmierung1___Raiji
         {
             base.Draw(spriteBatch);  
         }
+
+        protected override void HandleLife(GameTime gameTime, Room room, LevelManager level)
+        {
+            //Decrease Countdown so Player is hitable
+            lifeCooldown -= gameTime.ElapsedGameTime.Milliseconds;
+            hitCooldown -= gameTime.ElapsedGameTime.Milliseconds;
+            
+            //Intersect with Enemy and is Attacking
+            if (bounds.Intersects(room.EnemyBounds) && currentAnimationState == EAnimation.Attack)
+            {
+                if(hitCooldown <= 0)
+                {
+                    room.EnemyLife = room.EnemyLife -= 1;
+
+                }
+            }
+            else if (bounds.Intersects(room.EnemyBounds))
+            {
+                if (lifeCooldown <= 0)
+                {
+                    life -= 1;
+                    lifeCooldown = 500f;
+                }
+
+            }
+        }
+
     }
 }

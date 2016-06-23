@@ -30,6 +30,11 @@ namespace Projekt___Programmierung1___Raiji
         private bool isInitialized;
 
         private Player player;
+        public Rectangle PlayerRectangle
+        {
+            get { return player.bounds; }
+        }
+
 
         public LevelManager(ContentManager content)
         {

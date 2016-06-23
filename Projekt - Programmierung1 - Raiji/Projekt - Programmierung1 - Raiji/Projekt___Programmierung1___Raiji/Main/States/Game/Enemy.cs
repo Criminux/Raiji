@@ -47,6 +47,7 @@ namespace Raiji.Main.States.Game
             life = 3;
             lifeCooldown = 500f;
             movementCountdown = 500f;
+            hitCooldown = 500f;
 
         }
 
@@ -64,11 +65,26 @@ namespace Raiji.Main.States.Game
                 
                 base.Update(gameTime, room);
                 //Enemy Random Movement
-                RandomMovement(gameTime);
+                RandomBehaviour(gameTime);
             }
             
         }
 
+        protected override void HandleLife(GameTime gameTime, Room room, LevelManager level)
+        {
+            //Decrease Countdown so Player is hitable
+            lifeCooldown -= gameTime.ElapsedGameTime.Milliseconds;
+
+            //Intersect with Enemy and is Attacking
+            if (bounds.Intersects(level.PlayerRectangle) && currentAnimationState == EAnimation.Attack)
+            {
+                room.EnemyLife = room.EnemyLife -= 1;
+            }
+            else if (bounds.Intersects(level.PlayerRectangle))
+            {
+                currentAnimationState = EAnimation.Attack;
+            }
+        }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -79,8 +95,9 @@ namespace Raiji.Main.States.Game
             }
         }
 
+        
 
-        private void RandomMovement(GameTime gameTime)
+        private void RandomBehaviour(GameTime gameTime)
         {
             movementCountdown -= gameTime.ElapsedGameTime.Milliseconds;
             if(movementCountdown <= 0)

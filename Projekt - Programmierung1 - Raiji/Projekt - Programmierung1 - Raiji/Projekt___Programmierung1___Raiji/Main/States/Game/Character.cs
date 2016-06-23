@@ -19,6 +19,7 @@ namespace Projekt___Programmierung1___Raiji
         //General Character Fields
         public int life;
         protected float lifeCooldown;
+        protected float hitCooldown;
         protected Texture2D characterSprite;
         public Rectangle bounds;
 
@@ -96,7 +97,7 @@ namespace Projekt___Programmierung1___Raiji
             position += velocity;
             HandleCollisions(room, level, gameTime);
 
-           
+            HandleLife(gameTime, room, level);
         }
 
         virtual public void Draw(SpriteBatch spriteBatch)
@@ -223,25 +224,10 @@ namespace Projekt___Programmierung1___Raiji
                 }                
             }
 
-            lifeCooldown -= gameTime.ElapsedGameTime.Milliseconds;
-
-            //TODO: Make
-            //Intersect with Enemy and is Attacking
-            if(bounds.Intersects(room.EnemyBounds) && currentAnimationState == EAnimation.Attack)
-            {
-                room.EnemyLife = room.EnemyLife -= 1;
-            }      
-            else if(this is Player && bounds.Intersects(room.EnemyBounds))
-            {
-                if(lifeCooldown <= 0)
-                {
-                    life -= 1;
-                    lifeCooldown = 500f;
-                }
-                
-            }
+            
         }
 
+        protected abstract void HandleLife(GameTime gameTime, Room room, LevelManager level);
 
         //Moves the Player on Y-Axis
         private void ApplyPhysics(GameTime gameTime, Room room)
