@@ -15,7 +15,7 @@ namespace Projekt___Programmierung1___Raiji
 {
     class Player : Character
     {
-        
+       
 
         public Player(ContentManager content)
         {
@@ -31,6 +31,12 @@ namespace Projekt___Programmierung1___Raiji
             runAnimation = new Animation(runSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
             jumpAnimation = new Animation(jumpSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
             attackAnimation = new Animation(attackSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 50));
+
+            //Sound Stuff
+            attackSound = content.Load<SoundEffect>("SwordHitFinal");
+            jumpSound = content.Load<SoundEffect>("JumpFinal");
+            damageSound = content.Load<SoundEffect>("DamageFinal");
+            stepSound = content.Load<SoundEffect>("SingleStepFinal");
 
             currentAnimationState = EAnimation.Idle;
 
@@ -76,6 +82,7 @@ namespace Projekt___Programmierung1___Raiji
                 if (lifeCooldown <= 0)
                 {
                     life -= 1;
+                    damageSound.Play();
                     lifeCooldown = 500f;
                 }
 

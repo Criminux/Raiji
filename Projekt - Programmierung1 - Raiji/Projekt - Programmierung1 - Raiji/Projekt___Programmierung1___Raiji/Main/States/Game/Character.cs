@@ -42,6 +42,14 @@ namespace Projekt___Programmierung1___Raiji
         protected Texture2D jumpSpriteSheet;
         protected Texture2D attackSpriteSheet;
 
+        //Sounds
+        protected SoundEffect attackSound;
+        protected SoundEffect jumpSound;
+        protected SoundEffect damageSound;
+        protected SoundEffect stepSound;
+        protected float stepCooldown;
+
+
         //Movement Fields
         private const float maxdir = 1f;
         private const float acceleration = 0.5f;
@@ -54,6 +62,9 @@ namespace Projekt___Programmierung1___Raiji
         private const float maxJumpTime = 500f;
         private const float jumpCooldown = 1200f;
         private const float jumpVelocity = 40f;
+
+        //Attack Fields
+        protected float attackCooldown;
 
         //Collects all Movement
         private Vector2 velocity;
@@ -89,8 +100,17 @@ namespace Projekt___Programmierung1___Raiji
             jumpAnimation.Update(gameTime);
             attackAnimation.Update(gameTime);
 
+            
+            attackCooldown -= gameTime.ElapsedGameTime.Milliseconds;
+            stepCooldown -= gameTime.ElapsedGameTime.Milliseconds;
+
+            if (attackCooldown > 0)
+            {
+                currentAnimationState = EAnimation.Attack;
+            }
+            else { currentAnimationState = EAnimation.Idle; }
+
             // Reset variables for this cycle
-            currentAnimationState = EAnimation.Idle;
             click = false;
             velocity = Vector2.Zero;
             bounds.Location = new Point((int)Position.X, (int)Position.Y);
@@ -129,6 +149,8 @@ namespace Projekt___Programmierung1___Raiji
         //Moves the Player on X-Axis
         public void Move(float dir, GameTime gameTime)
         {
+
+
             dir = MathHelper.Clamp(dir, -maxdir, maxdir);
 
             //Set the Animation Direction
@@ -137,6 +159,12 @@ namespace Projekt___Programmierung1___Raiji
 
             //If Move is called: Set State to Run
             currentAnimationState = EAnimation.Run;
+
+            if (stepCooldown <= 0)
+            {
+                stepSound.Play(0.5f,0,0);
+                stepCooldown = 475f;
+            }
 
             velocity.X = MathHelper.Clamp(dir * gameTime.ElapsedGameTime.Milliseconds * acceleration, -maxMoveSpeed, maxMoveSpeed);
         }
@@ -148,7 +176,7 @@ namespace Projekt___Programmierung1___Raiji
             if (!JumpHasCooledDown)
             {
                 jumpTime = 0f;
-                //TODO: Play Jumpsound
+                jumpSound.Play(0.7f,0,0);
             }
 
         }
@@ -258,11 +286,21 @@ namespace Projekt___Programmierung1___Raiji
         
 
 
-        public void Attack()
+        public void Attack(GameTime gameTime)
         {
-            //Start Attack Animation
-            currentAnimationState = EAnimation.Attack;
 
+            if(attackCooldown <= 0)
+            {
+                //Start Attack Animation
+                currentAnimationState = EAnimation.Attack;
+
+                //Play the Sound
+                attackSound.Play();
+
+                //Reset Cooldown
+                attackCooldown = 500f;
+            }
+            
 
         }
 

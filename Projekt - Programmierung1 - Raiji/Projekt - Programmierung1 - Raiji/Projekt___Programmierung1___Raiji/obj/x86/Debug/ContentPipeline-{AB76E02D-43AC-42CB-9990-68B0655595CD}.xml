@@ -226,6 +226,70 @@
       <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\Arial.xnb</Output>
       <Time>2016-06-17T17:48:17+02:00</Time>
     </Item>
+    <Item>
+      <Source>DamageFinal.mp3</Source>
+      <Name>DamageFinal</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\DamageFinal.xnb</Output>
+      <Time>2016-06-24T13:47:57.7218541+02:00</Time>
+    </Item>
+    <Item>
+      <Source>HealthStationFinal.mp3</Source>
+      <Name>HealthStationFinal</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\HealthStationFinal.xnb</Output>
+      <Time>2016-06-24T13:47:57.7238542+02:00</Time>
+    </Item>
+    <Item>
+      <Source>HealthStationUsedFinal.mp3</Source>
+      <Name>HealthStationUsedFinal</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\HealthStationUsedFinal.xnb</Output>
+      <Time>2016-06-24T13:47:57.7248542+02:00</Time>
+    </Item>
+    <Item>
+      <Source>JumpFinal.mp3</Source>
+      <Name>JumpFinal</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\JumpFinal.xnb</Output>
+      <Time>2016-06-24T13:47:57.7258543+02:00</Time>
+    </Item>
+    <Item>
+      <Source>SwordHitFinal.mp3</Source>
+      <Name>SwordHitFinal</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\SwordHitFinal.xnb</Output>
+      <Time>2016-06-24T13:47:57.7338548+02:00</Time>
+    </Item>
+    <Item>
+      <Source>StepsFinal.mp3</Source>
+      <Name>StepsFinal</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\StepsFinal.xnb</Output>
+      <Extra>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\StepsFinal.wma</Extra>
+      <Time>2016-06-24T13:47:57.7328547+02:00</Time>
+    </Item>
+    <Item>
+      <Source>SingleStepFinal.mp3</Source>
+      <Name>SingleStepFinal</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\SingleStepFinal.xnb</Output>
+      <Time>2016-06-24T14:12:51.1122711+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{AB76E02D-43AC-42CB-9990-68B0655595CD}</ContentProjectGUID>

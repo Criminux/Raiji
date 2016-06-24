@@ -121,7 +121,7 @@ namespace Projekt___Programmierung1___Raiji
                         player.BeginJump(gameTime);
                         break;
                     case EInputKey.Attack:
-                        player.Attack();
+                        player.Attack(gameTime);
                         break;
                     case EInputKey.Use:
                         player.Click = true;
