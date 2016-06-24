@@ -30,10 +30,20 @@ namespace Projekt___Programmierung1___Raiji
 
         public override EGameState Update(TimeSpan totalTime, GameTime gameTime)
         {
+            if (levelManager.GameOver)
+            {
+                levelManager = new LevelManager(content);
+            }
             targetState = EGameState.GameLoop;
             ExecuteInput(Input(StateMachine.inputManager));
 
             levelManager.Update(gameTime);
+            if(levelManager.GameOver)
+            {
+                targetState = EGameState.MainMenu;
+                
+            }
+
 
             return targetState; 
         }

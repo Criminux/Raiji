@@ -20,11 +20,21 @@ namespace Projekt___Programmierung1___Raiji
         public int life;
         protected float lifeCooldown;
         protected float hitCooldown;
+        protected float clickCooldown = 300f;
         protected Texture2D characterSprite;
         public Rectangle bounds;
         bool click;
         public bool Click
         {
+            get
+            {
+                if(clickCooldown <= 0)
+                { 
+                    clickCooldown = 300f;
+                    return click;   
+                }
+                return false;
+            }
             set { click = value; }
         }
 
@@ -104,6 +114,7 @@ namespace Projekt___Programmierung1___Raiji
             
             attackCooldown -= gameTime.ElapsedGameTime.Milliseconds;
             stepCooldown -= gameTime.ElapsedGameTime.Milliseconds;
+            clickCooldown -= gameTime.ElapsedGameTime.Milliseconds;
 
             if (attackCooldown > 0)
             {
@@ -194,6 +205,8 @@ namespace Projekt___Programmierung1___Raiji
             int playerIndexX = (int)Math.Floor(bounds.Center.X / (float)Tile.Width);
             int playerIndexY = (int)Math.Floor(bounds.Center.Y / (float)Tile.Height);
 
+            
+
             //Loop through the potential collidable Tiles on X-Axis
             for(int x = playerIndexX -1;  x <= playerIndexX +1; x++)
             {
@@ -203,29 +216,21 @@ namespace Projekt___Programmierung1___Raiji
                     //Get the Tile which will now be checked
                     Tile currentTile = TileRoom[x, playerIndexY];
 
-                    //Is the Tile solid?
-                    if (currentTile.Collision == ETileCollision.Solid)
+                    Vector2 collisionDepth = CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds);
+                    if(collisionDepth != Vector2.Zero)
                     {
-                        //In case the Tile is solid, get the CollisionDepth from the CollisionUtil and apply it to position.X
-                        position.X += CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds).X;
-                        //Update the Rectangles position
-                        bounds.Location = new Point((int)position.X, (int)position.Y); // TODO: Update Bounds Funktion
-                    }
-                    //Is the Tile a Door?
-                    else if(currentTile is DoorTile)
-                    {
-                        //Is there a CollisionDepth?
-                        float tempDepth = CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds).X;
-                        //If Depth is not 0
-                        if(tempDepth != 0f)
-                        {
-                            level.ActiveRoom = ((DoorTile)currentTile).TargetRoom;
+                        OnTileCollision(currentTile, collisionDepth, level);
 
-                            //TODO: Position now correct?
-                            //position = new Vector2(300, 500);
-                            position = level.GetPositionByID(((DoorTile)currentTile).GetTargetID);
+                        if (currentTile.Collision == ETileCollision.Solid)
+                        {
+                            //In case the Tile is solid, get the CollisionDepth from the CollisionUtil and apply it to position.X
+                            position.X += CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds).X;
+                            //Update the Rectangles position
+                            bounds.Location = new Point((int)position.X, (int)position.Y); // TODO: Update Bounds Funktion
                         }
                     }
+
+                    
                     
                 }               
             }
@@ -238,26 +243,18 @@ namespace Projekt___Programmierung1___Raiji
                 {
                     //Get the Tile which will now be checked              
                     Tile currentTile = TileRoom[playerIndexX, y];
-                    if(currentTile.Collision == ETileCollision.Solid)
-                    {
-                        //In case the Tile is solid, get the CollisionDepth from the CollisionUtil and apply it to position.Y
-                        position.Y += CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds).Y;
-                        //Update the Rectangles position
-                        bounds.Location = new Point((int)position.X, (int)position.Y); // TODO: Update Bounds Funktion
-                    }
-                    //Is the Tile a Door?
-                    else if (currentTile is DoorTile)
-                    {
-                        //Is there a CollisionDepth?
-                        float tempDepth = CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds).Y;
-                        //If Depth is not 0
-                        if (tempDepth != 0f)
-                        {
-                            level.ActiveRoom = ((DoorTile)currentTile).TargetRoom;
 
-                            //TODO: Position now correct?
-                            //position = new Vector2(300, 500);
-                            position = level.GetPositionByID(((DoorTile)currentTile).GetTargetID);
+                    Vector2 collisionDepth = CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds);
+                    if (collisionDepth != Vector2.Zero)
+                    {
+                        OnTileCollision(currentTile, collisionDepth, level);
+
+                        if (currentTile.Collision == ETileCollision.Solid)
+                        {
+                            //In case the Tile is solid, get the CollisionDepth from the CollisionUtil and apply it to position.Y
+                            position.Y += CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds).Y;
+                            //Update the Rectangles position
+                            bounds.Location = new Point((int)position.X, (int)position.Y); // TODO: Update Bounds Funktion
                         }
                     }
                     
@@ -268,6 +265,10 @@ namespace Projekt___Programmierung1___Raiji
         }
 
         protected abstract void HandleLife(GameTime gameTime, Room room, LevelManager level, List<Enemy> enemies);
+
+        protected abstract void OnTileCollision(Tile collidingTile, Vector2 collisionDepth, LevelManager level);
+       
+
 
         //Moves the Player on Y-Axis
         private void ApplyPhysics(GameTime gameTime, Room room)
