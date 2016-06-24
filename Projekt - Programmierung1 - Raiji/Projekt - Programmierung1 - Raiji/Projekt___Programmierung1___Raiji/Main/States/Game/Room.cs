@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using Raiji.Main.States.Game;
+using System.Collections.Generic;
 
 namespace Projekt___Programmierung1___Raiji.Main.States.Game
 {
@@ -20,36 +21,17 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             get { return TileRoom; }
         }
 
+        //Für eventuelle Tooltips
+        private List<Tooltip> tooltips;
+
         //Für eventuelle Gegner
-        private Enemy enemy;
-
-        
-
-        public Rectangle EnemyBounds
+        private List<Enemy> enemies;
+        public List<Enemy> Enemies
         {
-            get
-            {
-                if (enemy != null)
-                {
-                    return enemy.bounds;
-                }
-                else { return new Rectangle(0, 0, 0, 0); }
-                
-            }
-        }
-        public int EnemyLife
-        {
-            get
-            {
-                if (enemy != null)
-                {
-                    return enemy.life;
-                }
-                else { return 0; }
-            }
-            set { enemy.life = value; }
+            get { return enemies; }
         }
 
+        private Vector2 playerPosition;
 
         private int levelID;
         private int roomID;
@@ -69,22 +51,27 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             this.levelID = levelID;
             this.roomID = roomID;
 
+            enemies = new List<Enemy>();
+            tooltips = new List<Tooltip>();
+
+
             Initialize(levelID, roomID);
         }
         
-        public void Update(GameTime gameTime, LevelManager level)
+        public void Update(GameTime gameTime, LevelManager level, Vector2 playerPosition)
         {
-            if(enemy != null)
-            {
-                enemy.Update(gameTime, this);
-                enemy.AfterUpdate(gameTime, this, level, content);
+            this.playerPosition = playerPosition;
 
+            foreach(Enemy tempEnemy in enemies)
+            {
+                tempEnemy.Update(gameTime, this);
+                tempEnemy.AfterUpdate(gameTime, this, level, content, enemies);
             }
 
         }
 
         
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, SpriteFont spriteFont)
         {
             //Draw the Tiles
             for(int i = 0; i < RowX; i++)
@@ -95,15 +82,38 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                 }
             }
 
-            //Draw the Enemies
-            if(enemy != null)
+            //Draw the Tooltips
+            foreach (Tooltip tempTooltip in tooltips)
             {
-                enemy.Draw(spriteBatch);
+                tempTooltip.Draw(spriteBatch, spriteFont);
             }
-            
+
+            //Draw the Enemies
+            foreach (Enemy tempEnemy in enemies)
+            {
+                tempEnemy.Draw(spriteBatch);
+            }
+
         }
 
-        
+        public int GetCloseEnemyLife()
+        {
+            float closeDistance = 500f;
+            int enemyLife = 0;
+
+            foreach(Enemy tempEnemy in enemies)
+            {
+                float tempDistance = Vector2.Distance(playerPosition, tempEnemy.Position);
+                if(tempDistance < closeDistance)
+                {
+                    closeDistance = tempDistance;
+                    enemyLife = tempEnemy.Life;
+                }
+            }
+
+            return enemyLife;
+        }
+
 
         //Initialize new Room
         private void Initialize(int levelID, int roomID) 
@@ -208,13 +218,25 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                 if (setting[0] == "Enemy")
                 {
                     
-                    int tempX = Int32.Parse(setting[1]);
-                    int tempY = Int32.Parse(setting[2]);
+                    float tempX = float.Parse(setting[1]);
+                    float tempY = float.Parse(setting[2]);
 
                     //Neuer Enemy initialisieren
-                    enemy = new Enemy(content);
-                    enemy.Position = new Vector2(tempX,tempY);
+                    Enemy tempEnemy = new Enemy(content);
+                    tempEnemy.Position = new Vector2(tempX,tempY);
 
+                    enemies.Add(tempEnemy);
+
+                }
+
+                if(setting[0] == "Tooltip")
+                {
+                    float tempX = float.Parse(setting[1]);
+                    float tempY = float.Parse(setting[2]);
+
+                    String message = setting[3];
+
+                    tooltips.Add(new Tooltip(new Vector2(tempX, tempY), message));
                 }
 
 

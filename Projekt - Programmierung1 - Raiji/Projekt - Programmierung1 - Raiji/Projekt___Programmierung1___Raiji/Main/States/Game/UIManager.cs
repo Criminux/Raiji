@@ -20,7 +20,6 @@ namespace Raiji.Main.States.Game
         int playerLife;
 
         //Get the Enenmy instance for printing health
-        Enemy enemy;
         int enemyLife;
 
         //Texture for UI
@@ -57,43 +56,45 @@ namespace Raiji.Main.States.Game
 
         public void Update(Room room)
         {
-            //Get the current Life
+            
             playerLife = player.Life;
-            enemyLife = room.EnemyLife;
+            enemyLife = room.GetCloseEnemyLife();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            //TODO: Make more perfomant
+
             //Draw the Players life
             switch(playerLife)
             {
                 case 3:
-                    spriteBatch.Draw(heart, playerHeart1, Color.White); //TODO: 3 Vector2 anlegen mit festgestzten Koordinaten
+                    spriteBatch.Draw(heart, playerHeart1, Color.White);
                     spriteBatch.Draw(heart, playerHeart2, Color.White);
                     spriteBatch.Draw(heart, playerHeart3, Color.White);
                     break;
                 case 2:
-                    spriteBatch.Draw(heart, playerHeart1, Color.White); //TODO: 3 Vector2 anlegen mit festgestzten Koordinaten
+                    spriteBatch.Draw(heart, playerHeart1, Color.White);
                     spriteBatch.Draw(heart, playerHeart2, Color.White);
                     break;
                 case 1:
-                    spriteBatch.Draw(heart, playerHeart1, Color.White); //TODO: 3 Vector2 anlegen mit festgestzten Koordinaten
+                    spriteBatch.Draw(heart, playerHeart1, Color.White); 
                     break;     
             }
             //Draw the Enemy life
             switch (enemyLife)
             {
                 case 3:
-                    spriteBatch.Draw(heart, enemyHeart1, Color.White); //TODO: 3 Vector2 anlegen mit festgestzten Koordinaten
+                    spriteBatch.Draw(heart, enemyHeart1, Color.White); 
                     spriteBatch.Draw(heart, enemyHeart2, Color.White);
                     spriteBatch.Draw(heart, enemyHeart3, Color.White);
                     break;
                 case 2:
-                    spriteBatch.Draw(heart, enemyHeart1, Color.White); //TODO: 3 Vector2 anlegen mit festgestzten Koordinaten
+                    spriteBatch.Draw(heart, enemyHeart1, Color.White); 
                     spriteBatch.Draw(heart, enemyHeart2, Color.White);
                     break;
                 case 1:
-                    spriteBatch.Draw(heart, enemyHeart1, Color.White); //TODO: 3 Vector2 anlegen mit festgestzten Koordinaten
+                    spriteBatch.Draw(heart, enemyHeart1, Color.White); 
                     break;
                 case 0:
                     break;

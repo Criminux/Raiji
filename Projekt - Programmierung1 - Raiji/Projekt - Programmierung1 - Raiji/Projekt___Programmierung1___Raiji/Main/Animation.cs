@@ -12,7 +12,7 @@ using Projekt___Programmierung1___Raiji.Main.States.Game;
 
 namespace Raiji.Main
 {
-    enum EAnimation
+    public enum EAnimation
     {
         Idle = 0,
         Run = 1,
@@ -21,7 +21,7 @@ namespace Raiji.Main
     }
 
 
-    class Animation
+    public class Animation
     {
 
         //Texture

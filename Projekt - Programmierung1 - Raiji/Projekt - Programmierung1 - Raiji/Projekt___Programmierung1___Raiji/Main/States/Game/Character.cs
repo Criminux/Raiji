@@ -14,7 +14,7 @@ using Raiji.Main.States.Game;
 
 namespace Projekt___Programmierung1___Raiji
 {
-    abstract class Character
+    public abstract class Character
     {
         //General Character Fields
         public int life;
@@ -89,6 +89,7 @@ namespace Projekt___Programmierung1___Raiji
         public int Life
         {
             get { return life; }
+            set { life = value; }
         }
 
 
@@ -117,13 +118,13 @@ namespace Projekt___Programmierung1___Raiji
         }
 
         // Is called after retrieving the input
-        public void AfterUpdate(GameTime gameTime, Room room, LevelManager level, ContentManager content)
+        public void AfterUpdate(GameTime gameTime, Room room, LevelManager level, ContentManager content, List<Enemy> enemies)
         {
             ApplyPhysics(gameTime, room);
             position += velocity;
             HandleCollisions(room, level, gameTime, content);
 
-            HandleLife(gameTime, room, level);
+            HandleLife(gameTime, room, level, enemies);
         }
 
         virtual public void Draw(SpriteBatch spriteBatch)
@@ -266,7 +267,7 @@ namespace Projekt___Programmierung1___Raiji
             
         }
 
-        protected abstract void HandleLife(GameTime gameTime, Room room, LevelManager level);
+        protected abstract void HandleLife(GameTime gameTime, Room room, LevelManager level, List<Enemy> enemies);
 
         //Moves the Player on Y-Axis
         private void ApplyPhysics(GameTime gameTime, Room room)

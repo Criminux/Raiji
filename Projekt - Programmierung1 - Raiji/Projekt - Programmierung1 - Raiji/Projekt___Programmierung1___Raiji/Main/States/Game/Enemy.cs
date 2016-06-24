@@ -14,7 +14,7 @@ using Projekt___Programmierung1___Raiji;
 
 namespace Raiji.Main.States.Game
 {
-    class Enemy : Character
+    public class Enemy : Character
     {
         bool isAlive;
         private float movementCountdown;
@@ -70,7 +70,7 @@ namespace Raiji.Main.States.Game
             
         }
 
-        protected override void HandleLife(GameTime gameTime, Room room, LevelManager level)
+        protected override void HandleLife(GameTime gameTime, Room room, LevelManager level, List<Enemy> enemies)
         {
             //Decrease Countdown so Player is hitable
             lifeCooldown -= gameTime.ElapsedGameTime.Milliseconds;
@@ -78,7 +78,10 @@ namespace Raiji.Main.States.Game
             //Intersect with Enemy and is Attacking
             if (bounds.Intersects(level.PlayerRectangle) && currentAnimationState == EAnimation.Attack)
             {
-                room.EnemyLife = room.EnemyLife -= 1;
+                foreach(Enemy tempEnemy in enemies)
+                {
+                    tempEnemy.Life = tempEnemy.Life - 1;
+                }
             }
             else if (bounds.Intersects(level.PlayerRectangle))
             {
@@ -102,7 +105,7 @@ namespace Raiji.Main.States.Game
             movementCountdown -= gameTime.ElapsedGameTime.Milliseconds;
             if(movementCountdown <= 0)
             {
-                direction = random.Next(0, 2);   
+                direction = random.Next(0, 3);   
                 movementCountdown = 500f;
             }
             if (direction == 1)
@@ -111,11 +114,16 @@ namespace Raiji.Main.States.Game
                 animationDirection = SpriteEffects.None;
                 Position = new Vector2(Position.X + 5, Position.Y);
             }
-            else
+            else if(direction == 2)
             {
                 currentAnimationState = EAnimation.Run;
                 animationDirection = SpriteEffects.FlipHorizontally;
                 Position = new Vector2(Position.X - 5, Position.Y);
+            }
+            else
+            {
+                currentAnimationState = EAnimation.Idle;
+
             }
 
         }

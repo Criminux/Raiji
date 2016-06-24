@@ -39,7 +39,7 @@ namespace Projekt___Programmierung1___Raiji
         }
         public override void Draw(SpriteBatch spriteBatch, SpriteFont spriteFont)
         {
-            levelManager.Draw(spriteBatch);
+            levelManager.Draw(spriteBatch, spriteFont);
         }
 
         protected override void ExecuteInput(EInputKey[] inputs)

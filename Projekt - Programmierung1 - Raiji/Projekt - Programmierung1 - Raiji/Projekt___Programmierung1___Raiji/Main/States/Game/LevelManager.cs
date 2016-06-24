@@ -62,7 +62,7 @@ namespace Projekt___Programmierung1___Raiji
             uiManager.Update(room[activeRoom]);
 
             //Update Room
-            room[activeRoom].Update(gameTime, this);
+            room[activeRoom].Update(gameTime, this, player.Position);
 
             //Update Player
             player.Update(gameTime, room[activeRoom]);
@@ -71,17 +71,17 @@ namespace Projekt___Programmierung1___Raiji
             ExecuteInput(StateMachine.inputManager.GetInput(), gameTime);
 
             //AfterUpdatePlayer
-            player.AfterUpdate(gameTime, room[activeRoom], this, content);
+            player.AfterUpdate(gameTime, room[activeRoom], this, content, room[activeRoom].Enemies);
 
         }
 
-        public void Draw(SpriteBatch spriteBatch) 
+        public void Draw(SpriteBatch spriteBatch, SpriteFont spriteFont) 
         {
             //Draw UI
             uiManager.Draw(spriteBatch);
 
             //Draw Room, including Tiles, Enemies and other Items
-            room[activeRoom].Draw(spriteBatch);
+            room[activeRoom].Draw(spriteBatch, spriteFont);
             
             //Draw Character
             player.Draw(spriteBatch);

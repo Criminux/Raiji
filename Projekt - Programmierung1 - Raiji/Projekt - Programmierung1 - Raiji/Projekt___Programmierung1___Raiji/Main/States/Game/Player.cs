@@ -10,10 +10,11 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Projekt___Programmierung1___Raiji.Main.States.Game;
 using Raiji.Main;
+using Raiji.Main.States.Game;
 
 namespace Projekt___Programmierung1___Raiji
 {
-    class Player : Character
+    public class Player : Character
     {
        
 
@@ -62,31 +63,35 @@ namespace Projekt___Programmierung1___Raiji
             base.Draw(spriteBatch);  
         }
 
-        protected override void HandleLife(GameTime gameTime, Room room, LevelManager level)
+        protected override void HandleLife(GameTime gameTime, Room room, LevelManager level, List<Enemy> enemies)
         {
             //Decrease Countdown so Player is hitable
             lifeCooldown -= gameTime.ElapsedGameTime.Milliseconds;
             hitCooldown -= gameTime.ElapsedGameTime.Milliseconds;
             
             //Intersect with Enemy and is Attacking
-            if (bounds.Intersects(room.EnemyBounds) && currentAnimationState == EAnimation.Attack)
+            foreach(Enemy tempEnemy in enemies)
             {
-                if(hitCooldown <= 0)
+                if (bounds.Intersects(tempEnemy.bounds) && currentAnimationState == EAnimation.Attack)
                 {
-                    room.EnemyLife = room.EnemyLife -= 1;
-                    hitCooldown = 500f;
+                    if (hitCooldown <= 0)
+                    {
+                        tempEnemy.Life = tempEnemy.Life - 1;
+                        hitCooldown = 500f;
+                    }
                 }
-            }
-            else if (bounds.Intersects(room.EnemyBounds))
-            {
-                if (lifeCooldown <= 0)
+                else if (bounds.Intersects(tempEnemy.bounds))
                 {
-                    life -= 1;
-                    damageSound.Play();
-                    lifeCooldown = 500f;
-                }
+                    if (lifeCooldown <= 0)
+                    {
+                        life -= 1;
+                        damageSound.Play();
+                        lifeCooldown = 500f;
+                    }
 
+                }
             }
+            
         }
 
     }
