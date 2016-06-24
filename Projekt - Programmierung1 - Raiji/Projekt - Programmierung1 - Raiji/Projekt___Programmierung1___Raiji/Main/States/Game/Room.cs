@@ -233,8 +233,13 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                 {
                     float tempX = float.Parse(setting[1]);
                     float tempY = float.Parse(setting[2]);
+                    String message = "";
 
-                    String message = setting[3];
+                    for (int i = 3; i < setting.Length; i++)
+                    {
+                        message = message + " " + setting[i];
+                    }
+                    
 
                     tooltips.Add(new Tooltip(new Vector2(tempX, tempY), message));
                 }

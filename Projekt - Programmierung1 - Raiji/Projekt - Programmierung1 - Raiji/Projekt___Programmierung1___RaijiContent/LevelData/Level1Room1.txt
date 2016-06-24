@@ -1,6 +1,6 @@
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 1
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -16,3 +16,9 @@
 Property 29 6 2 level1_room1_door1_right level1_room2_door1_left 1760 512
 Property 29 7 2 level1_room1_door2_right level1_room2_door2_left 1760 512
 Property 29 8 2 level1_room1_door3_right level1_room2_door3_left 1760 512
+Tooltip 100 80 Move with the Digi-Pad or Arrow-Keys and
+Tooltip 100 110 Jump with A or Space
+Tooltip 100 140 Keep in mind that your Jump has a Cooldown!
+Tooltip 1300 80 A special Ninja-Ability
+Tooltip 1300 110 is to jump, while
+Tooltip 1300 140 you are falling!
