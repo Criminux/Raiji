@@ -19,7 +19,6 @@ namespace Projekt___Programmierung1___Raiji
         Intro = 2,
         MainMenu = 11,
         PauseMenu = 12,
-        SettingsMenu = 13,
         GameLoop = 21,
         Credits = 31,
         Quit = 99
