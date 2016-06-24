@@ -14,6 +14,7 @@ namespace Raiji.Main.States.Game
         private String ID;
         private String targetID;
         private int targetRoom;
+        private Vector2 spawnPosition;
 
         public int TargetRoom
         {
@@ -27,6 +28,10 @@ namespace Raiji.Main.States.Game
         {
             get { return targetID; }
         }
+        public Vector2 SpawnPosition
+        {
+            get { return spawnPosition; }
+        }
 
 
         public DoorTile(ETile type, Vector2 position, ContentManager content) : base(type, position, content)
@@ -35,11 +40,12 @@ namespace Raiji.Main.States.Game
 
         }
 
-        public void SetProperties(int targetRoom, String ID, String targetID)
+        public void SetProperties(int targetRoom, String ID, String targetID, Vector2 targetPosition)
         {
             this.targetRoom = targetRoom;
             this.ID = ID;
             this.targetID = targetID;
+            this.spawnPosition = targetPosition;
         }
 
     }

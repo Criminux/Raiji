@@ -13,9 +13,9 @@
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-Property 0 6 2 level1_room3_door1_left level1_room2_door1_right
-Property 0 7 2 level1_room3_door2_left level1_room2_door2_right
-Property 0 8 2 level1_room3_door3_left level1_room2_door3_right
-Property 29 6 4 level1_room3_door1_right level1_room4_door1_left
-Property 29 7 4 level1_room3_door2_right level1_room4_door2_left
-Property 29 8 4 level1_room3_door3_right level1_room4_door3_left
+Property 0 6 2 level1_room3_door1_left level1_room2_door1_right 96 512
+Property 0 7 2 level1_room3_door2_left level1_room2_door2_right 96 512
+Property 0 8 2 level1_room3_door3_left level1_room2_door3_right 96 512
+Property 29 6 4 level1_room3_door1_right level1_room4_door1_left 1760 512
+Property 29 7 4 level1_room3_door2_right level1_room4_door2_left 1760 512
+Property 29 8 4 level1_room3_door3_right level1_room4_door3_left 1760 512

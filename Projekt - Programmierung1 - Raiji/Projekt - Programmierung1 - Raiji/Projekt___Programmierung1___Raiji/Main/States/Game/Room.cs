@@ -191,10 +191,14 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                     String tempID = setting[4];
                     String tempTargetID = setting[5];
 
+                    float spawnPositionX = float.Parse(setting[6]);
+                    float spawnPositionY = float.Parse(setting[7]);
+                    Vector2 spawnPosition = new Vector2(spawnPositionX, spawnPositionY);
+
                     if (TileRoom[tempX, tempY] is DoorTile)
                     {
                         DoorTile tile = (DoorTile)TileRoom[tempX, tempY];
-                        tile.SetProperties(tempTargetRoom, tempID, tempTargetID);
+                        tile.SetProperties(tempTargetRoom, tempID, tempTargetID, spawnPosition);
                     }
                     
 

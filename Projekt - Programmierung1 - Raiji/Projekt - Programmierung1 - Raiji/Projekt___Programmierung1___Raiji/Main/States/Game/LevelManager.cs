@@ -150,7 +150,7 @@ namespace Projekt___Programmierung1___Raiji
                             String tempID = ((DoorTile)tempTile).GetID;
                             if(tempID == ID)
                             {
-                                result = tempTile.Position;
+                                result = ((DoorTile)tempTile).SpawnPosition;
                             }
                         }
                     }
