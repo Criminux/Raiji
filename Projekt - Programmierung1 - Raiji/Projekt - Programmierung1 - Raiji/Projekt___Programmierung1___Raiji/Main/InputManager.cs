@@ -84,7 +84,6 @@ namespace Projekt___Programmierung1___Raiji
             return finalInputs;
         }
 
-        // TODO: Besser: GetMousePoint()
         public Point GetMousePoint()
         {
             return new Point(currentMouseState.X, currentMouseState.Y);

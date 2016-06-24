@@ -94,5 +94,50 @@ namespace Projekt___Programmierung1___Raiji
             
         }
 
+        protected override void OnTileCollision(Tile collidingTile, Vector2 collisionDepth, LevelManager level)
+        {
+            //Is the Tile a Door?
+            if (collidingTile is DoorTile)
+            {
+                level.ActiveRoom = ((DoorTile)collidingTile).TargetRoom;
+                Position = level.GetPositionByID(((DoorTile)collidingTile).GetTargetID);
+            }
+            else if (collidingTile.Type == ETile.AcidFull) life = 0;
+            else if (collidingTile.Type == ETile.Spike) life = 0;
+            else if (collidingTile.Type == ETile.HealStation)
+            {
+
+                HealStationTile healStation = (HealStationTile)collidingTile;
+                if (Click)
+                {
+                    if(!healStation.IsUsed)
+                    {
+                        IncreaseLife();
+                    }
+                    ((HealStationTile)collidingTile).Use();
+                }
+                
+            }
+            else if(collidingTile.Type == ETile.HealStationUsed)
+            {
+                if(Click)
+                {
+                    ((HealStationTile)collidingTile).Use();
+                }
+            }
+            else if(collidingTile.Type == ETile.DoorOpen)
+            {
+                //TODO: LevelDone
+            }
+            
+        }
+
+        public void IncreaseLife()
+        {
+            life += 1;
+            if (life > 3) life = 3;
+        }
+
+
     }
 }

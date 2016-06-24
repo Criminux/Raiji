@@ -236,24 +236,6 @@
       <Time>2016-06-24T13:47:57.7218541+02:00</Time>
     </Item>
     <Item>
-      <Source>HealthStationFinal.mp3</Source>
-      <Name>HealthStationFinal</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\HealthStationFinal.xnb</Output>
-      <Time>2016-06-24T13:47:57.7238542+02:00</Time>
-    </Item>
-    <Item>
-      <Source>HealthStationUsedFinal.mp3</Source>
-      <Name>HealthStationUsedFinal</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\HealthStationUsedFinal.xnb</Output>
-      <Time>2016-06-24T13:47:57.7248542+02:00</Time>
-    </Item>
-    <Item>
       <Source>JumpFinal.mp3</Source>
       <Name>JumpFinal</Name>
       <Importer>Mp3Importer</Importer>
@@ -289,6 +271,24 @@
       <Options>None</Options>
       <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\SingleStepFinal.xnb</Output>
       <Time>2016-06-24T14:12:51.1122711+02:00</Time>
+    </Item>
+    <Item>
+      <Source>HealStationFinal.mp3</Source>
+      <Name>HealStationFinal</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\HealStationFinal.xnb</Output>
+      <Time>2016-06-24T13:47:57.7238542+02:00</Time>
+    </Item>
+    <Item>
+      <Source>HealStationUsedFinal.mp3</Source>
+      <Name>HealStationUsedFinal</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>X:\Projekte\Programmierung1\Raiji\Raiji\Projekt - Programmierung1 - Raiji\Projekt - Programmierung1 - Raiji\Projekt___Programmierung1___Raiji\bin\x86\Debug\Content\HealStationUsedFinal.xnb</Output>
+      <Time>2016-06-24T13:47:57.7248542+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

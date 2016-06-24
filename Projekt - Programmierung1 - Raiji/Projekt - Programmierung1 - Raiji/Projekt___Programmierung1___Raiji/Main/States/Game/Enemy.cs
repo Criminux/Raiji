@@ -127,5 +127,10 @@ namespace Raiji.Main.States.Game
             }
 
         }
+
+        protected override void OnTileCollision(Tile collidingTile, Vector2 collisionDepth, LevelManager level)
+        {
+            //throw new NotImplementedException();
+        }
     }
 }

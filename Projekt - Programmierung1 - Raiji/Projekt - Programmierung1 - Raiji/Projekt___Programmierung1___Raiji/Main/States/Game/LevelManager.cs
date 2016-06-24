@@ -34,6 +34,17 @@ namespace Projekt___Programmierung1___Raiji
         {
             get { return player.bounds; }
         }
+        public bool GameOver
+        {
+            get
+            {
+                if (player.Life <= 0)
+                {
+                    return true;
+                }
+                else return false; 
+            }
+        }
 
 
         public LevelManager(ContentManager content)

@@ -217,13 +217,13 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="HealthStationFinal.mp3">
-      <Name>HealthStationFinal</Name>
+    <Compile Include="HealStationFinal.mp3">
+      <Name>HealStationFinal</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="HealthStationUsedFinal.mp3">
-      <Name>HealthStationUsedFinal</Name>
+    <Compile Include="HealStationUsedFinal.mp3">
+      <Name>HealStationUsedFinal</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>

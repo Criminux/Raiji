@@ -24,13 +24,13 @@ Content\HealStationUsed.xnb
 Content\Spikes.xnb
 Content\Arial.xnb
 Content\DamageFinal.xnb
-Content\HealthStationFinal.xnb
-Content\HealthStationUsedFinal.xnb
 Content\JumpFinal.xnb
 Content\SwordHitFinal.xnb
 Content\StepsFinal.xnb
 Content\StepsFinal.wma
 Content\SingleStepFinal.xnb
+Content\HealStationFinal.xnb
+Content\HealStationUsedFinal.xnb
 Content\LevelData\Level1Room1.txt
 Content\LevelData\Level1Room2.txt
 Content\LevelData\Level1Room3.txt

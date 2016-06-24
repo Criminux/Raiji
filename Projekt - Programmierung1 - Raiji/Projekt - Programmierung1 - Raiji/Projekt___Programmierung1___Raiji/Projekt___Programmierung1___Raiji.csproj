@@ -76,6 +76,7 @@
     <Compile Include="Main\CollisionUtil.cs" />
     <Compile Include="Main\States\Game\DoorTile.cs" />
     <Compile Include="Main\States\Game\Enemy.cs" />
+    <Compile Include="Main\States\Game\HealStationTile.cs" />
     <Compile Include="Main\States\Game\Room.cs" />
     <Compile Include="Main\States\Game\Tooltip.cs" />
     <Compile Include="Main\States\Game\UIManager.cs" />
