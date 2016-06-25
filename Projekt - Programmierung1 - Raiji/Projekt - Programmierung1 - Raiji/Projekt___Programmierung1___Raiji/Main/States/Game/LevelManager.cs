@@ -19,6 +19,10 @@ namespace Projekt___Programmierung1___Raiji
         UIManager uiManager;
         ContentManager content;
         private bool levelDone;
+        public bool LevelDone
+        {
+            set { levelDone = value; }
+        }
         Room[] room;
         private int levelID;
         private int activeRoom;
@@ -38,7 +42,7 @@ namespace Projekt___Programmierung1___Raiji
         {
             get
             {
-                if (player.Life <= 0)
+                if (player.GameOver)
                 {
                     return true;
                 }
@@ -56,7 +60,6 @@ namespace Projekt___Programmierung1___Raiji
             isInitialized = false; 
             
             player = new Player(content);
-            player.Position = new Vector2(200, 500);
 
             uiManager = new UIManager(player, content);
         }
@@ -64,9 +67,18 @@ namespace Projekt___Programmierung1___Raiji
 
         public void Update(GameTime gameTime)
         {
+            if(levelDone)
+            {
+                isInitialized = false;
+                levelID += 1;
+                activeRoom = 0;
+            }
+
             if(!isInitialized)
             {
                 InitializeLevel(levelID);
+                player.Position = new Vector2(200, 500);
+
             }
 
             //Update UI
@@ -108,6 +120,11 @@ namespace Projekt___Programmierung1___Raiji
                 {
                     room[i] = new Room(content, levelID, i + 1);
                 }
+            }
+            else if(levelID == 2)
+            {
+                room = new Room[1];
+                room[0] = new Room(content, levelID, 1);
             }
 
             isInitialized = true;

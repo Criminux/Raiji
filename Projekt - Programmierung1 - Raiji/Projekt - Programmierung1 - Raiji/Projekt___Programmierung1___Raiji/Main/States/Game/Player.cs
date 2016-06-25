@@ -38,6 +38,7 @@ namespace Projekt___Programmierung1___Raiji
             runSpriteSheet = content.Load<Texture2D>("128x128_RunSheet");
             jumpSpriteSheet = content.Load<Texture2D>("128x128_JumpSheet");
             attackSpriteSheet = content.Load<Texture2D>("128x128_AttackSheet");
+            deadSpriteSheet = content.Load<Texture2D>("128x128_DeadSheet");
             characterSprite = content.Load<Texture2D>("Stone");
 
             //Create Animation
@@ -45,6 +46,7 @@ namespace Projekt___Programmierung1___Raiji
             runAnimation = new Animation(runSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
             jumpAnimation = new Animation(jumpSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
             attackAnimation = new Animation(attackSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 50));
+            deadAnimation = new Animation(deadSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
 
             //Sound Stuff
             //attackSound = content.Load<SoundEffect>("SwordHitFinal");
@@ -60,6 +62,7 @@ namespace Projekt___Programmierung1___Raiji
             life = 3;
             lifeCooldown = 500f;
             hitCooldown = 500f;
+            deadCooldown = 900f;
 
             //Reset Variables
             points = 0;
@@ -179,9 +182,12 @@ namespace Projekt___Programmierung1___Raiji
                     ((HealStationTile)collidingTile).Use();
                 }
             }
-            else if (collidingTile.Type == ETile.DoorOpen)
+            else if (collidingTile.Type == ETile.DoorLocked)
             {
-                //TODO: LevelDone
+                if(Click && points > 1000 && hasKey)
+                {
+                    level.LevelDone = true;
+                }
             }
             
         }

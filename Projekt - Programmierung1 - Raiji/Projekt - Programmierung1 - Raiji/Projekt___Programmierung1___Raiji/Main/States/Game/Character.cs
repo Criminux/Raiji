@@ -25,6 +25,13 @@ namespace Projekt___Programmierung1___Raiji
         public Rectangle bounds;
         bool click;
         protected bool canAttack;
+        private bool gameOver;
+        public bool GameOver
+        {
+            get { return gameOver; }
+        }
+        protected float deadCooldown;
+
         public bool Click
         {
             get
@@ -46,12 +53,14 @@ namespace Projekt___Programmierung1___Raiji
         protected Animation runAnimation;
         protected Animation jumpAnimation;
         protected Animation attackAnimation;
+        protected Animation deadAnimation;
         protected SpriteEffects animationDirection;
 
         protected Texture2D idleSpriteSheet;
         protected Texture2D runSpriteSheet;
         protected Texture2D jumpSpriteSheet;
         protected Texture2D attackSpriteSheet;
+        protected Texture2D deadSpriteSheet;
 
         //Sounds
         //protected SoundEffect attackSound;
@@ -106,20 +115,22 @@ namespace Projekt___Programmierung1___Raiji
 
         virtual public void Update(GameTime gameTime, Room room)
         {
+            
+
             //Update all Animations
             idleAnimation.Update(gameTime);
             runAnimation.Update(gameTime);
             jumpAnimation.Update(gameTime);
             attackAnimation.Update(gameTime);
-
             
             attackCooldown -= gameTime.ElapsedGameTime.Milliseconds;
             stepCooldown -= gameTime.ElapsedGameTime.Milliseconds;
             clickCooldown -= gameTime.ElapsedGameTime.Milliseconds;
 
-            if (attackCooldown > 0)
+            if (attackCooldown >= 0)
             {
                 currentAnimationState = EAnimation.Attack;
+
             }
             else { currentAnimationState = EAnimation.Idle; }
 
@@ -138,6 +149,18 @@ namespace Projekt___Programmierung1___Raiji
             HandleCollisions(room, level, gameTime, content);
 
             HandleLife(gameTime, room, level, enemies);
+
+            if (life <= 0)
+            {
+                currentAnimationState = EAnimation.Dead;
+                deadAnimation.Update(gameTime);
+
+                deadCooldown -= gameTime.ElapsedGameTime.Milliseconds;
+                if(deadCooldown <= 0)
+                {
+                    gameOver = true;
+                }
+            }
         }
 
         virtual public void Draw(SpriteBatch spriteBatch)
@@ -155,6 +178,9 @@ namespace Projekt___Programmierung1___Raiji
                     break;
                 case EAnimation.Attack:
                     attackAnimation.Draw(spriteBatch, position, animationDirection);
+                    break;
+                case EAnimation.Dead:
+                    deadAnimation.Draw(spriteBatch, position, animationDirection);
                     break;
             }
         }

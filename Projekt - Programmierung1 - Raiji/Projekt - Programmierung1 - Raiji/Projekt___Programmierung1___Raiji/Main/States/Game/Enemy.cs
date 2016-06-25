@@ -29,6 +29,7 @@ namespace Raiji.Main.States.Game
             runSpriteSheet = content.Load<Texture2D>("128x128_RunSheetEnemy");
             jumpSpriteSheet = content.Load<Texture2D>("128x128_JumpSheetEnemy");
             attackSpriteSheet = content.Load<Texture2D>("128x128_AttackSheetEnemy");
+            deadSpriteSheet = content.Load<Texture2D>("128x128_DeadSheetEnemy");
             characterSprite = content.Load<Texture2D>("Stone");
 
             //Create Animation
@@ -36,6 +37,7 @@ namespace Raiji.Main.States.Game
             runAnimation = new Animation(runSpriteSheet, 4, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
             jumpAnimation = new Animation(jumpSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
             attackAnimation = new Animation(attackSpriteSheet, 4, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
+            deadAnimation = new Animation(deadSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
 
             currentAnimationState = EAnimation.Idle;
             isAlive = true;
@@ -48,13 +50,14 @@ namespace Raiji.Main.States.Game
             lifeCooldown = 500f;
             movementCountdown = 500f;
             hitCooldown = 500f;
+            deadCooldown = 900f;
 
         }
 
         public override void Update(GameTime gameTime, Room room)
         {
             //If Enemy is smaller than 0
-            if (life <= 0)
+            if (GameOver)
             {
                 isAlive = false;
             }
@@ -64,10 +67,12 @@ namespace Raiji.Main.States.Game
             {
                 
                 base.Update(gameTime, room);
+
                 //Enemy Random Movement
-                RandomBehaviour(gameTime);
+                if (life > 0) RandomBehaviour(gameTime);
+                
             }
-            
+
         }
 
         protected override void HandleLife(GameTime gameTime, Room room, LevelManager level, List<Enemy> enemies)
@@ -112,13 +117,13 @@ namespace Raiji.Main.States.Game
             {
                 currentAnimationState = EAnimation.Run;
                 animationDirection = SpriteEffects.None;
-                Position = new Vector2(Position.X + 5, Position.Y);
+                Position = new Vector2(Position.X + 2, Position.Y);
             }
             else if(direction == 2)
             {
                 currentAnimationState = EAnimation.Run;
                 animationDirection = SpriteEffects.FlipHorizontally;
-                Position = new Vector2(Position.X - 5, Position.Y);
+                Position = new Vector2(Position.X - 2, Position.Y);
             }
             else
             {

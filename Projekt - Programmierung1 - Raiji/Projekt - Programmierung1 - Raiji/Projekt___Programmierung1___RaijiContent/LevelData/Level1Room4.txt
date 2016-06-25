@@ -1,10 +1,10 @@
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 9
-1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 9
-1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 9
-1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 1
-1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 1
-9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 9 9 9 1 1 1 1 1 1
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1
+1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1
+1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 8 0 0 0 1
+1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 1
+9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
@@ -16,9 +16,12 @@
 Property 0 6 3 level1_room4_door1_left level1_room3_door1_right 96 512
 Property 0 7 3 level1_room4_door2_left level1_room3_door2_right 96 512
 Property 0 8 3 level1_room4_door3_left level1_room3_door3_right 96 512
-Property 29 1 5 level1_room4_door1_right level1_room5_door1_left 1760 192
-Property 29 2 5 level1_room4_door2_right level1_room5_door2_left 1760 192
-Property 29 3 5 level1_room4_door3_right level1_room5_door3_left 1760 192
+Property 21 0 5 level1_room4_door1_top level1_room5_door1_bot 1408 64
+Property 22 0 5 level1_room4_door2_top level1_room5_door2_bot 1408 64
+Property 23 0 5 level1_room4_door3_top level1_room5_door3_bot 1408 64
 Enemy 1000 832
 Item 1408 192 0
 Item 1472 192 0
+Tooltip 100 80 Get to the Door to finish a Level
+Tooltip 100 110 You need at least 1000 points
+Tooltip 100 140 and the key!
