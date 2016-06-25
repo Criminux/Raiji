@@ -18,13 +18,14 @@ namespace Raiji.Main.States.Game
         //Get the Player instance for printing health
         Player player;
         int playerLife;
+        int playerPoints;
 
         //Get the Enenmy instance for printing health
         int enemyLife;
 
         //Texture for UI
         Texture2D heart;
-
+        Texture2D key;
 
         //Vector2s for correct Draw-Position
         Vector2 playerHeart1;
@@ -35,6 +36,10 @@ namespace Raiji.Main.States.Game
         Vector2 enemyHeart2;
         Vector2 enemyHeart3;
 
+        Vector2 pointsLocation;
+        Vector2 keyTextLocation;
+        Vector2 keyTextureLocation;
+
         public UIManager(Player player, ContentManager content)
         {
             //Set the instance
@@ -43,6 +48,7 @@ namespace Raiji.Main.States.Game
 
             //Load all Textures for the UI
             heart = content.Load<Texture2D>("heart");
+            key = content.Load<Texture2D>("Key");
 
             //Set the Vector Coordinates
             playerHeart1 = new Vector2(10, 970);
@@ -52,6 +58,10 @@ namespace Raiji.Main.States.Game
             enemyHeart1 = new Vector2(1698, 970);
             enemyHeart2 = new Vector2(1772, 970);
             enemyHeart3 = new Vector2(1846, 970);
+
+            pointsLocation = new Vector2(500, 990);
+            keyTextLocation = new Vector2(800, 990);
+            keyTextureLocation = new Vector2(870, 970);
         }
 
         public void Update(Room room)
@@ -59,9 +69,11 @@ namespace Raiji.Main.States.Game
             
             playerLife = player.Life;
             enemyLife = room.GetCloseEnemyLife();
+            playerPoints = player.Points;
+
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, SpriteFont spriteFont)
         {
             //TODO: Make more perfomant
 
@@ -99,6 +111,13 @@ namespace Raiji.Main.States.Game
                 case 0:
                     break;
             }
+
+            //Draw Points
+            spriteBatch.DrawString(spriteFont, "Points: " + playerPoints.ToString(), pointsLocation, Color.White);
+
+            //Draw Key
+            spriteBatch.DrawString(spriteFont, "Key: ", keyTextLocation, Color.White);
+            if (player.HasKey) spriteBatch.Draw(key, keyTextureLocation, Color.White);
         }
 
     }

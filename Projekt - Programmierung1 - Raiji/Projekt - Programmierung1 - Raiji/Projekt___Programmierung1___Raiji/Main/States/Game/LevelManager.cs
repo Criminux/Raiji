@@ -89,7 +89,7 @@ namespace Projekt___Programmierung1___Raiji
         public void Draw(SpriteBatch spriteBatch, SpriteFont spriteFont) 
         {
             //Draw UI
-            uiManager.Draw(spriteBatch);
+            uiManager.Draw(spriteBatch, spriteFont);
 
             //Draw Room, including Tiles, Enemies and other Items
             room[activeRoom].Draw(spriteBatch, spriteFont);
@@ -132,7 +132,7 @@ namespace Projekt___Programmierung1___Raiji
                         player.BeginJump(gameTime);
                         break;
                     case EInputKey.Attack:
-                        player.Attack(gameTime);
+                        player.Attack(gameTime, room[activeRoom]);
                         break;
                     case EInputKey.Use:
                         player.Click = true;

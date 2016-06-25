@@ -24,6 +24,7 @@ namespace Projekt___Programmierung1___Raiji
         protected Texture2D characterSprite;
         public Rectangle bounds;
         bool click;
+        protected bool canAttack;
         public bool Click
         {
             get
@@ -53,10 +54,10 @@ namespace Projekt___Programmierung1___Raiji
         protected Texture2D attackSpriteSheet;
 
         //Sounds
-        protected SoundEffect attackSound;
-        protected SoundEffect jumpSound;
-        protected SoundEffect damageSound;
-        protected SoundEffect stepSound;
+        //protected SoundEffect attackSound;
+        //protected SoundEffect jumpSound;
+        //protected SoundEffect damageSound;
+        //protected SoundEffect stepSound;
         protected float stepCooldown;
 
 
@@ -123,6 +124,7 @@ namespace Projekt___Programmierung1___Raiji
             else { currentAnimationState = EAnimation.Idle; }
 
             // Reset variables for this cycle
+            canAttack = false;
             click = false;
             velocity = Vector2.Zero;
             bounds.Location = new Point((int)Position.X, (int)Position.Y);
@@ -174,7 +176,7 @@ namespace Projekt___Programmierung1___Raiji
 
             if (stepCooldown <= 0)
             {
-                stepSound.Play(0.5f,0,0);
+                //stepSound.Play(0.5f,0,0);
                 stepCooldown = 475f;
             }
 
@@ -188,7 +190,7 @@ namespace Projekt___Programmierung1___Raiji
             if (!JumpHasCooledDown)
             {
                 jumpTime = 0f;
-                jumpSound.Play(0.7f,0,0);
+                //jumpSound.Play(0.7f,0,0);
             }
 
         }
@@ -291,7 +293,7 @@ namespace Projekt___Programmierung1___Raiji
         
 
 
-        public void Attack(GameTime gameTime)
+        public void Attack(GameTime gameTime, Room room)
         {
 
             if(attackCooldown <= 0)
@@ -300,10 +302,17 @@ namespace Projekt___Programmierung1___Raiji
                 currentAnimationState = EAnimation.Attack;
 
                 //Play the Sound
-                attackSound.Play();
+                //attackSound.Play();
 
                 //Reset Cooldown
                 attackCooldown = 500f;
+
+                float tempDistance = room.GetCloseEnemyDistance();
+                if(tempDistance <= 100f)
+                {
+                    canAttack = true;
+                }
+
             }
             
 

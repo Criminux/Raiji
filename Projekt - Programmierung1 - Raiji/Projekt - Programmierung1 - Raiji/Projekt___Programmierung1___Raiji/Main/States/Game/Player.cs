@@ -16,7 +16,20 @@ namespace Projekt___Programmierung1___Raiji
 {
     public class Player : Character
     {
-       
+        //Only Player Fields
+        private int points;
+        public int Points
+        {
+            get { return points; }
+        }
+
+        private bool hasKey;
+        public bool HasKey
+        {
+            get { return hasKey; }
+        }
+
+
 
         public Player(ContentManager content)
         {
@@ -34,10 +47,10 @@ namespace Projekt___Programmierung1___Raiji
             attackAnimation = new Animation(attackSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 50));
 
             //Sound Stuff
-            attackSound = content.Load<SoundEffect>("SwordHitFinal");
-            jumpSound = content.Load<SoundEffect>("JumpFinal");
-            damageSound = content.Load<SoundEffect>("DamageFinal");
-            stepSound = content.Load<SoundEffect>("SingleStepFinal");
+            //attackSound = content.Load<SoundEffect>("SwordHitFinal");
+            //jumpSound = content.Load<SoundEffect>("JumpFinal");
+            //damageSound = content.Load<SoundEffect>("DamageFinal");
+            //stepSound = content.Load<SoundEffect>("SingleStepFinal");
 
             currentAnimationState = EAnimation.Idle;
 
@@ -47,16 +60,49 @@ namespace Projekt___Programmierung1___Raiji
             life = 3;
             lifeCooldown = 500f;
             hitCooldown = 500f;
+
+            //Reset Variables
+            points = 0;
+            hasKey = false;
         }
 
         public override void Update(GameTime gameTime, Room room)
         {
            
-
             base.Update(gameTime, room);
-            
+
+            PickUpItem(room);
         }
 
+        private void PickUpItem(Room room)
+        {
+            List<Item> tempItemList = new List<Item>();
+
+            for(int i = 0; i < room.Items.Count; i++)
+            {
+                if (bounds.Intersects(room.Items[i].Bounds))
+                {
+
+                    switch (room.Items[i].Type)
+                    {
+                        case EItem.Diamond:
+                            points += 100;
+                            break;
+                        case EItem.Key:
+                            hasKey = true;
+                            break;
+
+                    }
+                }
+                else
+                {
+                    tempItemList.Add (room.Items[i]);
+                }
+            }
+
+            room.Items = tempItemList;
+            
+        }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -72,20 +118,28 @@ namespace Projekt___Programmierung1___Raiji
             //Intersect with Enemy and is Attacking
             foreach(Enemy tempEnemy in enemies)
             {
-                if (bounds.Intersects(tempEnemy.bounds) && currentAnimationState == EAnimation.Attack)
+                if (canAttack == true)
                 {
                     if (hitCooldown <= 0)
                     {
                         tempEnemy.Life = tempEnemy.Life - 1;
                         hitCooldown = 500f;
+                        if(tempEnemy.Life == 0)
+                        {
+                            points += 250;
+                        }
                     }
+                }
+                else if(bounds.Intersects(tempEnemy.bounds) && currentAnimationState == EAnimation.Attack)
+                {
+
                 }
                 else if (bounds.Intersects(tempEnemy.bounds))
                 {
                     if (lifeCooldown <= 0)
                     {
                         life -= 1;
-                        damageSound.Play();
+                        //damageSound.Play();
                         lifeCooldown = 500f;
                     }
 
@@ -110,22 +164,22 @@ namespace Projekt___Programmierung1___Raiji
                 HealStationTile healStation = (HealStationTile)collidingTile;
                 if (Click)
                 {
-                    if(!healStation.IsUsed)
+                    if (!healStation.IsUsed)
                     {
                         IncreaseLife();
                     }
                     ((HealStationTile)collidingTile).Use();
                 }
-                
+
             }
-            else if(collidingTile.Type == ETile.HealStationUsed)
+            else if (collidingTile.Type == ETile.HealStationUsed)
             {
-                if(Click)
+                if (Click)
                 {
                     ((HealStationTile)collidingTile).Use();
                 }
             }
-            else if(collidingTile.Type == ETile.DoorOpen)
+            else if (collidingTile.Type == ETile.DoorOpen)
             {
                 //TODO: LevelDone
             }

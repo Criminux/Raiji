@@ -31,6 +31,14 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             get { return enemies; }
         }
 
+        //Für eventuelle Items
+        private List<Item> items;
+        public List<Item> Items
+        {
+            get { return items; }
+            set { items = value; }
+        }
+
         private Vector2 playerPosition;
 
         private int levelID;
@@ -53,6 +61,7 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
 
             enemies = new List<Enemy>();
             tooltips = new List<Tooltip>();
+            items = new List<Item>();
 
 
             Initialize(levelID, roomID);
@@ -94,6 +103,12 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                 tempEnemy.Draw(spriteBatch);
             }
 
+            //Draw the Items
+            foreach (Item tempItem in items)
+            {
+                tempItem.Draw(spriteBatch);
+            }
+
         }
 
         public int GetCloseEnemyLife()
@@ -112,6 +127,22 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
             }
 
             return enemyLife;
+        }
+
+        public float GetCloseEnemyDistance()
+        {
+            float result = 500f;
+
+            foreach (Enemy tempEnemy in enemies)
+            {
+                float tempDistance = Vector2.Distance(playerPosition, tempEnemy.Position);
+                if (tempDistance < result)
+                {
+                    result = tempDistance;
+                }
+            }
+
+            return result;
         }
 
 
@@ -244,6 +275,30 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                     tooltips.Add(new Tooltip(new Vector2(tempX, tempY), message));
                 }
 
+                if(setting[0] == "Item")
+                {
+                    float tempX = float.Parse(setting[1]);
+                    float tempY = float.Parse(setting[2]);
+
+                    int tempType = int.Parse(setting[3]);
+                    EItem type;
+
+                    switch(tempType)
+                    {
+                        case 0:
+                            type = EItem.Diamond;
+                            break;
+                        case 1:
+                            type = EItem.Key;
+                            break;
+                        default:
+                            type = EItem.Diamond;
+                            break;
+                    }
+
+                    items.Add(new Item(type, new Vector2(tempX, tempY), content));
+
+                }
 
             }
             
