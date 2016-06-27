@@ -63,10 +63,10 @@ namespace Projekt___Programmierung1___Raiji
         protected Texture2D deadSpriteSheet;
 
         //Sounds
-        //protected SoundEffect attackSound;
-        //protected SoundEffect jumpSound;
-        //protected SoundEffect damageSound;
-        //protected SoundEffect stepSound;
+        protected SoundEffect attackSound;
+        protected SoundEffect jumpSound;
+        protected SoundEffect damageSound;
+        protected SoundEffect stepSound;
         protected float stepCooldown;
 
 
@@ -202,7 +202,7 @@ namespace Projekt___Programmierung1___Raiji
 
             if (stepCooldown <= 0)
             {
-                //stepSound.Play(0.5f,0,0);
+                stepSound.Play(0.5f,0,0);
                 stepCooldown = 475f;
             }
 
@@ -216,7 +216,7 @@ namespace Projekt___Programmierung1___Raiji
             if (!JumpHasCooledDown)
             {
                 jumpTime = 0f;
-                //jumpSound.Play(0.7f,0,0);
+                jumpSound.Play(0.7f,0,0);
             }
 
         }
@@ -328,7 +328,7 @@ namespace Projekt___Programmierung1___Raiji
                 currentAnimationState = EAnimation.Attack;
 
                 //Play the Sound
-                //attackSound.Play();
+                attackSound.Play();
 
                 //Reset Cooldown
                 attackCooldown = 500f;

@@ -14,8 +14,8 @@ namespace Raiji.Main.States.Game
     {
         private ContentManager content;
         private bool isUsed;
-        //private SoundEffect useSound;
-        //private SoundEffect useDeniedSound;
+        private SoundEffect useSound;
+        private SoundEffect useDeniedSound;
 
         public HealStationTile(ETile type, Vector2 position, ContentManager content, bool isUsed) : base(type, position, content)
         {
@@ -31,8 +31,8 @@ namespace Raiji.Main.States.Game
                 texture = content.Load<Texture2D>("HealStation");
             }
 
-            //useSound = content.Load<SoundEffect>("HealStationFinal");
-            //useDeniedSound = content.Load<SoundEffect>("HealStationUsedFinal");
+            useSound = content.Load<SoundEffect>("HealthStationFinal");
+            useDeniedSound = content.Load<SoundEffect>("HealthStationUsedFinal");
         }
 
         public void Use()
@@ -40,12 +40,12 @@ namespace Raiji.Main.States.Game
             if(!isUsed)
             {
                 texture = content.Load<Texture2D>("HealStationUsed");
-                //useSound.Play(0.6f, 0, 0);
+                useSound.Play(0.6f, 0, 0);
                 isUsed = true;
             }
             else
             {
-                //useDeniedSound.Play(0.6f,0,0);
+                useDeniedSound.Play(0.6f,0,0);
             }
         }
 

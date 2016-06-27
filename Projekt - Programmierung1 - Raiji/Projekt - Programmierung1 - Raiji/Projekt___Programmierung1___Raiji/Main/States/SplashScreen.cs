@@ -41,7 +41,7 @@ namespace Projekt___Programmierung1___Raiji
             ExecuteInput(Input(StateMachine.inputManager));
             
             //After 5 Seconds SplashScreen
-            if(totalTime.Seconds >= 1) 
+            if(totalTime.Seconds >= 5) 
             {
                 targetState = EGameState.MainMenu;
             }
