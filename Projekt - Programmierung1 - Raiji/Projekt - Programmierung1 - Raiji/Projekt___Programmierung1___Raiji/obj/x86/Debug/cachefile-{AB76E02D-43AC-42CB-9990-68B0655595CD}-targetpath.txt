@@ -32,6 +32,9 @@ Content\JumpFinal.xnb
 Content\SingleStepFinal.xnb
 Content\StepsFinal.xnb
 Content\SwordHitFinal.xnb
+Content\IntroRaiji.xnb
+Content\IntroRaiji.wmv
+Content\Menu.xnb
 Content\LevelData\Level1Room1.txt
 Content\LevelData\Level1Room2.txt
 Content\LevelData\Level1Room3.txt

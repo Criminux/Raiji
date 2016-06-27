@@ -17,6 +17,7 @@ namespace Projekt___Programmierung1___Raiji
         //TODO add all Buttons
         private Button startButton;
         private Button exitButton;
+        private Texture2D menuBackground;
 
         public MainMenu(ContentManager content)
         {
@@ -24,8 +25,8 @@ namespace Projekt___Programmierung1___Raiji
             this.content = content;
 
             //Create Button Instances
-            startButton = new Button("Starten", content);
-            exitButton = new Button("Beenden", content);
+            startButton = new Button("Start", content);
+            exitButton = new Button("Exit", content);
 
             //Set the Button Position
             startButton.Position = new Vector2(860, 515);
@@ -37,7 +38,9 @@ namespace Projekt___Programmierung1___Raiji
 
             //Giving stargetState a default value
             targetState = EGameState.MainMenu;
-            
+
+            menuBackground = content.Load<Texture2D>("Menu");
+
             //TODO MediaPlayer Play
         }
 
@@ -65,6 +68,8 @@ namespace Projekt___Programmierung1___Raiji
         //Draws the MenuButtons
         public override void Draw(SpriteBatch spriteBatch, SpriteFont spriteFont)
         {
+            spriteBatch.Draw(menuBackground, new Vector2(0, 0), Color.White);
+
             startButton.Draw(spriteBatch, spriteFont);
             exitButton.Draw(spriteBatch, spriteFont);
         }

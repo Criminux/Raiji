@@ -37,13 +37,11 @@ namespace Projekt___Programmierung1___Raiji
         //Override Update Method showing the SplashScreen 5 Seconds
         public override EGameState Update(TimeSpan totalTime, GameTime gameTime)
         {
-            //Process the Input
-            ExecuteInput(Input(StateMachine.inputManager));
             
             //After 5 Seconds SplashScreen
             if(totalTime.Seconds >= 5) 
             {
-                targetState = EGameState.MainMenu;
+                targetState = EGameState.Intro;
             }
 
             return targetState;
@@ -57,18 +55,7 @@ namespace Projekt___Programmierung1___Raiji
 
         protected override void ExecuteInput(EInputKey[] inputs)
         {
-            int size = inputs.Length;
-            for (int i = 0; i < size; i++)
-            {
-                switch (inputs[i])
-                {
-                    case EInputKey.Escape:
-                        targetState = EGameState.Quit;
-                        break;
-                    default:
-                        break;
-                }
-            }
+            
         }
     }
 }

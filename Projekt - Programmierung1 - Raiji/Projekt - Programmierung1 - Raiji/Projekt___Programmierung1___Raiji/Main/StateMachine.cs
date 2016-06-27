@@ -8,10 +8,11 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using Raiji.Main.States;
 
 namespace Projekt___Programmierung1___Raiji
 {
-
+    //Eunumeration aller States
     public enum EGameState
     {
         Unspecified = 0,
@@ -25,25 +26,21 @@ namespace Projekt___Programmierung1___Raiji
     }
 
 
-    /// <summary>
-    /// This is the main type for your game
-    /// </summary>
     public class StateMachine : Microsoft.Xna.Framework.Game
     {
-        //Anlegen der Objektinstanzen
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
-        //TODO Wird eventuell gelöscht
         SpriteFont spriteFont;
+        
 
-        //TODO Eigene Klassen
         public static InputManager inputManager = new InputManager();
         TimeManager timeManager;
 
+        //Anlegen der State Instanzen
         SplashScreen splashScreen;
         MainMenu mainMenu;
         GameLoop gameloop;
+        Intro intro;
         
 
         //Anlegen der States
@@ -61,62 +58,40 @@ namespace Projekt___Programmierung1___Raiji
 
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
+        
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
         protected override void LoadContent()
         {
             //Der Objektinstanz einen Wert geben (Konstruktoraufruf)
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-
-            //TODO wird eventuell gelöscht
             spriteFont = Content.Load<SpriteFont>("Arial");
 
-            //TODO Eigene Klassen
             timeManager = new TimeManager();
 
-            //TODO State Klassen
+            //State Klassen
             splashScreen = new SplashScreen(Content);
             mainMenu = new MainMenu(Content);
             gameloop = new GameLoop(Content);
+            intro = new Intro(Content, GraphicsDevice.Viewport);
            
             //Start the StateMachine by redirecting it to the SplashScreen
             currentState = EGameState.SplashScreen;
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// all content.
-        /// </summary>
+        
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+      
         protected override void Update(GameTime gameTime)
         {
             //Time is being counted
-            Time(gameTime);
+            CountTime(gameTime);
 
             //Global InputManager getInput
             inputManager.UpdateInput();
@@ -130,7 +105,7 @@ namespace Projekt___Programmierung1___Raiji
         }
 
         
-        private void Time(GameTime gameTime)
+        private void CountTime(GameTime gameTime)
         {
             timeManager.UpdateTime(gameTime);
         }
@@ -148,6 +123,7 @@ namespace Projekt___Programmierung1___Raiji
                     break;
                 case EGameState.Intro:
                     IsMouseVisible = false;
+                    targetState = intro.Update(timeManager.GetTotalTime(), gameTime);
                     break;
                 case EGameState.MainMenu:
                     IsMouseVisible = true;
@@ -161,11 +137,8 @@ namespace Projekt___Programmierung1___Raiji
 
             }
         }
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Draw(GameTime gameTime)
+
+     protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
 
@@ -194,6 +167,7 @@ namespace Projekt___Programmierung1___Raiji
                     splashScreen.Draw(spriteBatch, spriteFont);
                     break;
                 case EGameState.Intro:
+                    intro.Draw(spriteBatch, spriteFont);
                     break;
                 case EGameState.MainMenu:
                     mainMenu.Draw(spriteBatch, spriteFont);
