@@ -49,10 +49,10 @@ namespace Projekt___Programmierung1___Raiji
             deadAnimation = new Animation(deadSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
 
             //Sound Stuff
-            //attackSound = content.Load<SoundEffect>("SwordHitFinal");
-            //jumpSound = content.Load<SoundEffect>("JumpFinal");
-            //damageSound = content.Load<SoundEffect>("DamageFinal");
-            //stepSound = content.Load<SoundEffect>("SingleStepFinal");
+            attackSound = content.Load<SoundEffect>("SwordHitFinal");
+            jumpSound = content.Load<SoundEffect>("JumpFinal");
+            damageSound = content.Load<SoundEffect>("DamageFinal");
+            stepSound = content.Load<SoundEffect>("SingleStepFinal");
 
             currentAnimationState = EAnimation.Idle;
 
@@ -142,7 +142,7 @@ namespace Projekt___Programmierung1___Raiji
                     if (lifeCooldown <= 0)
                     {
                         life -= 1;
-                        //damageSound.Play();
+                        damageSound.Play();
                         lifeCooldown = 500f;
                     }
 
@@ -184,7 +184,7 @@ namespace Projekt___Programmierung1___Raiji
             }
             else if (collidingTile.Type == ETile.DoorLocked)
             {
-                if(Click && points > 1000 && hasKey)
+                if(Click && points >= 1000 && hasKey)
                 {
                     level.LevelDone = true;
                 }
