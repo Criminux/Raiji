@@ -106,9 +106,10 @@
     <Content Include="Raiji.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Projekt___Programmierung1___RaijiContent\Projekt___Programmierung1___RaijiContent.contentproj">
-      <Name>Projekt___Programmierung1___RaijiContent</Name>
+    <ProjectReference Include="..\Projekt___Programmierung1___RaijiContent\RaijiContent.contentproj">
+      <Name>RaijiContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{AB76E02D-43AC-42CB-9990-68B0655595CD}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
