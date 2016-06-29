@@ -189,36 +189,44 @@ namespace Projekt___Programmierung1___Raiji
         //Moves the Player on X-Axis
         public void Move(float dir, GameTime gameTime)
         {
-
-
-            dir = MathHelper.Clamp(dir, -maxdir, maxdir);
-
-            //Set the Animation Direction
-            if (dir >= 0) animationDirection = SpriteEffects.None;
-            else animationDirection = SpriteEffects.FlipHorizontally;
-
-            //If Move is called: Set State to Run
-            currentAnimationState = EAnimation.Run;
-
-            if (stepCooldown <= 0)
+            if(life > 0)
             {
-                stepSound.Play(0.5f,0,0);
-                stepCooldown = 475f;
+
+                dir = MathHelper.Clamp(dir, -maxdir, maxdir);
+
+                //Set the Animation Direction
+                if (dir >= 0) animationDirection = SpriteEffects.None;
+                else animationDirection = SpriteEffects.FlipHorizontally;
+
+                if (stepCooldown <= 0 && this is Player)
+                {
+                    stepSound.Play(0.5f, 0, 0);
+                    stepCooldown = 475f;
+                }
+
+                //If Move is called: Set State to Run
+                currentAnimationState = EAnimation.Run;
+                
+                if(this is Enemy) velocity.X = MathHelper.Clamp(dir * gameTime.ElapsedGameTime.Milliseconds * acceleration / 2, -maxMoveSpeed , maxMoveSpeed );
+                else velocity.X = MathHelper.Clamp(dir * gameTime.ElapsedGameTime.Milliseconds * acceleration, -maxMoveSpeed, maxMoveSpeed);
+
             }
 
-            velocity.X = MathHelper.Clamp(dir * gameTime.ElapsedGameTime.Milliseconds * acceleration, -maxMoveSpeed, maxMoveSpeed);
         }
 
         //Begins Jump - triggered by Space
         public void BeginJump(GameTime gameTime)
         {
-            //Start Jump
-            if (!JumpHasCooledDown)
+            if(life > 0)
             {
-                jumpTime = 0f;
-                jumpSound.Play(0.7f,0,0);
+                //Start Jump
+                if (!JumpHasCooledDown)
+                {
+                    jumpTime = 0f;
+                    jumpSound.Play(0.7f, 0, 0);
+                }
             }
-
+            
         }
 
         
@@ -326,12 +334,11 @@ namespace Projekt___Programmierung1___Raiji
             {
                 //Start Attack Animation
                 currentAnimationState = EAnimation.Attack;
-
-                //Play the Sound
-                attackSound.Play();
-
+                
                 //Reset Cooldown
                 attackCooldown = 500f;
+
+                if (this is Player) attackSound.Play();
 
                 float tempDistance = room.GetCloseEnemyDistance();
                 if(tempDistance <= 100f)

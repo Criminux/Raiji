@@ -22,7 +22,7 @@ Property 29 8 3 level1_room2_door3_right level1_room3_door3_left 1760 512
 Property 29 11 3 level1_room2_door4_right level1_room3_door4_left 1760 832
 Property 29 12 3 level1_room2_door5_right level1_room3_door5_left 1760 832
 Property 29 13 3 level1_room2_door5_right level1_room3_door6_left 1760 832
-Enemy 900 450
+Enemy 900 450 0
 Tooltip 1300 80 You can attack an enemy
 Tooltip 1300 110 by pressing X or ALT
 Item 1152 512 0

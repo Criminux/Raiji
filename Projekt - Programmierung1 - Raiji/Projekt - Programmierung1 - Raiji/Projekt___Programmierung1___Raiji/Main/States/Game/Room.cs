@@ -40,6 +40,10 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
         }
 
         private Vector2 playerPosition;
+        public Vector2 PlayerPosition
+        {
+            get { return playerPosition; }
+        }
 
         private int levelID;
         private int roomID;
@@ -252,12 +256,29 @@ namespace Projekt___Programmierung1___Raiji.Main.States.Game
                     float tempX = float.Parse(setting[1]);
                     float tempY = float.Parse(setting[2]);
 
-                    //Neuer Enemy initialisieren
-                    Enemy tempEnemy = new Enemy(content);
-                    tempEnemy.Position = new Vector2(tempX,tempY);
+                    int tempType = int.Parse(setting[3]);
 
-                    enemies.Add(tempEnemy);
+                    Enemy tempEnemy;
 
+                    switch (tempType)
+                    {
+                        case 0:
+                            //Neuer Enemy initialisieren
+                            tempEnemy = new Enemy(content, EEnemy.Yellow);
+                            tempEnemy.Position = new Vector2(tempX, tempY);
+                            enemies.Add(tempEnemy);
+
+                            break;
+                        case 1:
+                            //Neuer Enemy initialisieren
+                            tempEnemy = new Enemy(content, EEnemy.Red);
+                            tempEnemy.Position = new Vector2(tempX, tempY);
+                            enemies.Add(tempEnemy);
+
+                            break;
+                    }
+
+                    
                 }
 
                 if(setting[0] == "Tooltip")
