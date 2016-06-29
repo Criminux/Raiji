@@ -197,10 +197,10 @@ namespace Raiji.Main.States.Game
                             TileRoom[i, yCount] = new HealStationTile(ETile.HealStation, new Vector2(i * Tile.Width, yCount * Tile.Height), content, false);
                             break;
                         case 6:
-                            TileRoom[i, yCount] = new HealStationTile(ETile.HealStationUsed, new Vector2(i * Tile.Width, yCount * Tile.Height), content, true);
+                            TileRoom[i, yCount] = new HealStationTile(ETile.HealStationUsed, new Vector2(i * Tile.Width, yCount * Tile.Height), content, true); //TODO
                             break;
                         case 7:
-                            TileRoom[i, yCount] = new Tile(ETile.DoorOpen, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
+                            TileRoom[i, yCount] = new Tile(ETile.DoorOpen, new Vector2(i * Tile.Width, yCount * Tile.Height), content); //TODO
                             break;
                         case 8:
                             TileRoom[i, yCount] = new Tile(ETile.DoorLocked, new Vector2(i * Tile.Width, yCount * Tile.Height), content);

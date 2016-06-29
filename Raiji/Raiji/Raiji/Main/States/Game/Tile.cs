@@ -23,6 +23,8 @@ namespace Raiji
         HealStationUsed = 42,
         DoorOpen = 51, //LevelFinish
         DoorLocked = 52, //LevelFinish
+        Trigger = 61,
+        Triggered = 62,
         Unspecified = 99
 
     }
@@ -109,6 +111,15 @@ namespace Raiji
                     texture = content.Load<Texture2D>("Tile/AcidFull");
                     collision = ETileCollision.Passable;
                     break;
+                case ETile.Trigger:
+                    texture = content.Load<Texture2D>("Tile/Back");
+                    collision = ETileCollision.Passable;
+                    break;
+                case ETile.Triggered:
+                    texture = content.Load<Texture2D>("Tile/Stone");
+                    collision = ETileCollision.Solid;
+                    break;
+
 
             }
 

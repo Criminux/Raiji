@@ -35,7 +35,7 @@ namespace Raiji
 
         public override EGameState Update(TimeSpan totalTime, GameTime gameTime)
         {
-            if (levelManager.GameOver)
+            if (levelManager.GameOver || levelManager.LevelDone)
             {
                 levelManager = new LevelManager(content);
             }

@@ -82,6 +82,8 @@
     <Compile Include="Main\States\Game\Item.cs" />
     <Compile Include="Main\States\Game\Room.cs" />
     <Compile Include="Main\States\Game\Tooltip.cs" />
+    <Compile Include="Main\States\Game\TriggeredTile.cs" />
+    <Compile Include="Main\States\Game\TriggerTile.cs" />
     <Compile Include="Main\States\Game\UIManager.cs" />
     <Compile Include="Main\States\Intro.cs" />
     <Compile Include="Main\States\Menu\Button.cs" />

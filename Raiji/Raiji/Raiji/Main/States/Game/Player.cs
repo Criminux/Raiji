@@ -189,6 +189,10 @@ namespace Raiji
                     level.LevelDone = true;
                 }
             }
+            else if(collidingTile.Type  == ETile.Trigger)
+            {
+                //TODO: 
+            }
             
         }
 
