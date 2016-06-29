@@ -24,22 +24,22 @@ namespace Raiji.Main.States.Game
 
             if(isUsed)
             {
-                texture = content.Load<Texture2D>("HealStationUsed");
+                texture = content.Load<Texture2D>("Tile/HealStationUsed");
             }
             else
             {
-                texture = content.Load<Texture2D>("HealStation");
+                texture = content.Load<Texture2D>("Tile/HealStation");
             }
 
-            useSound = content.Load<SoundEffect>("HealthStationFinal");
-            useDeniedSound = content.Load<SoundEffect>("HealthStationUsedFinal");
+            useSound = content.Load<SoundEffect>("Sound/HealthStationFinal");
+            useDeniedSound = content.Load<SoundEffect>("Sound/HealthStationUsedFinal");
         }
 
         public void Use()
         {
             if(!isUsed)
             {
-                texture = content.Load<Texture2D>("HealStationUsed");
+                texture = content.Load<Texture2D>("Tile/HealStationUsed");
                 useSound.Play(0.6f, 0, 0);
                 isUsed = true;
             }

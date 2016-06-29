@@ -39,7 +39,7 @@ namespace Projekt___Programmierung1___Raiji
             //Giving stargetState a default value
             targetState = EGameState.MainMenu;
 
-            menuBackground = content.Load<Texture2D>("Menu");
+            menuBackground = content.Load<Texture2D>("Menu/Menu");
 
             //TODO MediaPlayer Play
         }

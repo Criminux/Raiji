@@ -37,10 +37,10 @@ namespace Raiji.Main.States.Game
             switch(type)
             {
                 case EItem.Diamond:
-                    texture = content.Load<Texture2D>("Diamond");
+                    texture = content.Load<Texture2D>("Item/Diamond");
                     break;
                 case EItem.Key:
-                    texture = content.Load<Texture2D>("Key");
+                    texture = content.Load<Texture2D>("Item/Key");
                     break;
             }
 

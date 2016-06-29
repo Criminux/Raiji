@@ -48,7 +48,7 @@ namespace Raiji.Main.States.Game
 
             //Load all Textures for the UI
             heart = content.Load<Texture2D>("heart");
-            key = content.Load<Texture2D>("Key");
+            key = content.Load<Texture2D>("Item/Key");
 
             //Set the Vector Coordinates
             playerHeart1 = new Vector2(10, 970);

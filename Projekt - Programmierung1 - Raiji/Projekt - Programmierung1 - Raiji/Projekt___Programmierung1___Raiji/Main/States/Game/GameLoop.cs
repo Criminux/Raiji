@@ -15,7 +15,8 @@ namespace Projekt___Programmierung1___Raiji
     {
         //Creates a LevelManager
         LevelManager levelManager;
-
+        Song backgroundSong;
+        bool isSongPlaying;
         
         
         public GameLoop(ContentManager content) 
@@ -23,6 +24,10 @@ namespace Projekt___Programmierung1___Raiji
             this.content = content;
 
             levelManager = new LevelManager(content);
+            backgroundSong = content.Load<Song>("Music/StartOver");
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = 0.15f;
+            isSongPlaying = false;
 
             targetState = EGameState.GameLoop;
 
@@ -36,12 +41,17 @@ namespace Projekt___Programmierung1___Raiji
             }
             targetState = EGameState.GameLoop;
             ExecuteInput(Input(StateMachine.inputManager));
-
+            if(!isSongPlaying)
+            {
+                MediaPlayer.Play(backgroundSong);
+                isSongPlaying = true;
+            }
             levelManager.Update(gameTime);
             if(levelManager.GameOver)
             {
-                targetState = EGameState.MainMenu;
-                
+                MediaPlayer.Stop();
+                isSongPlaying = false;
+                targetState = EGameState.MainMenu; 
             }
 
 

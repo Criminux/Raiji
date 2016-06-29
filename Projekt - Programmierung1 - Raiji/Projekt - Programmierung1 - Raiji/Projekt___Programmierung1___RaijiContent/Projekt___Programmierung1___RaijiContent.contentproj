@@ -44,26 +44,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="buttonPressed.png">
+    <Compile Include="Menu\buttonPressed.png">
       <Name>buttonPressed</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="button.png">
+    <Compile Include="Menu\button.png">
       <Name>button</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Stone.png">
+    <Compile Include="Tile\Stone.png">
       <Name>Stone</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Back.png">
+    <Compile Include="Tile\Back.png">
       <Name>Back</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -77,33 +77,24 @@
       <Processor>PassThroughProcessor</Processor>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Animation\Player\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="PlayerOutline.png">
-      <Name>PlayerOutline</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="128x128_AttackSheet.png">
+    <Compile Include="Animation\Player\128x128_AttackSheet.png">
       <Name>128x128_AttackSheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_IdleSheet.png">
+    <Compile Include="Animation\Player\128x128_IdleSheet.png">
       <Name>128x128_IdleSheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_JumpSheet.png">
+    <Compile Include="Animation\Player\128x128_JumpSheet.png">
       <Name>128x128_JumpSheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_RunSheet.png">
+    <Compile Include="Animation\Player\128x128_RunSheet.png">
       <Name>128x128_RunSheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -145,79 +136,79 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="128x128_AttackSheetEnemy.png">
+    <Compile Include="Animation\Enemy\128x128_AttackSheetEnemy.png">
       <Name>128x128_AttackSheetEnemy</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_DeadSheet.png">
+    <Compile Include="Animation\Player\128x128_DeadSheet.png">
       <Name>128x128_DeadSheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_DeadSheetEnemy.png">
+    <Compile Include="Animation\Enemy\128x128_DeadSheetEnemy.png">
       <Name>128x128_DeadSheetEnemy</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_IdleSheetEnemy.png">
+    <Compile Include="Animation\Enemy\128x128_IdleSheetEnemy.png">
       <Name>128x128_IdleSheetEnemy</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_JumpSheetEnemy.png">
+    <Compile Include="Animation\Enemy\128x128_JumpSheetEnemy.png">
       <Name>128x128_JumpSheetEnemy</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_RunSheetEnemy.png">
+    <Compile Include="Animation\Enemy\128x128_RunSheetEnemy.png">
       <Name>128x128_RunSheetEnemy</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="AcidFull.png">
+    <Compile Include="Tile\AcidFull.png">
       <Name>AcidFull</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="AcidTop.png">
+    <Compile Include="Tile\AcidTop.png">
       <Name>AcidTop</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="DoorLocked.png">
+    <Compile Include="Tile\DoorLocked.png">
       <Name>DoorLocked</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="DoorOpen.png">
+    <Compile Include="Tile\DoorOpen.png">
       <Name>DoorOpen</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="HealStation.png">
+    <Compile Include="Tile\HealStation.png">
       <Name>HealStation</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="HealStationUsed.png">
+    <Compile Include="Tile\HealStationUsed.png">
       <Name>HealStationUsed</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Spikes.png">
+    <Compile Include="Tile\Spikes.png">
       <Name>Spikes</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Diamond.png">
+    <Compile Include="Item\Diamond.png">
       <Name>Diamond</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Key.png">
+    <Compile Include="Item\Key.png">
       <Name>Key</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -232,37 +223,37 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DamageFinal.mp3">
+    <Compile Include="Sound\DamageFinal.mp3">
       <Name>DamageFinal</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="HealthStationFinal.mp3">
+    <Compile Include="Sound\HealthStationFinal.mp3">
       <Name>HealthStationFinal</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="HealthStationUsedFinal.mp3">
+    <Compile Include="Sound\HealthStationUsedFinal.mp3">
       <Name>HealthStationUsedFinal</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="JumpFinal.mp3">
+    <Compile Include="Sound\JumpFinal.mp3">
       <Name>JumpFinal</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="SingleStepFinal.mp3">
+    <Compile Include="Sound\SingleStepFinal.mp3">
       <Name>SingleStepFinal</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="StepsFinal.mp3">
+    <Compile Include="Sound\StepsFinal.mp3">
       <Name>StepsFinal</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="SwordHitFinal.mp3">
+    <Compile Include="Sound\SwordHitFinal.mp3">
       <Name>SwordHitFinal</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -276,37 +267,44 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menu.png">
+    <Compile Include="Menu\Menu.png">
       <Name>Menu</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="128x128_AttackSheetEnemy2.png">
+    <Compile Include="Animation\Enemy\128x128_AttackSheetEnemy2.png">
       <Name>128x128_AttackSheetEnemy2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_DeadSheetEnemy2.png">
+    <Compile Include="Animation\Enemy\128x128_DeadSheetEnemy2.png">
       <Name>128x128_DeadSheetEnemy2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_IdleSheetEnemy2.png">
+    <Compile Include="Animation\Enemy\128x128_IdleSheetEnemy2.png">
       <Name>128x128_IdleSheetEnemy2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_JumpSheetEnemy2.png">
+    <Compile Include="Animation\Enemy\128x128_JumpSheetEnemy2.png">
       <Name>128x128_JumpSheetEnemy2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="128x128_RunSheetEnemy2.png">
+    <Compile Include="Animation\Enemy\128x128_RunSheetEnemy2.png">
       <Name>128x128_RunSheetEnemy2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Music\StartOver.wav">
+      <Name>StartOver</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

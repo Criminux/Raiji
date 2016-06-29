@@ -38,22 +38,22 @@ namespace Raiji.Main.States.Game
             {
                 case EEnemy.Yellow:
                     //Load Sprites for Animation
-                    idleSpriteSheet = content.Load<Texture2D>("128x128_IdleSheetEnemy");
-                    runSpriteSheet = content.Load<Texture2D>("128x128_RunSheetEnemy");
-                    jumpSpriteSheet = content.Load<Texture2D>("128x128_JumpSheetEnemy");
-                    attackSpriteSheet = content.Load<Texture2D>("128x128_AttackSheetEnemy");
-                    deadSpriteSheet = content.Load<Texture2D>("128x128_DeadSheetEnemy");
-                    characterSprite = content.Load<Texture2D>("Stone");
+                    idleSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_IdleSheetEnemy");
+                    runSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_RunSheetEnemy");
+                    jumpSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_JumpSheetEnemy");
+                    attackSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_AttackSheetEnemy");
+                    deadSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_DeadSheetEnemy");
+                    characterSprite = content.Load<Texture2D>("Tile/Stone");
                     speed = 1f;
                     break;
                 case EEnemy.Red:
                     //Load Sprites for Animation
-                    idleSpriteSheet = content.Load<Texture2D>("128x128_IdleSheetEnemy2");
-                    runSpriteSheet = content.Load<Texture2D>("128x128_RunSheetEnemy2");
-                    jumpSpriteSheet = content.Load<Texture2D>("128x128_JumpSheetEnemy2");
-                    attackSpriteSheet = content.Load<Texture2D>("128x128_AttackSheetEnemy2");
-                    deadSpriteSheet = content.Load<Texture2D>("128x128_DeadSheetEnemy2");
-                    characterSprite = content.Load<Texture2D>("Stone");
+                    idleSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_IdleSheetEnemy2");
+                    runSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_RunSheetEnemy2");
+                    jumpSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_JumpSheetEnemy2");
+                    attackSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_AttackSheetEnemy2");
+                    deadSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_DeadSheetEnemy2");
+                    characterSprite = content.Load<Texture2D>("Tile/Stone");
                     speed = 2f;
                     break;
             }

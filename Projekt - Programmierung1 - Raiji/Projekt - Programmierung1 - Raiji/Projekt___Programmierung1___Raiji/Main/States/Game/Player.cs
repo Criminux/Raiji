@@ -34,12 +34,12 @@ namespace Projekt___Programmierung1___Raiji
         public Player(ContentManager content)
         {
             //Load Sprites for Animation
-            idleSpriteSheet = content.Load<Texture2D>("128x128_IdleSheet");
-            runSpriteSheet = content.Load<Texture2D>("128x128_RunSheet");
-            jumpSpriteSheet = content.Load<Texture2D>("128x128_JumpSheet");
-            attackSpriteSheet = content.Load<Texture2D>("128x128_AttackSheet");
-            deadSpriteSheet = content.Load<Texture2D>("128x128_DeadSheet");
-            characterSprite = content.Load<Texture2D>("Stone");
+            idleSpriteSheet = content.Load<Texture2D>("Animation/Player/128x128_IdleSheet");
+            runSpriteSheet = content.Load<Texture2D>("Animation/Player/128x128_RunSheet");
+            jumpSpriteSheet = content.Load<Texture2D>("Animation/Player/128x128_JumpSheet");
+            attackSpriteSheet = content.Load<Texture2D>("Animation/Player/128x128_AttackSheet");
+            deadSpriteSheet = content.Load<Texture2D>("Animation/Player/128x128_DeadSheet");
+            characterSprite = content.Load<Texture2D>("Tile/Stone");
 
             //Create Animation
             idleAnimation = new Animation(idleSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
@@ -49,10 +49,10 @@ namespace Projekt___Programmierung1___Raiji
             deadAnimation = new Animation(deadSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
 
             //Sound Stuff
-            attackSound = content.Load<SoundEffect>("SwordHitFinal");
-            jumpSound = content.Load<SoundEffect>("JumpFinal");
-            damageSound = content.Load<SoundEffect>("DamageFinal");
-            stepSound = content.Load<SoundEffect>("SingleStepFinal");
+            attackSound = content.Load<SoundEffect>("Sound/SwordHitFinal");
+            jumpSound = content.Load<SoundEffect>("Sound/JumpFinal");
+            damageSound = content.Load<SoundEffect>("Sound/DamageFinal");
+            stepSound = content.Load<SoundEffect>("Sound/SingleStepFinal");
 
             currentAnimationState = EAnimation.Idle;
 

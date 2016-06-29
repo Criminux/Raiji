@@ -70,43 +70,43 @@ namespace Projekt___Programmierung1___Raiji
             switch(type)
             {
                 case ETile.Stone:
-                    texture = content.Load<Texture2D>("Stone");                
+                    texture = content.Load<Texture2D>("Tile/Stone");                
                     collision = ETileCollision.Solid;
                     break;
                 case ETile.Background:
-                    texture = content.Load<Texture2D>("Back");
+                    texture = content.Load<Texture2D>("Tile/Back");
                     collision = ETileCollision.Passable;
                     break;
                 case ETile.Door:
-                    texture = content.Load<Texture2D>("Back");
+                    texture = content.Load<Texture2D>("Tile/Back");
                     collision = ETileCollision.Passable;
                     break;
                 case ETile.Spike:
-                    texture = content.Load<Texture2D>("Spikes");
+                    texture = content.Load<Texture2D>("Tile/Spikes");
                     collision = ETileCollision.Passable;
                     break;
                 case ETile.HealStation:
-                    texture = content.Load<Texture2D>("HealStation");
+                    texture = content.Load<Texture2D>("Tile/HealStation");
                     collision = ETileCollision.Passable;
                     break;
                 case ETile.HealStationUsed:
-                    texture = content.Load<Texture2D>("HealStationUsed");
+                    texture = content.Load<Texture2D>("Tile/HealStationUsed");
                     collision = ETileCollision.Passable;
                     break;
                 case ETile.DoorOpen:
-                    texture = content.Load<Texture2D>("DoorOpen");
+                    texture = content.Load<Texture2D>("Tile/DoorOpen");
                     collision = ETileCollision.Passable;
                     break;
                 case ETile.DoorLocked:
-                    texture = content.Load<Texture2D>("DoorLocked");
+                    texture = content.Load<Texture2D>("Tile/DoorLocked");
                     collision = ETileCollision.Passable;
                     break;
                 case ETile.AcidTop:
-                    texture = content.Load<Texture2D>("AcidTop");
+                    texture = content.Load<Texture2D>("Tile/AcidTop");
                     collision = ETileCollision.Passable;
                     break;
                 case ETile.AcidFull:
-                    texture = content.Load<Texture2D>("AcidFull");
+                    texture = content.Load<Texture2D>("Tile/AcidFull");
                     collision = ETileCollision.Passable;
                     break;
 

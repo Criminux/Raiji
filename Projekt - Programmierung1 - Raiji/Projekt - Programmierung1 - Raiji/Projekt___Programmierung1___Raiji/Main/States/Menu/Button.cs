@@ -43,8 +43,8 @@ namespace Projekt___Programmierung1___Raiji
 
         public Button(string text, ContentManager content)
         {
-            texture = content.Load<Texture2D>("button");
-            hoverTexture = content.Load <Texture2D>("buttonPressed");
+            texture = content.Load<Texture2D>("Menu/button");
+            hoverTexture = content.Load <Texture2D>("Menu/buttonPressed");
             this.text = text;
             bounds = texture.Bounds;
            
@@ -57,7 +57,7 @@ namespace Projekt___Programmierung1___Raiji
 
             isHoveredOver = bounds.Contains(StateMachine.inputManager.GetMousePoint());
 
-            if (isHoveredOver && StateMachine.inputManager.MouseClicked()) // TODO: if(hover && MouseClicked())
+            if (isHoveredOver && StateMachine.inputManager.MouseClicked()) 
             {
                 OnClick();
             }
