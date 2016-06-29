@@ -20,8 +20,7 @@ namespace Raiji.Main
         Attack = 3,
         Dead = 4
     }
-
-
+    
     public class Animation
     {
 
