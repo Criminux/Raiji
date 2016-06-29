@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Main\Animation.cs" />
     <Compile Include="Main\CollisionUtil.cs" />
+    <Compile Include="Main\States\Credits.cs" />
     <Compile Include="Main\States\Game\DoorTile.cs" />
     <Compile Include="Main\States\Game\Enemy.cs" />
     <Compile Include="Main\States\Game\HealStationTile.cs" />
@@ -103,7 +104,7 @@
     <Content Include="Raiji.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Projekt___Programmierung1___RaijiContent\RaijiContent.contentproj">
+    <ProjectReference Include="..\RaijiContent\RaijiContent.contentproj">
       <Name>RaijiContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
       <Project>{AB76E02D-43AC-42CB-9990-68B0655595CD}</Project>

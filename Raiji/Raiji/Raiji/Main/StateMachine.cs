@@ -19,7 +19,6 @@ namespace Raiji
         SplashScreen = 1,
         Intro = 2,
         MainMenu = 11,
-        PauseMenu = 12,
         GameLoop = 21,
         Credits = 31,
         Quit = 99
@@ -41,7 +40,7 @@ namespace Raiji
         MainMenu mainMenu;
         GameLoop gameloop;
         Intro intro;
-        
+        Credits credits;        
 
         //Anlegen der States
         private EGameState currentState, targetState, previousState;
@@ -54,7 +53,7 @@ namespace Raiji
             //Set Resolution to FullHD and toggle Fullscreen
             graphics.PreferredBackBufferWidth = 1920;
             graphics.PreferredBackBufferHeight = 1080;
-            //graphics.IsFullScreen = true;
+            //TODO: graphics.IsFullScreen = true;
 
         }
 
@@ -77,6 +76,7 @@ namespace Raiji
             mainMenu = new MainMenu(Content);
             gameloop = new GameLoop(Content);
             intro = new Intro(Content, GraphicsDevice.Viewport);
+            credits = new Credits(Content);
            
             //Start the StateMachine by redirecting it to the SplashScreen
             currentState = EGameState.SplashScreen;
@@ -133,8 +133,14 @@ namespace Raiji
                     IsMouseVisible = false;
                     targetState = gameloop.Update(timeManager.GetTotalTime(), gameTime);
                     break;
-                //TODO Finish Case
-
+                case EGameState.Credits:
+                    IsMouseVisible = false;
+                    targetState = credits.Update(timeManager.GetTotalTime(), gameTime);
+                    break;
+                case EGameState.Unspecified:
+                    IsMouseVisible = true;
+                    targetState = mainMenu.Update(timeManager.GetTotalTime(), gameTime);
+                    break;
             }
         }
 
@@ -175,8 +181,12 @@ namespace Raiji
                 case EGameState.GameLoop:
                     gameloop.Draw(spriteBatch, spriteFont);
                     break;
-                    //TODO Finish Case
-
+                case EGameState.Credits:
+                    credits.Draw(spriteBatch, spriteFont);
+                    break;
+                case EGameState.Unspecified:
+                    mainMenu.Draw(spriteBatch, spriteFont);
+                    break;
             }
         }
     }

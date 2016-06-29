@@ -47,6 +47,12 @@ namespace Raiji
                 isSongPlaying = true;
             }
             levelManager.Update(gameTime);
+            if(levelManager.LevelDone)
+            {
+                MediaPlayer.Stop();
+                isSongPlaying = false;
+                targetState = EGameState.Credits;
+            }
             if(levelManager.GameOver)
             {
                 MediaPlayer.Stop();

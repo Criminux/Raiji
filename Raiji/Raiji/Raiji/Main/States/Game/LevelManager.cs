@@ -10,7 +10,6 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Raiji.Main.States.Game;
 using Raiji.Main;
-using Raiji.Main.States.Game;
 
 namespace Raiji
 {
@@ -22,6 +21,7 @@ namespace Raiji
         public bool LevelDone
         {
             set { levelDone = value; }
+            get { return levelDone; }
         }
         Room[] room;
         private int levelID;
@@ -67,12 +67,13 @@ namespace Raiji
 
         public void Update(GameTime gameTime)
         {
+            /*
             if(levelDone)
             {
                 isInitialized = false;
                 levelID += 1;
                 activeRoom = 0;
-            }
+            }*/
 
             if(!isInitialized)
             {
