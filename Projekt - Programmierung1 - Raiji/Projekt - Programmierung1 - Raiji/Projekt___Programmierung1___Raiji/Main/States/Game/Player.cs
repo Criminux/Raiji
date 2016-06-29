@@ -8,11 +8,11 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using Projekt___Programmierung1___Raiji.Main.States.Game;
+using Raiji.Main.States.Game;
 using Raiji.Main;
 using Raiji.Main.States.Game;
 
-namespace Projekt___Programmierung1___Raiji
+namespace Raiji
 {
     public class Player : Character
     {

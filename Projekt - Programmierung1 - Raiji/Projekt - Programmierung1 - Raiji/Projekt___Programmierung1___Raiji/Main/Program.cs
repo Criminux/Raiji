@@ -1,6 +1,6 @@
 using System;
 
-namespace Projekt___Programmierung1___Raiji
+namespace Raiji
 {
 #if WINDOWS || XBOX
     static class Program

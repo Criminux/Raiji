@@ -6,7 +6,7 @@ using System.IO;
 using Raiji.Main.States.Game;
 using System.Collections.Generic;
 
-namespace Projekt___Programmierung1___Raiji.Main.States.Game
+namespace Raiji.Main.States.Game
 {
     public class Room
     {

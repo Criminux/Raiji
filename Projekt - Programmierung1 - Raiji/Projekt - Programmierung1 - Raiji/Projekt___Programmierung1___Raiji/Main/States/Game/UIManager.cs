@@ -8,8 +8,8 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using Projekt___Programmierung1___Raiji;
-using Projekt___Programmierung1___Raiji.Main.States.Game;
+using Raiji;
+using Raiji.Main.States.Game;
 
 namespace Raiji.Main.States.Game
 {

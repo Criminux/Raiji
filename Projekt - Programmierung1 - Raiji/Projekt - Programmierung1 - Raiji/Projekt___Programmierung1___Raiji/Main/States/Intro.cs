@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Raiji.Main.States;
-using Projekt___Programmierung1___Raiji;
+using Raiji;
 
 namespace Raiji.Main.States
 {

@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Raiji.Main.States;
 
-namespace Projekt___Programmierung1___Raiji
+namespace Raiji
 {
     //Eunumeration aller States
     public enum EGameState
