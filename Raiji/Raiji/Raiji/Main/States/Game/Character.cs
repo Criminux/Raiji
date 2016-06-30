@@ -78,7 +78,7 @@ namespace Raiji
         protected bool isOnGround;
         private float jumpTime = jumpCooldown;
         private const float maxJumpTime = 500f;
-        private const float jumpCooldown = 1200f;
+        private const float jumpCooldown = 1000f;
         private const float jumpVelocity = 40f;
 
         //Attack Fields

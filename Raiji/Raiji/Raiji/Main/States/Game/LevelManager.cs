@@ -43,7 +43,7 @@ namespace Raiji
         {
             get
             {   //GameOver whem Timer ran out or player dead
-                if (player.GameOver || timeManager.Seconds > 100)
+                if (player.GameOver || timeManager.Seconds > 150)
                 {
                     return true;
                 }

@@ -13,8 +13,8 @@
 1 1 1 1 1 1 1 4 4 4 1 1 1 1 4 4 4 1 1 0 0 0 0 0 0 1 1 1 1 1
 1 1 1 1 1 1 1 4 4 4 1 1 1 1 4 4 4 1 1 0 0 0 0 0 0 1 1 1 1 1
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 9 9 9 1 1 1 1 1 1 1 1
-Property 19 14 4 level1_room5_door1_bot level1_room4_door1_top 1344 832
-Property 20 14 4 level1_room5_door2_bot level1_room4_door2_top 1344 832
+Property 19 14 4 level1_room5_door1_bot level1_room4_door1_top 1216 832
+Property 20 14 4 level1_room5_door2_bot level1_room4_door2_top 1280 832
 Property 21 14 4 level1_room5_door3_bot level1_room4_door3_top 1344 832
 Item 64 384 0
 Item 64 448 0

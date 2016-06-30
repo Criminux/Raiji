@@ -16,9 +16,9 @@
 Property 0 6 3 level1_room4_door1_left level1_room3_door1_right 96 512
 Property 0 7 3 level1_room4_door2_left level1_room3_door2_right 96 512
 Property 0 8 3 level1_room4_door3_left level1_room3_door3_right 96 512
-Property 21 0 5 level1_room4_door1_top level1_room5_door1_bot 1408 64
+Property 21 0 5 level1_room4_door1_top level1_room5_door1_bot 1344 64
 Property 22 0 5 level1_room4_door2_top level1_room5_door2_bot 1408 64
-Property 23 0 5 level1_room4_door3_top level1_room5_door3_bot 1408 64
+Property 23 0 5 level1_room4_door3_top level1_room5_door3_bot 1472 64
 Enemy 1000 832 1
 Item 1408 192 0
 Item 1472 192 0

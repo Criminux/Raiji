@@ -16,7 +16,7 @@ namespace Raiji.Main.States.Game
 
         //For printing Time
         int totalSeconds;
-        const int maximumTime = 100;
+        const int maximumTime = 150;
 
         //Texture for UI
         Texture2D heart;
