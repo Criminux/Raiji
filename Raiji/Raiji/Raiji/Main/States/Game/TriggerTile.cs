@@ -9,6 +9,7 @@ namespace Raiji.Main.States.Game
 {
     class TriggerTile : Tile
     {
+        //TriggerTile needs targetID from TriggeredTile
         private String targetID;
         public String TargetID
         {
@@ -21,6 +22,7 @@ namespace Raiji.Main.States.Game
 
         public void SetProperties(String targetID)
         {
+            //Called from room
             this.targetID = targetID;
         }
     }

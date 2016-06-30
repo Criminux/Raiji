@@ -14,6 +14,7 @@ using Raiji;
 
 namespace Raiji.Main.States.Game
 {
+    //Enemy type enumeration
     public enum EEnemy
     {
         Yellow = 0,
@@ -23,9 +24,11 @@ namespace Raiji.Main.States.Game
 
     public class Enemy : Character
     {
+        //Enemy fields
         bool isAlive;
+        //Countdown for RandomBehaviour for type Yellow
         private float movementCountdown;
-        private float speed;
+        //save current direction for type Yellow
         int direction;
         Random random;
         EEnemy type;
@@ -33,6 +36,7 @@ namespace Raiji.Main.States.Game
 
         public Enemy(ContentManager content, EEnemy type)
         {
+            //Load correct spriteSheets for the enemy type
             this.type = type;
             switch(type)
             {
@@ -44,7 +48,6 @@ namespace Raiji.Main.States.Game
                     attackSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_AttackSheetEnemy");
                     deadSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_DeadSheetEnemy");
                     characterSprite = content.Load<Texture2D>("Tile/Stone");
-                    speed = 1f;
                     break;
                 case EEnemy.Red:
                     //Load Sprites for Animation
@@ -54,7 +57,6 @@ namespace Raiji.Main.States.Game
                     attackSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_AttackSheetEnemy2");
                     deadSpriteSheet = content.Load<Texture2D>("Animation/Enemy/128x128_DeadSheetEnemy2");
                     characterSprite = content.Load<Texture2D>("Tile/Stone");
-                    speed = 2f;
                     break;
             }
 
@@ -66,13 +68,14 @@ namespace Raiji.Main.States.Game
             attackAnimation = new Animation(attackSpriteSheet, 4, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
             deadAnimation = new Animation(deadSpriteSheet, 5, 2, 128, 128, new TimeSpan(0, 0, 0, 0, 100));
 
+            //Reset curtain variables
             currentAnimationState = EAnimation.Idle;
             isAlive = true;
             bounds = characterSprite.Bounds;
 
             random = new Random();
 
-            //Enemy Variable Stuff
+            //Enemy Cooldowns
             life = 3;
             lifeCooldown = 500f;
             movementCountdown = 500f;
@@ -83,7 +86,7 @@ namespace Raiji.Main.States.Game
 
         public override void Update(GameTime gameTime, Room room)
         {
-            //If Enemy is smaller than 0
+            //If Enemy is dead
             if (GameOver)
             {
                 isAlive = false;
@@ -92,10 +95,10 @@ namespace Raiji.Main.States.Game
             //Only Update Logic if he is alive
             if (isAlive)
             {
-                
+                //Call the character Update
                 base.Update(gameTime, room);
 
-                //Enemy Random Movement
+                //Enemy Random Behaviour
                 if (life > 0) RandomBehaviour(gameTime, room);
                 
             }
@@ -104,18 +107,11 @@ namespace Raiji.Main.States.Game
 
         protected override void HandleLife(GameTime gameTime, Room room, LevelManager level, List<Enemy> enemies)
         {
-            //Decrease Countdown so Player is hitable
+            //Decrease Countdown so enemy is hitable
             lifeCooldown -= gameTime.ElapsedGameTime.Milliseconds;
 
-            //Intersect with Enemy and is Attacking
-            if (bounds.Intersects(level.PlayerRectangle) && currentAnimationState == EAnimation.Attack)
-            {
-                foreach(Enemy tempEnemy in enemies)
-                {
-                    tempEnemy.Life = tempEnemy.Life - 1;
-                }
-            }
-            else if (bounds.Intersects(level.PlayerRectangle))
+            //Intersect with player
+            if (bounds.Intersects(level.PlayerRectangle))
             {
                 currentAnimationState = EAnimation.Attack;
             }
@@ -125,6 +121,7 @@ namespace Raiji.Main.States.Game
         {
             if(isAlive)
             {
+                //Draw the enemy
                 base.Draw(spriteBatch);
 
             }
@@ -134,43 +131,56 @@ namespace Raiji.Main.States.Game
 
         private void RandomBehaviour(GameTime gameTime, Room room)
         {
+            //If enemy is yellow
             if(type == EEnemy.Yellow)
             {
+                //Countdown to next direction change
                 movementCountdown -= gameTime.ElapsedGameTime.Milliseconds;
                 if (movementCountdown <= 0)
                 {
+                    //Get new direction and reset countdown
                     direction = random.Next(0, 3);
                     movementCountdown = 500f;
                 }
+
+                //check the current direction
                 if (direction == 1)
                 {
+                    //Walk right
                     currentAnimationState = EAnimation.Run;
                     animationDirection = SpriteEffects.None;
                     Position = new Vector2((Position.X + 2), Position.Y);
                 }
                 else if (direction == 2)
                 {
+                    //Walk left
                     currentAnimationState = EAnimation.Run;
                     animationDirection = SpriteEffects.FlipHorizontally;
                     Position = new Vector2((Position.X - 2), Position.Y);
                 }
                 else
                 {
+                    //Idle
                     currentAnimationState = EAnimation.Idle;
 
                 }
             }
+            //If enemy is type Red
             else if(type == EEnemy.Red)
             {
+                //Get distance to player
                 float tempDistance = Vector2.Distance(Position, room.PlayerPosition);
+                //If distance is smaller than 300
                 if(tempDistance <= 300f)
                 {
+                    //If smaller than 25 attack him
                     if(tempDistance <= 25f)
                     {
                         Attack(gameTime, room);
                     }
                     else
                     {
+                        //Follow the player
                         float tempDir;
                         if (Position.X > room.PlayerPosition.X) tempDir = -1f;
                         else tempDir = 1f;
@@ -181,6 +191,7 @@ namespace Raiji.Main.States.Game
                 }
                 else
                 {
+                    //If not close idle
                     currentAnimationState = EAnimation.Idle;
                 }
             }
@@ -189,7 +200,7 @@ namespace Raiji.Main.States.Game
 
         protected override void OnTileCollision(Tile collidingTile, Vector2 collisionDepth, LevelManager level, Room room)
         {
-            //Gegner bekommt keinen Schaden etc.
+            //Enemy takes no damage from curtain tiles and cant toggle any events
         }
     }
 }

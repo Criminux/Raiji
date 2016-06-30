@@ -44,7 +44,6 @@ namespace Raiji.Main.States.Game
         {
             //Set the instance
             this.player = player;
-            //this.enemy = enemy;
 
             //Load all Textures for the UI
             heart = content.Load<Texture2D>("heart");
@@ -66,7 +65,7 @@ namespace Raiji.Main.States.Game
 
         public void Update(Room room)
         {
-            
+            //Update all  values for the Draw
             playerLife = player.Life;
             enemyLife = room.GetCloseEnemyLife();
             playerPoints = player.Points;
@@ -75,43 +74,16 @@ namespace Raiji.Main.States.Game
 
         public void Draw(SpriteBatch spriteBatch, SpriteFont spriteFont)
         {
-            //TODO: Make more perfomant
+            //Draw the player life
+            if(playerLife >= 1) spriteBatch.Draw(heart, playerHeart1, Color.White);
+            if(playerLife >= 2) spriteBatch.Draw(heart, playerHeart2, Color.White);
+            if(playerLife >= 3) spriteBatch.Draw(heart, playerHeart3, Color.White);
 
-            //Draw the Players life
-            switch(playerLife)
-            {
-                case 3:
-                    spriteBatch.Draw(heart, playerHeart1, Color.White);
-                    spriteBatch.Draw(heart, playerHeart2, Color.White);
-                    spriteBatch.Draw(heart, playerHeart3, Color.White);
-                    break;
-                case 2:
-                    spriteBatch.Draw(heart, playerHeart1, Color.White);
-                    spriteBatch.Draw(heart, playerHeart2, Color.White);
-                    break;
-                case 1:
-                    spriteBatch.Draw(heart, playerHeart1, Color.White); 
-                    break;     
-            }
             //Draw the Enemy life
-            switch (enemyLife)
-            {
-                case 3:
-                    spriteBatch.Draw(heart, enemyHeart1, Color.White); 
-                    spriteBatch.Draw(heart, enemyHeart2, Color.White);
-                    spriteBatch.Draw(heart, enemyHeart3, Color.White);
-                    break;
-                case 2:
-                    spriteBatch.Draw(heart, enemyHeart1, Color.White); 
-                    spriteBatch.Draw(heart, enemyHeart2, Color.White);
-                    break;
-                case 1:
-                    spriteBatch.Draw(heart, enemyHeart1, Color.White); 
-                    break;
-                case 0:
-                    break;
-            }
-
+            if(enemyLife >= 1) spriteBatch.Draw(heart, enemyHeart1, Color.White);
+            if(enemyLife >= 2) spriteBatch.Draw(heart, enemyHeart2, Color.White);
+            if(enemyLife >= 3) spriteBatch.Draw(heart, enemyHeart3, Color.White);
+            
             //Draw Points
             spriteBatch.DrawString(spriteFont, "Points: " + playerPoints.ToString(), pointsLocation, Color.White);
 

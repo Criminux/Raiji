@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Raiji.Main.States.Game
 {
-
+    //Enmeration of all ItemTypes
     public enum EItem
     {
         Diamond = 0,
@@ -17,6 +17,7 @@ namespace Raiji.Main.States.Game
 
     public class Item
     {
+        //Item need position, texture, bounds and type
         private Vector2 position;
         private Texture2D texture;
         private Rectangle bounds;
@@ -34,6 +35,7 @@ namespace Raiji.Main.States.Game
 
         public Item(EItem type, Vector2 position, ContentManager content)
         {
+            //Load correct texture for item
             switch(type)
             {
                 case EItem.Diamond:
@@ -44,6 +46,7 @@ namespace Raiji.Main.States.Game
                     break;
             }
 
+            //save properties and set rectangle
             this.type = type;
             this.position = position;
             bounds = new Rectangle((int)position.X, (int)position.Y, 64, 64);
@@ -52,6 +55,7 @@ namespace Raiji.Main.States.Game
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            //Draw item to its position
             spriteBatch.Draw(texture, position, Color.White);
         }
     }

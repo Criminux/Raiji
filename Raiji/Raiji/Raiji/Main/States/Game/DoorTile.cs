@@ -10,12 +10,16 @@ namespace Raiji.Main.States.Game
 {
     class DoorTile : Tile
     {
-
+        //ID for identification
         private String ID;
+        //Target ID for identification of the target Til
         private String targetID;
+        //Target room for switching
         private int targetRoom;
+        //Position where player will spawn when coming out of this door
         private Vector2 spawnPosition;
 
+        //Properties for the fields
         public int TargetRoom
         {
             get { return targetRoom; }
@@ -33,13 +37,12 @@ namespace Raiji.Main.States.Game
             get { return spawnPosition; }
         }
 
-
+        
         public DoorTile(ETile type, Vector2 position, ContentManager content) : base(type, position, content)
         {
-
-
         }
 
+        //Set the properties for a door
         public void SetProperties(int targetRoom, String ID, String targetID, Vector2 targetPosition)
         {
             this.targetRoom = targetRoom;

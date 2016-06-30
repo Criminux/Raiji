@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Raiji
 {
+    //Enumeration for all Tile types
     public enum ETile
     {
         Background = 0,
@@ -29,6 +30,7 @@ namespace Raiji
 
     }
 
+    //Enumerations for possible collision settings
     public enum ETileCollision
     {
         Passable = 0,
@@ -69,6 +71,7 @@ namespace Raiji
         
         public Tile(ETile type, Vector2 position, ContentManager content)
         {
+            //Create the tile and load its texture and give the correct collision setting
             switch(type)
             {
                 case ETile.Stone:
@@ -123,6 +126,7 @@ namespace Raiji
 
             }
 
+            //Save the information and set the rectangle
             this.type = type;
             this.position = position;
             bounds = texture.Bounds;
@@ -132,6 +136,7 @@ namespace Raiji
 
         public void DrawTile(SpriteBatch spriteBatch)
         {
+            //Draw the tile
             spriteBatch.Draw(texture, position, Color.White);
         }
 
