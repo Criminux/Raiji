@@ -23,7 +23,6 @@ namespace Raiji.Main.States
         {
             //Draw Background and Credits Text
             spriteBatch.Draw(texture, Vector2.Zero, Color.White);
-            spriteBatch.DrawString(spriteFont, "You finished the Demo of Raiji!", new Vector2(100, 100), Color.White);
         }
 
         public override EGameState Update(TimeSpan totalTime, GameTime gameTime)
