@@ -43,5 +43,6 @@ namespace Raiji
         }
 
         protected abstract void ExecuteInput(EInputKey[] inputs);
+
     }
 }

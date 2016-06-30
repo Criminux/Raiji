@@ -13,6 +13,7 @@ using Raiji;
 
 namespace Raiji.Main.States
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
     class Intro : State
     {
         //Intro plays a Video

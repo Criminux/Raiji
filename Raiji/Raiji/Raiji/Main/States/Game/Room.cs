@@ -8,6 +8,7 @@ using System.Collections.Generic;
 
 namespace Raiji.Main.States.Game
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
     public class Room
     {
         //Content instance
@@ -418,5 +419,6 @@ namespace Raiji.Main.States.Game
             
         }
 
+        
     }
 }
