@@ -18,13 +18,12 @@ namespace Raiji
         private Vector2 vector;
         private Color color;
         
-        //Constructor - Content to Load the SplashScreen
         public SplashScreen(ContentManager content)
         {
-            //TODO
+            //Save content instance
             this.content = content;
 
-            //Giving the fields values
+            //Load content and create instances
             texture = content.Load<Texture2D>("SplashScreen");
             vector = new Vector2(0, 0); //TopLeftCorner
             color = new Color(255,255,255,1); //White
@@ -34,10 +33,11 @@ namespace Raiji
         }
 
 
-        //Override Update Method showing the SplashScreen 5 Seconds
         public override EGameState Update(TimeSpan totalTime, GameTime gameTime)
         {
-            
+            //Reset targetState
+            targetState = EGameState.SplashScreen;
+
             //After 5 Seconds SplashScreen
             if(totalTime.Seconds >= 5) 
             {
@@ -55,7 +55,7 @@ namespace Raiji
 
         protected override void ExecuteInput(EInputKey[] inputs)
         {
-            
+            //Cant be skipped
         }
     }
 }

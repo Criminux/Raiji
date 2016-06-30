@@ -18,6 +18,7 @@ namespace Raiji
         private Texture2D texture;
         private Texture2D hoverTexture;
 
+        //Position from Button
         private Vector2 position;
 
         public Vector2 Position
@@ -33,18 +34,20 @@ namespace Raiji
 
         //Is the Mouse hovering over the Button
         private bool isHoveredOver;
+        //Text from the Button
         private string text;
-
+        //Button Bounds
         Rectangle bounds;
 
-        //MouseInput
-
+        //Click Event
         public event EventHandler<EventArgs> Click;
 
         public Button(string text, ContentManager content)
         {
+            //Button loads its texture and hovertexture
             texture = content.Load<Texture2D>("Menu/button");
             hoverTexture = content.Load <Texture2D>("Menu/buttonPressed");
+            //Save information and set bounds
             this.text = text;
             bounds = texture.Bounds;
            
@@ -53,12 +56,13 @@ namespace Raiji
 
         public void Update()
         {
-            
-
+            //Set isHoveredOver bool
             isHoveredOver = bounds.Contains(StateMachine.inputManager.GetMousePoint());
 
+            //If isHovered and Mouse is clicked
             if (isHoveredOver && StateMachine.inputManager.MouseClicked()) 
             {
+                //Call Onclick Method
                 OnClick();
             }
 
@@ -67,24 +71,20 @@ namespace Raiji
         
         public void Draw(SpriteBatch spriteBatch, SpriteFont spriteFont)
         {
-            // TODO: Versuche, den HoverBegin und HoverEnd als Event abzufangen und nur dann den Button neuzuzeichnen
+            //Draw correct texture
             if (isHoveredOver)
                 spriteBatch.Draw(hoverTexture, position, Color.White);
             else
                 spriteBatch.Draw(texture, position, Color.White);
 
-            //writes the text
+            //Write the text
             spriteBatch.DrawString(spriteFont, text, position + new Vector2(texture.Width / 2f, texture.Height / 2f) - spriteFont.MeasureString(text) / 2f, Color.Black);
         }
 
-        protected void OnClick() // TODO: Setze diese Mechanik lieber als Event um
-
-        {
-            if (Click != null)
-            {
-                Click(this, new EventArgs());
-            }
-                
+        protected void OnClick()
+        {   
+            //Click Event
+            Click(this, new EventArgs());
         }
 
     }

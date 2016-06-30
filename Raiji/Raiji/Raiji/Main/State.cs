@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Raiji
 {
+    //State Parentclass for all States
     abstract class State
     {
 
@@ -20,8 +21,10 @@ namespace Raiji
         //TargetState
         protected EGameState targetState;
 
+        //Update Method returns next state
         public abstract EGameState Update(TimeSpan totalTime, GameTime gameTime);
         
+        //Draw Method draws state
         public abstract void Draw(SpriteBatch spriteBatch, SpriteFont spriteFont);
 
         protected virtual EInputKey[] Input(InputManager inputManager)

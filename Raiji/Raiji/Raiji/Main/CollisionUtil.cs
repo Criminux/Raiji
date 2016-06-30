@@ -18,10 +18,9 @@ namespace Raiji.Main
         public static Vector2 CalculateCollisionDepth(Rectangle characterBounds, Rectangle otherBounds)
         {
             //If the distance on both axis is higher than the sum of the half of both Rectangles, they are not colliding
-           // if((distanceX >= (characterBounds.Width/2 + otherBounds.Width/2)) && (distanceY >= (characterBounds.Height/2 + otherBounds.Height/2)))
             if(!characterBounds.Intersects(otherBounds))
             {
-                //Zero Vector is returned
+                //Not colliding at all, Zero Vector is returned
                 return Vector2.Zero;
             }
 
@@ -35,8 +34,6 @@ namespace Raiji.Main
             //Get the distance between both Rectangles on both axis
             float distanceX = characterBoundsCenter.X - otherBoundsCenter.X;
             float distanceY = characterBoundsCenter.Y - otherBoundsCenter.Y;
-
-            //Collision has happened
 
             //Is the distance on X-Axis higher than 0 -> Determine relative position of other Rectangle
             if (distanceX > 0)

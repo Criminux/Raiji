@@ -12,7 +12,7 @@ using Raiji.Main.States;
 
 namespace Raiji
 {
-    //Eunumeration aller States
+    //Eunumeration of all sates
     public enum EGameState
     {
         Unspecified = 0,
@@ -31,18 +31,19 @@ namespace Raiji
         SpriteBatch spriteBatch;
         SpriteFont spriteFont;
         
-
+        //Static input manager, global use
         public static InputManager inputManager = new InputManager();
-        TimeManager timeManager;
 
-        //Anlegen der State Instanzen
+        private TimeManager timeManager;
+
+        //Create State instances
         SplashScreen splashScreen;
         MainMenu mainMenu;
         GameLoop gameloop;
         Intro intro;
         Credits credits;        
 
-        //Anlegen der States
+        //save current and future states
         private EGameState currentState, targetState, previousState;
 
         public StateMachine()
@@ -53,7 +54,7 @@ namespace Raiji
             //Set Resolution to FullHD and toggle Fullscreen
             graphics.PreferredBackBufferWidth = 1920;
             graphics.PreferredBackBufferHeight = 1080;
-            //TODO: graphics.IsFullScreen = true;
+            graphics.IsFullScreen = true;
 
         }
 
@@ -65,13 +66,10 @@ namespace Raiji
 
         protected override void LoadContent()
         {
-            //Der Objektinstanz einen Wert geben (Konstruktoraufruf)
+            //Instantiate
             spriteBatch = new SpriteBatch(GraphicsDevice);
             spriteFont = Content.Load<SpriteFont>("Arial");
-
             timeManager = new TimeManager();
-
-            //State Klassen
             splashScreen = new SplashScreen(Content);
             mainMenu = new MainMenu(Content);
             gameloop = new GameLoop(Content);
@@ -107,11 +105,13 @@ namespace Raiji
         
         private void CountTime(GameTime gameTime)
         {
+            //Update total Time
             timeManager.UpdateTime(gameTime);
         }
 
         private void StateUpdate(GameTime gameTime)
         {
+            //Check which State needs to update and set the IsMouseVisible property
             switch (currentState)
             {
                 case EGameState.Quit:
@@ -146,15 +146,14 @@ namespace Raiji
 
      protected override void Draw(GameTime gameTime)
         {
+            //Clear
             GraphicsDevice.Clear(Color.Black);
 
             //spriteBatch Business
             spriteBatch.Begin();
 
+            //Check which State is going to be drawed
             StateDraw();
-
-            //TODO: Wird gelöscht
-            spriteBatch.DrawString(spriteFont, timeManager.GetTotalTime().ToString(), new Vector2(10, 10), Color.White);
 
             spriteBatch.End();
 
@@ -167,6 +166,7 @@ namespace Raiji
 
         private void StateDraw()
         {
+            //Switch though current State and draw correct one
             switch (currentState)
             {
                 case EGameState.SplashScreen:
