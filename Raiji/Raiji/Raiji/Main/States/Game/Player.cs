@@ -10,7 +10,6 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Raiji.Main.States.Game;
 using Raiji.Main;
-using Raiji.Main.States.Game;
 
 namespace Raiji
 {
@@ -151,7 +150,7 @@ namespace Raiji
             
         }
 
-        protected override void OnTileCollision(Tile collidingTile, Vector2 collisionDepth, LevelManager level)
+        protected override void OnTileCollision(Tile collidingTile, Vector2 collisionDepth, LevelManager level, Room room)
         {
             //Is the Tile a Door?
             if (collidingTile is DoorTile)
@@ -191,7 +190,8 @@ namespace Raiji
             }
             else if(collidingTile.Type  == ETile.Trigger)
             {
-                //TODO: 
+                String tempID = ((TriggerTile)collidingTile).TargetID;
+                level.TriggerTileByID(tempID);
             }
             
         }

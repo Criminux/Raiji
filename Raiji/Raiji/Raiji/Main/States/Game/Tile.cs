@@ -112,7 +112,7 @@ namespace Raiji
                     collision = ETileCollision.Passable;
                     break;
                 case ETile.Trigger:
-                    texture = content.Load<Texture2D>("Tile/Back");
+                    texture = content.Load<Texture2D>("Tile/Trigger");
                     collision = ETileCollision.Passable;
                     break;
                 case ETile.Triggered:

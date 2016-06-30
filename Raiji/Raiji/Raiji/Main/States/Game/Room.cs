@@ -197,10 +197,10 @@ namespace Raiji.Main.States.Game
                             TileRoom[i, yCount] = new HealStationTile(ETile.HealStation, new Vector2(i * Tile.Width, yCount * Tile.Height), content, false);
                             break;
                         case 6:
-                            TileRoom[i, yCount] = new HealStationTile(ETile.HealStationUsed, new Vector2(i * Tile.Width, yCount * Tile.Height), content, true); //TODO
+                            TileRoom[i, yCount] = new TriggerTile(ETile.Trigger, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
                             break;
                         case 7:
-                            TileRoom[i, yCount] = new Tile(ETile.DoorOpen, new Vector2(i * Tile.Width, yCount * Tile.Height), content); //TODO
+                            TileRoom[i, yCount] = new TriggeredTile(ETile.Triggered, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
                             break;
                         case 8:
                             TileRoom[i, yCount] = new Tile(ETile.DoorLocked, new Vector2(i * Tile.Width, yCount * Tile.Height), content);
@@ -219,7 +219,7 @@ namespace Raiji.Main.States.Game
                 
             }
 
-            //Read more lines for DoorTile Linking and enemy initialization
+            //Read more lines for DoorTile Linking, enemy initialization, tooltips and other obstacles or items
             String Line;
             while((Line = reader.ReadLine()) != null)
             {
@@ -319,6 +319,34 @@ namespace Raiji.Main.States.Game
 
                     items.Add(new Item(type, new Vector2(tempX, tempY), content));
 
+                }
+                if (setting[0] == "Trigger")
+                {
+                    int tempX = Int32.Parse(setting[1]);
+                    int tempY = Int32.Parse(setting[2]);
+
+                    String tempTargetID = setting[3];
+
+                    if (TileRoom[tempX, tempY] is TriggerTile)
+                    {
+                        TriggerTile tile = (TriggerTile)TileRoom[tempX, tempY];
+                        tile.SetProperties(tempTargetID);
+                    }
+                }
+                if (setting[0] == "Triggered")
+                {
+                    int tempX = Int32.Parse(setting[1]);
+                    int tempY = Int32.Parse(setting[2]);
+
+                    String tempID = setting[3];
+                    float tempTimerValue = float.Parse(setting[4]);
+
+
+                    if (TileRoom[tempX, tempY] is TriggeredTile)
+                    {
+                        TriggeredTile tile = (TriggeredTile)TileRoom[tempX, tempY];
+                        tile.SetProperties(tempID, tempTimerValue);
+                    }
                 }
 
             }

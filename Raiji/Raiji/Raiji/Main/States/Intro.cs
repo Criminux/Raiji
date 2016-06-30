@@ -21,8 +21,6 @@ namespace Raiji.Main.States
         Rectangle videoRectangle;
         Texture2D videoTexture;
 
-        EGameState targetState;
-
         public Intro(ContentManager content, Viewport view)
         {
             this.content = content;

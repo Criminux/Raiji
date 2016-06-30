@@ -50,6 +50,9 @@ namespace Raiji
             }
         }
 
+        //Save all Triggered Tiles to update the Timer
+        private List<TriggeredTile> triggeredTiles;
+
 
         public LevelManager(ContentManager content)
         {
@@ -62,20 +65,21 @@ namespace Raiji
             player = new Player(content);
 
             uiManager = new UIManager(player, content);
+
+            triggeredTiles = new List<TriggeredTile>();
         }
         
 
         public void Update(GameTime gameTime)
         {
-            /*
-            if(levelDone)
+          
+            for (int i = triggeredTiles.Count - 1; i >= 0; --i)
             {
-                isInitialized = false;
-                levelID += 1;
-                activeRoom = 0;
-            }*/
+                triggeredTiles[i].Update(gameTime);
+                if (!triggeredTiles[i].IsTriggered) triggeredTiles.Remove(triggeredTiles[i]);
+            }
 
-            if(!isInitialized)
+            if (!isInitialized)
             {
                 InitializeLevel(levelID);
                 player.Position = new Vector2(200, 500);
@@ -187,6 +191,32 @@ namespace Raiji
             }
 
             return result;
+        }
+
+        public void TriggerTileByID(String ID)
+        {
+            for (int i = 0; i < room.Length; i++)
+            {
+                Tile[,] tempTileRoom = room[i].tileRoom;
+
+                //Loop through Tiles of current Room
+                for (int j = 0; j < tempTileRoom.GetLength(0); j++)
+                {
+                    for (int k = 0; k < tempTileRoom.GetLength(1); k++)
+                    {
+                        Tile tempTile = tempTileRoom[j, k];
+                        if(tempTile is TriggeredTile)
+                        {
+                            if (((TriggeredTile)tempTile).GetID == ID)
+                            {
+                                ((TriggeredTile)tempTile).Trigger();
+                                triggeredTiles.Add(((TriggeredTile)tempTile));
+                            }
+                        }
+                        
+                    }
+                }
+            }
         }
 
     }

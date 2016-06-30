@@ -10,7 +10,6 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Raiji.Main.States.Game;
 using Raiji.Main;
-using Raiji.Main.States.Game;
 
 namespace Raiji.Main.States.Game
 {

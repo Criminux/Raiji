@@ -4,14 +4,14 @@
 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 0 0 0 1 1 3 3 3 3 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 0 0 0 1 1 4 4 4 4 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-9 0 0 0 1 1 1 1 1 1 1 1 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 9
-9 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 9
-9 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 9
+9 0 0 0 1 1 1 1 1 1 1 1 0 0 0 0 1 1 0 0 0 0 0 0 0 0 7 0 0 9
+9 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 7 0 0 9
+9 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 6 0 0 0 0 0 0 0 7 0 0 9
 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1
 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1
-1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9
-1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9
-1 1 1 1 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9
+1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 9
+1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 9
+1 1 1 1 1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 9
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 Property 0 6 1 level1_room2_door1_left level1_room1_door1_right 96 512
 Property 0 7 1 level1_room2_door2_left level1_room1_door2_right 96 512
@@ -22,7 +22,14 @@ Property 29 8 3 level1_room2_door3_right level1_room3_door3_left 1760 512
 Property 29 11 3 level1_room2_door4_right level1_room3_door4_left 1760 832
 Property 29 12 3 level1_room2_door5_right level1_room3_door5_left 1760 832
 Property 29 13 3 level1_room2_door5_right level1_room3_door6_left 1760 832
+Trigger 18 8 level1_room2_triggered1
+Triggered 26 6 level1_room2_triggered1 15000
+Triggered 26 7 level1_room2_triggered1 15000
+Triggered 26 8 level1_room2_triggered1 15000
+Triggered 26 11 level1_room2_triggered1 15000
+Triggered 26 12 level1_room2_triggered1 15000
+Triggered 26 13 level1_room2_triggered1 15000
 Enemy 900 450 0
 Tooltip 1300 80 You can attack an enemy
 Tooltip 1300 110 by pressing X or ALT
-Item 1152 512 0
+Item 1280 512 0

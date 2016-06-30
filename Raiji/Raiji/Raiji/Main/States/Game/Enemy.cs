@@ -187,7 +187,7 @@ namespace Raiji.Main.States.Game
 
         }
 
-        protected override void OnTileCollision(Tile collidingTile, Vector2 collisionDepth, LevelManager level)
+        protected override void OnTileCollision(Tile collidingTile, Vector2 collisionDepth, LevelManager level, Room room)
         {
             //Gegner bekommt keinen Schaden etc.
         }

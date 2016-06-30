@@ -254,7 +254,7 @@ namespace Raiji
                     Vector2 collisionDepth = CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds);
                     if(collisionDepth != Vector2.Zero)
                     {
-                        OnTileCollision(currentTile, collisionDepth, level);
+                        OnTileCollision(currentTile, collisionDepth, level, room);
 
                         if (currentTile.Collision == ETileCollision.Solid)
                         {
@@ -282,7 +282,7 @@ namespace Raiji
                     Vector2 collisionDepth = CollisionUtil.CalculateCollisionDepth(bounds, currentTile.Bounds);
                     if (collisionDepth != Vector2.Zero)
                     {
-                        OnTileCollision(currentTile, collisionDepth, level);
+                        OnTileCollision(currentTile, collisionDepth, level, room);
 
                         if (currentTile.Collision == ETileCollision.Solid)
                         {
@@ -301,7 +301,7 @@ namespace Raiji
 
         protected abstract void HandleLife(GameTime gameTime, Room room, LevelManager level, List<Enemy> enemies);
 
-        protected abstract void OnTileCollision(Tile collidingTile, Vector2 collisionDepth, LevelManager level);
+        protected abstract void OnTileCollision(Tile collidingTile, Vector2 collisionDepth, LevelManager level, Room room);
        
 
 
