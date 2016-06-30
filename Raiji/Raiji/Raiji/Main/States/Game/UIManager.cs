@@ -23,6 +23,10 @@ namespace Raiji.Main.States.Game
         //Get the Enenmy instance for printing health
         int enemyLife;
 
+        //For printing Time
+        int totalSeconds;
+        const int maximumTime = 100;
+
         //Texture for UI
         Texture2D heart;
         Texture2D key;
@@ -39,6 +43,9 @@ namespace Raiji.Main.States.Game
         Vector2 pointsLocation;
         Vector2 keyTextLocation;
         Vector2 keyTextureLocation;
+
+        Vector2 timeTextLocation;
+        Vector2 timeLocation;
 
         public UIManager(Player player, ContentManager content)
         {
@@ -61,14 +68,18 @@ namespace Raiji.Main.States.Game
             pointsLocation = new Vector2(500, 990);
             keyTextLocation = new Vector2(800, 990);
             keyTextureLocation = new Vector2(870, 970);
+
+            timeTextLocation = new Vector2(1100, 990);
+            timeLocation = new Vector2(1350, 990);
         }
 
-        public void Update(Room room)
+        public void Update(Room room, int totalSeconds)
         {
             //Update all  values for the Draw
             playerLife = player.Life;
             enemyLife = room.GetCloseEnemyLife();
             playerPoints = player.Points;
+            this.totalSeconds = totalSeconds;
 
         }
 
@@ -90,6 +101,12 @@ namespace Raiji.Main.States.Game
             //Draw Key
             spriteBatch.DrawString(spriteFont, "Key: ", keyTextLocation, Color.White);
             if (player.HasKey) spriteBatch.Draw(key, keyTextureLocation, Color.White);
+
+            //Draw Time
+            spriteBatch.DrawString(spriteFont, "Remaining Time: ", timeTextLocation, Color.White);
+            //Calculate remaining Time
+            int tempPrintTime = maximumTime - totalSeconds;
+            spriteBatch.DrawString(spriteFont, tempPrintTime.ToString(), timeLocation, Color.White);
         }
 
     }

@@ -18,6 +18,7 @@ namespace Raiji
         //UI Manager and content
         UIManager uiManager;
         ContentManager content;
+        TimeManager timeManager;
         //checks if level is done
         private bool levelDone;
         public bool LevelDone
@@ -48,8 +49,8 @@ namespace Raiji
         public bool GameOver
         {
             get
-            {
-                if (player.GameOver)
+            {   //GameOver whem Timer ran out or player dead
+                if (player.GameOver || timeManager.Seconds > 100)
                 {
                     return true;
                 }
@@ -71,7 +72,7 @@ namespace Raiji
             player = new Player(content);
 
             uiManager = new UIManager(player, content);
-
+            timeManager = new TimeManager();
         }
         
 
@@ -86,8 +87,11 @@ namespace Raiji
 
             }
 
+            //Update Time
+            timeManager.UpdateTime(gameTime);
+
             //Update UI
-            uiManager.Update(room[activeRoom]);
+            uiManager.Update(room[activeRoom], timeManager.Seconds);
 
             //Update Room
             room[activeRoom].Update(gameTime, this, player.Position);
